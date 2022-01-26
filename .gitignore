@@ -123,17 +123,18 @@ dist
 .vscode-test
 
 # yarn v2
-.yarn/
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# project spefic
+dndler_py/
 data/firstnames.json
 data/lastnames.json
 csvToJSON.py
 csvToJSON.py
 csvToJSON.py
-
-# project spefic
-dndler_py/
