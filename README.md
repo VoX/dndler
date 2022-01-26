@@ -2,15 +2,14 @@
 The dndler is a tool for creating improvized game materials for Dungeons & Dragons campaigns.
 
 # Usage
-    yarn
-then
+    yarn install
+and to run the react client and api in parallel
 
     yarn start
-or to run with `nodemon`
-
-    yarn dev
     
-localhost:3000
+the client runs on `localhost:3000` and the api on `localhost:8000`
+
+`yarn workspace client start` to run the client alone and `yarn workspace server dev` for the api
 
 have fun
 
