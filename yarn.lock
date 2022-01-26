@@ -1684,9 +1684,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 17.0.10
-  resolution: "@types/node@npm:17.0.10"
-  checksum: 979e83d642a2b4f18fa1a4233f884822c05abc7acd0836024aa964187f8446432b21f7913e72fe2b3927c4a811c27a0b6cd60ac7c4ac6a6762cfbab70782aa6a
+  version: 17.0.12
+  resolution: "@types/node@npm:17.0.12"
+  checksum: f7e4c384b72648550391c2c8bd42560dfccf5b7a0506fb5842f326f8b176286be279dd63f62af621fe6d409d474ea5d312855061f512132e999f4e902a22e4db
   languageName: node
   linkType: hard
 
@@ -1877,6 +1877,24 @@ __metadata:
   checksum: 985163db2292fac9e5a1e072bf99f1b5baccf196e4de25a0b0b81865ebddeb3b3eb4480734ef0a2ac8c002845396b91aa89121f5b84f93981a4658164a9ec6e9
   languageName: node
   linkType: hard
+
+"api@workspace:packages/server":
+  version: 0.0.0-use.local
+  resolution: "api@workspace:packages/server"
+  dependencies:
+    "@babel/core": ^7.16.12
+    "@babel/preset-env": ^7.16.11
+    babel-jest: ^27.4.6
+    babel-plugin-lodash: ^3.3.4
+    body-parser: ^1.19.1
+    express: ^4.17.2
+    express-validator: ^6.14.0
+    jest: ^27.4.7
+    joi: ^17.5.0
+    lodash: ^4.17.21
+    nodemon: ^2.0.15
+  languageName: unknown
+  linkType: soft
 
 "aproba@npm:^1.0.3 || ^2.0.0":
   version: 2.0.0
@@ -2238,9 +2256,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001286":
-  version: 1.0.30001301
-  resolution: "caniuse-lite@npm:1.0.30001301"
-  checksum: 0e359f2c682bed35521902ce7fc91136c485de4c1e1e33272d6fbb7cdf77178df7649960a9b69ce9da12022aadd7a0037b3c9b3594c41146d58216654dc9a236
+  version: 1.0.30001302
+  resolution: "caniuse-lite@npm:1.0.30001302"
+  checksum: 612689059f6a9aeebad43afeabac655308ddbad8e0f345030edf7656564cf9d0d5af10e3cbf61b64b09b06a97f82ba3788f5621d6526c7a3e7e068cae88d6782
   languageName: node
   linkType: hard
 
@@ -2681,18 +2699,6 @@ __metadata:
 "dndler@workspace:.":
   version: 0.0.0-use.local
   resolution: "dndler@workspace:."
-  dependencies:
-    "@babel/core": ^7.16.12
-    "@babel/preset-env": ^7.16.11
-    babel-jest: ^27.4.6
-    babel-plugin-lodash: ^3.3.4
-    body-parser: ^1.19.1
-    express: ^4.17.2
-    express-validator: ^6.14.0
-    jest: ^27.4.7
-    joi: ^17.5.0
-    lodash: ^4.17.21
-    nodemon: ^2.0.15
   languageName: unknown
   linkType: soft
 
@@ -2729,9 +2735,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.17":
-  version: 1.4.52
-  resolution: "electron-to-chromium@npm:1.4.52"
-  checksum: 31e8e38f0a4dd45e86f3b9905f3b1f915ec2f3831226dc15542764b3a435dd8025fe1ab546ed0a8ed6c46d87ac49724e80cd074bdbaf926657568ee76105fcd3
+  version: 1.4.53
+  resolution: "electron-to-chromium@npm:1.4.53"
+  checksum: 8c221a85b1941763803836044a8d8eaacb6e9661302fcdd36601a74f7123236aa52b0007d54320a1550cbbcf9dfdd4cf52ca92e677df3f71be0ee2ed68c738d7
   languageName: node
   linkType: hard
 
