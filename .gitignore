@@ -136,5 +136,4 @@ dndler_py/
 data/firstnames.json
 data/lastnames.json
 csvToJSON.py
-csvToJSON.py
-csvToJSON.py
+*/.DS_Store
