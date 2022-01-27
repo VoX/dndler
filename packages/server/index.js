@@ -4,15 +4,32 @@ import express from 'express';
 import { body, validationResult } from 'express-validator';
 import * as generator from './generators.js';
 import bodyParser from 'body-parser';
-
-//dev requires
-// import { formParse } from '../client/js/interpreter.js';
-// import { debugDisplay } from '../client/js/characterpage.js';
+import {
+    sourcebooks,
+    names,
+    backgrounds,
+    races,
+    classFeatures
+  } from '../data/data.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 8000;
+
+app.get('/', (req, res) => {
+    res.status(200).send('hello im the api');
+})
+
+app.get('/sources', (req, res) => {
+    res.status(200).send(sourcebooks);
+})
+
+//Leaving the old code here for reference until we want to merge this over to main
+
+//dev requires
+// import { formParse } from '../client/js/interpreter.js';
+// import { debugDisplay } from '../client/js/characterpage.js';
 
 // app.use(express.static(path.join(__dirname, '../client')));
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,10 +37,6 @@ const port = process.env.PORT || 8000;
 // app.get('/', (req, res) => {
 //     res.status(200).sendFile(path.join(__dirname, '../client', '/index.html'));
 // })
-
-app.get('/', (req, res) => {
-    res.status(200).send('hello im the api');
-})
 
 // app.get('/custom', (req, res) => {
 //     res.status(200).sendFile(path.join(__dirname, '../client', '/custom.html'));
