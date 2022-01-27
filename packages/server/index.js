@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.get('/sources', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.setHeader('Access-Control-Allow-Methods', 'GET');
-    res.status(200).sendFile((path.join(__dirname, '../data/sourcebooks.json'));
+    res.status(200).sendFile((path.join(__dirname, '../data/sourcebooks.json')));
 })
 
 //Leaving the old code here for reference until we want to merge this over to main
