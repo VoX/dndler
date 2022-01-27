@@ -18,8 +18,10 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 app.get('/', (req, res) => {
-    res.status(200).send('hello im the api');
-})
+  res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.status(200).send(JSON.stringify({message: 'hello'}))
+});
+
 
 app.get('/sources', (req, res) => {
     res.status(200).send(sourcebooks);
