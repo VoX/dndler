@@ -16,7 +16,7 @@ window.onload = mouseWatch = () => {
 mouseOver = (id) => {
     if(mouseDown)
     {
-        document.getElementById(id).checked = 1-document.getElementById(id).checked;
+        document.getElementById(id).checked = 1 - document.getElementById(id).checked;
         document.getElementById(id).dispatchEvent(new Event('input'));
     }
 }
