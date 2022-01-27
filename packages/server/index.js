@@ -18,7 +18,9 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 app.get('/', (req, res) => {
+  // Allow CORS
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+  // Send JSON.stringified object after checking for 200 Status.
   res.status(200).send(JSON.stringify({message: 'hello'}))
 });
 
