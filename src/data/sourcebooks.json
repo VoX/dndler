@@ -1,5 +1,6 @@
 {
-    "Player's Handbook": {
+    "PHB": {
+        "Name": "Player's Handbook",
         "Backgrounds": [
             "Acolyte",
             "Charlatan",
@@ -53,7 +54,8 @@
         ],
         "Spells": []
     },
-    "Tomb of Annihilation": {
+    "TOA": {
+        "Name": "Tomb of Annihilation",
         "Backgrounds": [
             "Anthropologist",
             "Archaeologist"
@@ -62,7 +64,8 @@
         "Races": [],
         "Spells": []
     },
-    "Mythic Odysseys of Theros": {
+    "MOT": {
+        "Name": "Mythic Odysseys of Theros",
         "Backgrounds": [
             "Athlete"
         ],
@@ -73,7 +76,8 @@
         ],
         "Spells": []
     },
-    "Sword Coast Adventurer's Guide": {
+    "SWA": {
+        "Name": "Sword Coast Adventurer's Guide",
         "Backgrounds": [
             "City Watch",
             "Clan Crafter",
@@ -94,7 +98,8 @@
         ],
         "Spells": []
     },
-    "Baldur's Gate - Descent into Avernus": {
+    "DIA": {
+        "Name": "Baldur's Gate - Descent into Avernus",
         "Backgrounds": [
             "Faceless"
         ],
@@ -102,7 +107,8 @@
         "Races": [],
         "Spells": []
     },
-    "Ghosts of Saltmarsh": {
+    "GOS": {
+        "Name": "Ghosts of Saltmarsh",
         "Backgrounds": [
             "Fisher",
             "Marine",
@@ -113,7 +119,8 @@
         "Races": [],
         "Spells": []
     },
-    "Curse of Strahd": {
+    "COS": {
+        "Name": "Curse of Strahd",
         "Backgrounds": [
             "Haunted One",
             "Black Fist Double Agent",
@@ -127,7 +134,8 @@
         "Races": [],
         "Spells": []
     },
-    "Eberron: Rising from the Last War": {
+    "EBE": {
+        "Name": "Eberron - Rising from the Last War",
         "Backgrounds": [
             "House Agent"
         ],
@@ -141,7 +149,8 @@
         ],
         "Spells": []
     },
-    "Mulmaster Bonds and Backgrounds": {
+    "MBB": {
+        "Name": "Mulmaster Bonds and Backgrounds",
         "Backgrounds": [
             "Caravan Specialist",
             "Earthspur Miner",
@@ -153,7 +162,8 @@
         "Races": [],
         "Spells": []
     },
-    "State of Hillsfar": {
+    "SOH": {
+        "Name": "State of Hillsfar",
         "Backgrounds": [
             "Cormanthor Refugee",
             "Gate Urchin",
@@ -164,7 +174,8 @@
         "Races": [],
         "Spells": []
     },
-    "Plane Shift - Amonkhet": {
+    "PSA": {
+        "Name": "Planeshift - Amonkhet",
         "Backgrounds": [
             "Initiate",
             "Vizier"
@@ -173,7 +184,8 @@
         "Races": [],
         "Spells": []
     },
-    "Plane Shift - Innistrad": {
+    "PSI": {
+        "Name": "Planeshift - Innistrad",
         "Backgrounds": [
             "Inquisitor"
         ],
@@ -181,7 +193,8 @@
         "Races": [],
         "Spells": []
     },
-    "Guildmaster's Guide to Ravnica": {
+    "RAV": {
+        "Name": "Guildmasters' Guide to Ravnica",
         "Backgrounds": [
             "Azorious Functionary",
             "Boros Legionnaire",
@@ -204,7 +217,8 @@
         ],
         "Spells": []
     },
-    "Explorer's Guide to Wildemount": {
+    "EGW": {
+        "Name": "Explorer's Guide to Wildemount",
         "Backgrounds": [
             "Grinner",
             "Volstrucker Agent"
@@ -215,7 +229,8 @@
         ],
         "Spells": []
     },
-    "The Wild Beyond the Witchlight": {
+    "WLD": {
+        "Name": "Wild Beyond the Witchlight",
         "Backgrounds": [],
         "Classes": [],
         "Races": [
@@ -224,7 +239,8 @@
         ],
         "Spells": []
     },
-    "Elemental Evil Player's Companion": {
+    "EEP": {
+        "Name": "Elemental Evil Player's Companion",
         "Backgrounds": [],
         "Classes": [],
         "Races": [
@@ -234,7 +250,8 @@
         ],
         "Spells": []
     },
-    "Volo's Guide to Monsters": {
+    "VOL": {
+        "Name": "Volo's Guide to Monsters",
         "Backgrounds": [],
         "Classes": [],
         "Races": [
@@ -253,7 +270,8 @@
         ],
         "Spells": []
     },
-    "Tasha's Cauldron of Everything": {
+    "TCE": {
+        "Name": "Tasha's Cauldron of Everything",
         "Backgrounds": [],
         "Classes": [
             "Artificer"

@@ -516,5 +516,120 @@
                 "Cost": "10 Gp"
             }
         }
+    },
+    "Musical Instruments": [
+        "Bagpipes",
+        "Drum",
+        "Dulcimer",
+        "Flute",
+        "Lute",
+        "Lyre",
+        "Horn",
+        "Pan Flute",
+        "Shawm",
+        "Viol"
+    ],
+    "Artisan's Tools": [
+        "Alchemist's Supplies",
+        "Brewer's Supplies",
+        "Calligrapher's Supplies",
+        "Carpenter's Tools",
+        "Cartographer's Tools",
+        "Cobbler's Tools",
+        "Cook's Utensils",
+        "Glassblower's Tools",
+        "Jeweler's Tools",
+        "Leatherworker's Tools",
+        "Mason's Tools",
+        "Painter's Supplies",
+        "Potter's Tools",
+        "Smith's Tools",
+        "Tinker's Tools",
+        "Weaver's Tools",
+        "Woodcarver's Tools",
+        "Thieves' Tools",
+        "Navigator's Tools"
+    ],
+    "Adventurer's Packs": {
+        "Burglar's Pack": [
+            "Backpack", 
+            "Ball bearing (1000)", 
+            "10 ft. String", 
+            "Bell", 
+            "Candle (5)",
+            "Crowbar", 
+            "Hammer", 
+            "Piton (10)",
+            "Hooded Lantern", 
+            "Flask of Oil (2)", 
+            "Ration (5)", 
+            "Tinderbox", 
+            "Waterskin", 
+            "50 ft. Hempen Rope"
+        ],
+        "Diplomat's Pack": [
+            "Chest", 
+            "Map/Scroll Case (2)", 
+            "Set of Fine Clothes",
+            "Bottle of Ink", 
+            "Ink Pen", 
+            "Lamp", 
+            "Flasks of Oil (2)", 
+            "Sheet of Paper (5)", 
+            "Vial of Perfume", 
+            "Sealing Wax", 
+            "Soap"
+        ],
+        "Dungeoneer's Pack": [
+            "Backpack", 
+            "Crowbar", 
+            "Hammer", 
+            "Piton (10)", 
+            "Torch (10)", 
+            "Tinderbox", 
+            "Ration (10)", 
+            "Waterskin", 
+            "50 ft. Hempen Rope"
+        ],
+        "Entertainer's Pack": [
+            "Backpack", 
+            "Bedroll", 
+            "Costume (2)", 
+            "Candle (5)", 
+            "Ration (5)", 
+            "Waterskin", 
+            "Disguise Kit"
+        ],
+        "Explorer's Pack": [
+            "Backpack", 
+            "Bedroll", 
+            "Mess Kit", 
+            "Tinderbox", 
+            "Torch (10)", 
+            "Rations (10)",
+            "Waterskin", 
+            "50 ft. Hempen Rope"
+        ],
+        "Priest's Pack": [
+            "Backpack", 
+            "Blanket", 
+            "Candle (10)", 
+            "Tinderbox", 
+            "Alms Box", 
+            "Block of Incense (2)",
+            "Censer", 
+            "Vestments", 
+            "Ration (2)", 
+            "Waterskin"
+        ],
+        "Scholar's Pack": [
+            "Backpack", 
+            "Book of Lore", 
+            "Bottle of Ink", 
+            "Ink Pen", 
+            "Sheet of Parchment (10)",
+            "Little Bag of Sand", 
+            "Small Knife"
+        ]
     }
 }

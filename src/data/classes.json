@@ -1,4 +1,4 @@
-const classes = {
+{
     "Artificer": {
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Shield"],
@@ -244,6 +244,4 @@ const classes = {
                 ["Scholar's Pack", "Explorer's Pack"]
             ]
     }
-};
-
-export default classes;
+}

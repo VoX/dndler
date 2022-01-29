@@ -37,7 +37,7 @@ const backgrounds = {
         "Gear": [
             "Holy Symbol",
             "Prayer Book or Prayer Wheel",
-            "5 Sticks of Incense",
+            "Stick of Incense (5)",
             "Vestments",
             "Set of Common Clothes",
             "15 GP"
@@ -192,7 +192,7 @@ const backgrounds = {
             "Despite my best efforts, I am unreliable to my friends."
         ],
         "Gear": [
-            "Musical Instrument",
+            "Instrument Choice",
             "Favor of an Admirer",
             "Costume",
             "15 GP"
@@ -246,7 +246,7 @@ const backgrounds = {
             "I have trouble trusting in my allies."
         ],
         "Gear": [
-            "Set of Artisan's Tools",
+            "Artisan Choice",
             "Shovel",
             "Iron Pot",
             "Set of Common Clothes",
@@ -365,7 +365,7 @@ const backgrounds = {
             "I'm horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I'm surrounded by rivals."
         ],
         "Gear": [
-            "Set of Artisan's Tools",
+            "Artisan Choice",
             "Letter of Introduction from Guild",
             "Set of Traveler's Clothes",
             "15 GP"
@@ -1058,8 +1058,8 @@ const backgrounds = {
             "I must be the captain of any group I join."
         ],
         "Gear": [
-            "Bronze Discus or Leather Ball",
-            "Lucky Charm or Past Trophy",
+            ["Bronze Discus", "Leather Ball"],
+            ["Lucky Charm", "Past Trophy"],
             "Set of Traveler's Clothes",
             "10 GP"
         ]
@@ -1174,7 +1174,7 @@ const backgrounds = {
             "I'm horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I'm surrounded by rivals."
         ],
         "Gear": [
-            "Set of Artisan's Tools",
+            "Artisan Choice",
             "Chisel to Mark your Handiwork",
             "Set of Traveler's Clothes",
             "Gem worth 10 GP",
@@ -1433,7 +1433,7 @@ const backgrounds = {
         ],
         "Gear": [
             "Set of Traveler's Clothes",
-            "Musical Instrument or Gaming Set",
+            ["Instrument Choice", "Gaming Set"],
             "Poorly Wrought Maps from Hometown",
             "Small Jewelery from your Hometown worth 10 GP",
             "5 GP"
@@ -1487,7 +1487,7 @@ const backgrounds = {
         "Gear": [
             "Fishing Tackle",
             "Net",
-            "Favorite Fishing Lure or Oiled Leather Wading Boots",
+            ["Favorite Fishing Lure", "Oiled Leather Wading Boots"],
             "Set of Traveler's Clothes",
             "10 GP"
         ]
@@ -1895,7 +1895,7 @@ const backgrounds = {
             "Though I act charming, I feel nothing for others and don't know what friendship is."
         ],
         "Gear": [
-            "Fancy Leather Vest or Leather Boots",
+            ["Fancy Leather Vest", "Leather Boots"],
             "Set of Common Clothes",
             "15 GP"
         ]
@@ -1999,7 +1999,7 @@ const backgrounds = {
         ],
         "Gear": [
             "Hunting Trap",
-            "Totemic Token or Set of Tattoos Marking Loyalty",
+            ["Totemic Token", "Set of Tattoos Marking Loyalty"],
             "Set of Traveler's Clothes",
             "10 GP"
         ]
@@ -2041,7 +2041,7 @@ const backgrounds = {
         ],
         "Gear": [
             "Set of Fine Clothes",
-            "Signet Ring or Brooch",
+            ["Signet Ring", "Brooch"],
             "Scroll of Pedigree",
             "Skin of Fine zzar or Wine",
             "20 GP"
@@ -2087,7 +2087,7 @@ const backgrounds = {
             "Set of Common Clothes",
             "Tears of Virulence Emblem",
             "Writ of Free Agency signed by Lord Regent",
-            "Set of Artisan's Tools or Gaming Set",
+            ["Artisan Choice", "Gaming Set"],
             "15 GP"
         ]
     },
@@ -2230,7 +2230,7 @@ const backgrounds = {
             "I relentlessly despise the Maimed Virulence and his allies. I'd abandon other goals in order to strike out at them."
         ],
         "Gear": [
-            "20 Caltrops",
+            "Caltrops (20)",
             "Small Trinket of a Previous Life",
             "Healer's Kit",
             "Set of Dark Common Clothes with a Cloak and Hood",
@@ -2400,7 +2400,7 @@ const backgrounds = {
             "I'm afraid of the dark."
         ],
         "Gear": [
-            "Shovel or Miner's Pick",
+            ["Shovel", "Miner's Pick"],
             "Block and Tackle",
             "Climber's Kit",
             "Set of Common Clothes",
@@ -2487,7 +2487,7 @@ const backgrounds = {
             "I have no artistic sense. I hide that fact behind extreme opinions and have become a trendsetter."
         ],
         "Gear": [
-            "Set of Artisan's Tools or Musical Instrument",
+            ["Artisan Choice", "Instrument Choice"],
             "Set of Fine Clothes",
             "10 GP"
         ]
@@ -2528,7 +2528,7 @@ const backgrounds = {
             "When something goes wrong, it's never my fault."
         ],
         "Gear": [
-            "Set of Artisan's Tools",
+            "Artisan Choice",
             "Token of Previous Life",
             "Set of Traveler's Clothes",
             "15 GP"
@@ -2571,7 +2571,7 @@ const backgrounds = {
         ],
         "Gear": [
             "Two-Person Tent",
-            "Set of Artisan's Tools",
+            "Artisan Choice",
             "Holy Symbol",
             "Set of Traveler's Clothes",
             "5 GP"
@@ -2614,9 +2614,9 @@ const backgrounds = {
         ],
         "Gear": [
             "Battered Alms Box",
-            "Musical Instrument",
+            "Instrument Choice",
             "Cast-off Military Jacket",
-            "Cap or Scarf",
+            ["Cap", "Scarf"],
             "Set of Common Clothes",
             "10 GP"
         ]
@@ -2785,7 +2785,7 @@ const backgrounds = {
             "I secretly believe the God-Pharaoh's return will not bring blessing to this world."
         ],
         "Gear": [
-            "Set of Artisan's Tools or Musical Instrument",
+            ["Artisan Choice", "Instrument Choice"],
             "Scroll of your God's Teachings",
             "Vizier's Cartouche",
             "Set of Fine Clothes",
@@ -2967,7 +2967,7 @@ const backgrounds = {
         ],
         "Gear": [
             "Dimir Insignia",
-            "3 Small Knives",
+            "Small Knife (3)",
             "Set of Dark Common Clothes"
         ]
     },
@@ -3008,7 +3008,7 @@ const backgrounds = {
         ],
         "Gear": [
             "Poisoner's Kit",
-            "Pet Beetle or Spider",
+            ["Pet Beetle", "Pet Spider"],
             "Set of Common Clothes",
             "10 GP"
         ]
@@ -3095,7 +3095,7 @@ const backgrounds = {
         ],
         "Gear": [
             "Izzet Insignia",
-            "Set of Artisan's Tools",
+            "Artisan Choice",
             "Charred and Twisted Remains of a Failed Experiment",
             "Hammer",
             "Block and Tackle",
@@ -3192,12 +3192,12 @@ const backgrounds = {
         ],
         "Gear": [
             "Rakdos Insignia",
-            "Musical Instrument",
+            "Instrument Choice",
             "Costume",
             "Hooded Lantern",
             "10-foot long Chain with Spiked Links",
             "Tinderbox",
-            "10 Torches",
+            "Torch (10)",
             "Set of Common Clothes",
             "10 GP"
         ]
@@ -3349,7 +3349,7 @@ const backgrounds = {
         "Gear": [
             "Set of Fine Clothes",
             "Disguise Kit",
-            "Musical Instrument",
+            "Instrument Choice",
             "Gold-Plated Ring of a Smiling Face",
             "15 GP"
         ]

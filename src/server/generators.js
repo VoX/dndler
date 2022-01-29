@@ -1,12 +1,14 @@
 // import lodash library
 import pkg from 'lodash';
-const { sum, zipWith, add, shuffle, sample } = pkg;
+const { sum, zipWith, add, shuffle, sample, flatten, flattenDeep } = pkg;
 import {
   sourcebooks,
   names,
   backgrounds,
   races,
-  classFeatures
+  classes,
+  classFeatures,
+  equipment
 } from '../data/data.js';
 
 // array of ability score abbreviations
@@ -292,6 +294,76 @@ const generateBackground = () => {
   return bgObject;
 };
 
+const equipmentReplace = (item) => {
+  let choice = ''
+  switch (item) {
+    case 'Simple':
+      choice = "Simple Choice";
+      break;
+    case 'Simple Melee':
+      choice = "Simple Melee Choice"
+      '';
+      break;
+    case 'Simple Ranged':
+      choice = "Simple Ranged Choice"
+      '';
+      break;
+    case 'Martial':
+      choice = "Martial Choice"
+      '';
+      break;
+    case 'Martial Melee':
+      choice = "Martial Melee Choice"
+      '';
+      break;
+    case 'Martial Ranged':
+      choice = "Martial Ranged Choice"
+      '';
+      break;
+    case 'Artisan Choice':
+      choice = "TOOLS Choice"
+      '';
+      break;
+    case 'Instrument Choice':
+      choice = "TUNES Choice"
+      '';
+      break;
+    default:
+      break;
+  }
+  return choice;
+}
+
+const generateEquipment = (classchoice, bgchoice) => {
+  let needSwap = [
+    "Simple", 
+    "Simple Melee", 
+    "Simple Ranged", 
+    "Martial", 
+    "Martial Melee",
+    "Martial Ranged", 
+    "Artisan Choice", 
+    "Instrument Choice"
+  ];
+  let equipment = [];
+  equipment.push(classes[classchoice]["Equipment"]);
+  equipment.push(bgchoice["Gear"]);
+  equipment = flatten(equipment);
+  for (let item in equipment) {
+    if (Array.isArray(equipment[item])) {
+      equipment[item] = sample(equipment[item]);
+    }
+  };
+  equipment = flattenDeep(equipment);
+  equipment.forEach(function (item, index) {
+    if (needSwap.includes(item)) {
+      console.log(item);
+      equipment[index] = equipmentReplace(item);
+    }
+  });
+  return equipment;
+};
+
 //generates a full character sheet
 const generateAll = () => {
   let race = generateRace();
@@ -328,6 +400,7 @@ export {
   generateWeightedStats,
   generateUnweightedStats,
   generateStats,
+  generateEquipment,
   calcModFromScore,
   calcArmorClass,
   calcHitpoints
