@@ -295,44 +295,46 @@ const generateBackground = () => {
 };
 
 const equipmentReplace = (item) => {
-  let choice = ''
+  let choice = '';
+  let options = '';
   switch (item) {
     case 'Simple':
-      choice = "Simple Choice";
+      options = Object.keys(equipment["Weapons"]["Simple Melee"]).concat(Object.keys(equipment["Weapons"]["Simple Ranged"]));
+      choice = sample(options);
       break;
     case 'Simple Melee':
-      choice = "Simple Melee Choice"
-      '';
+      options = Object.keys(equipment["Weapons"]["Simple Melee"]);
+      choice = sample(options);
       break;
     case 'Simple Ranged':
-      choice = "Simple Ranged Choice"
-      '';
+      options = Object.keys(equipment["Weapons"]["Simple Ranged"]);
+      choice = sample(options);
       break;
     case 'Martial':
-      choice = "Martial Choice"
-      '';
+      options = Object.keys(equipment["Weapons"]['Martial Melee']).concat(Object.keys(equipment["Weapons"]['Martial Ranged']));
+      choice = sample(options);
       break;
     case 'Martial Melee':
-      choice = "Martial Melee Choice"
-      '';
+      options = Object.keys(equipment["Weapons"]["Martial Melee"]);
+      choice = sample(options);
       break;
     case 'Martial Ranged':
-      choice = "Martial Ranged Choice"
-      '';
+      options = Object.keys(equipment["Weapons"]["Martial Ranged"]);
+      choice = sample(options);
       break;
     case 'Artisan Choice':
-      choice = "TOOLS Choice"
-      '';
+      options = equipment["Artisan's Tools"];
+      choice = sample(options);
       break;
     case 'Instrument Choice':
-      choice = "TUNES Choice"
-      '';
+      options = equipment["Musical Instruments"];
+      choice = sample(options);
       break;
     default:
       break;
   }
   return choice;
-}
+};
 
 const generateEquipment = (classchoice, bgchoice) => {
   let needSwap = [
@@ -357,12 +359,34 @@ const generateEquipment = (classchoice, bgchoice) => {
   equipment = flattenDeep(equipment);
   equipment.forEach(function (item, index) {
     if (needSwap.includes(item)) {
-      console.log(item);
       equipment[index] = equipmentReplace(item);
     }
   });
   return equipment;
 };
+
+const generateProficiency = (modArray, charLevel) => {
+  let profBonus = 2;
+  let skillsObject = {
+    "Acrobatics": [],
+    "Animal": [],
+    "Arcana": [],
+    "Athletics": [],
+    "Deception": [],
+    "History": [],
+    "Insight": [],
+    "Intimidation": [],
+    "Investigation": [],
+    "Medicine": [],
+    "Nature": [],
+    "Perception": [],
+    "Performance": [],
+    "Religion": [],
+    "Sleight": [],
+    "Stealth": [],
+    "Survival": []
+  };
+}
 
 //generates a full character sheet
 const generateAll = () => {
