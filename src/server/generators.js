@@ -1,6 +1,6 @@
 // import lodash library
 import pkg from 'lodash';
-const { sum, zipWith, add, shuffle, sample, flatten, flattenDeep } = pkg;
+const { sum, zipWith, add, shuffle, sample, sampleSize, flatten, flattenDeep } = pkg;
 import {
   sourcebooks,
   names,
@@ -294,6 +294,7 @@ const generateBackground = () => {
   return bgObject;
 };
 
+// replace equipment keywords with actual choices
 const equipmentReplace = (item) => {
   let choice = '';
   let options = '';
@@ -336,7 +337,8 @@ const equipmentReplace = (item) => {
   return choice;
 };
 
-const generateEquipment = (classchoice, bgchoice) => {
+// generate equipment list based on class and background
+const generateEquipment = (classChoice, bgChoice) => {
   let needSwap = [
     "Simple", 
     "Simple Melee", 
@@ -348,8 +350,8 @@ const generateEquipment = (classchoice, bgchoice) => {
     "Instrument Choice"
   ];
   let equipment = [];
-  equipment.push(classes[classchoice]["Equipment"]);
-  equipment.push(bgchoice["Gear"]);
+  equipment.push(classes[classChoice]["Equipment"]);
+  equipment.push(bgChoice["Gear"]);
   equipment = flatten(equipment);
   for (let item in equipment) {
     if (Array.isArray(equipment[item])) {
@@ -365,28 +367,82 @@ const generateEquipment = (classchoice, bgchoice) => {
   return equipment;
 };
 
-const generateProficiency = (modArray, charLevel) => {
+// calculate proficiency bonus based on character level 
+const calcProfBonus = (charLevel) => {
   let profBonus = 2;
-  let skillsObject = {
-    "Acrobatics": [],
-    "Animal": [],
-    "Arcana": [],
-    "Athletics": [],
-    "Deception": [],
-    "History": [],
-    "Insight": [],
-    "Intimidation": [],
-    "Investigation": [],
-    "Medicine": [],
-    "Nature": [],
-    "Perception": [],
-    "Performance": [],
-    "Religion": [],
-    "Sleight": [],
-    "Stealth": [],
-    "Survival": []
+  if (charLevel >= 5) {
+    profBonus = 3;
+    if (charLevel >= 9) {
+      profBonus = 4;
+      if (charLevel >= 13) {
+        profBonus = 5;
+        if (charLevel >= 17) {
+          profBonus = 6;
+        }
+      }
+    }
+  }
+  return profBonus;
+};
+
+// choose skill proficiencies based on class and background
+// note: add bgChoice to arguments here after adding necessary data
+const chooseProficientSkills = (classChoice) => {
+  let proficientSkills = [];
+  let skillOptions = classes[classChoice]["Proficiencies"]["Skills"]["Choices"];
+  let numChoices = classes[classChoice]["Proficiencies"]["Skills"]["numChoices"];
+  proficientSkills.push(sampleSize(skillOptions, numChoices));
+  proficientSkills = flatten(proficientSkills);
+  return proficientSkills;
+};
+
+// generate skills object based on proficiencies selected
+const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
+  let profBonus = calcProfBonus(charLevel);
+  let proficientSkills = chooseProficientSkills(classChoice);
+  let proficientThrows = classes[classChoice]["Proficiencies"]["Saving Throws"];
+  let savingThrows = {
+    "STR": modObject["STR"],
+    "DEX": modObject["DEX"],
+    "CON": modObject["CON"],
+    "INT": modObject["INT"],
+    "WIS": modObject["WIS"],
+    "CHA": modObject["CHA"]
   };
-}
+  let skillsObject = {
+    "Acrobatics": modObject["DEX"],
+    "Animal": modObject["WIS"],
+    "Arcana": modObject["INT"],
+    "Athletics": modObject["STR"],
+    "Deception": modObject["CHA"],
+    "History": modObject["INT"],
+    "Insight": modObject["WIS"],
+    "Intimidation": modObject["CHA"],
+    "Investigation": modObject["INT"],
+    "Medicine": modObject["WIS"],
+    "Nature": modObject["INT"],
+    "Perception": modObject["WIS"],
+    "Performance": modObject["CHA"],
+    "Persuasion": modObject["CHA"],
+    "Religion": modObject["INT"],
+    "Sleight": modObject["DEX"],
+    "Stealth": modObject["DEX"],
+    "Survival": modObject["WIS"]
+  };
+  for (let skill of proficientSkills) {
+    skillsObject[skill] = skillsObject[skill] + profBonus;
+  };
+  for (let save in proficientThrows) {
+    savingThrows[save] = savingThrows[save] + profBonus;
+  };
+  let profObject = {
+    "Proficient Skills": proficientSkills,
+    "Proficient Throws": proficientThrows,
+    "Saving Throws": savingThrows,
+    "Skills": skillsObject
+  };
+  return profObject;
+};
 
 //generates a full character sheet
 const generateAll = () => {
@@ -425,6 +481,7 @@ export {
   generateUnweightedStats,
   generateStats,
   generateEquipment,
+  generateProficiency,
   calcModFromScore,
   calcArmorClass,
   calcHitpoints

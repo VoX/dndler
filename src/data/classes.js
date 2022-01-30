@@ -45,7 +45,7 @@ const classes = {
             "Tools": ["Instrument Choice", "Instrument Choice", "Instrument Choice"],
             "Saving Throws": ["DEX", "CHA"],
             "Skills": {
-                "Choices": ["Acrobatics", "Animal", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Religion", "SleightofHand", "Stealth", "Survival"],
+                "Choices": ["Acrobatics", "Animal", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Religion", "Sleight", "Stealth", "Survival"],
                 "numChoices": 3
             }
         },
