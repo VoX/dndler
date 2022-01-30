@@ -1,4 +1,5 @@
 // import lodash library
+import e from 'express';
 import pkg from 'lodash';
 const { sum, zipWith, add, shuffle, sample, sampleSize, flatten, flattenDeep } = pkg;
 import {
@@ -198,6 +199,12 @@ const generateStats = (raceChoice, classChoice, isWeighted = false) => {
   return statsObject;
 };
 
+// generate character level
+const generateLevel = () => {
+  let charLevel = Math.ceil(Math.random()*20);
+  return charLevel;
+}
+
 // calculate hitpoints based on con mod, class, and char level
 const calcHitpoints = (conMod, classChoice, charLevel) => {
   let hitpoints = 0;
@@ -231,37 +238,37 @@ const calcHitpoints = (conMod, classChoice, charLevel) => {
 
 // calculate armor class based on available gear and proficiencies
 const calcArmorClass = (modifiers, classChoice, equipmentList) => {
-  modSTR = modifiers['STR'];
-  modDEX = modifiers['DEX'];
-  modCON = modifiers['CON'];
-  modINT = modifiers['INT'];
-  modWIS = modifiers['WIS'];
-  modCHA = modifiers['CHA'];
-  armorClass = 10 + modDEX
+  let modSTR = modifiers["STR"];
+  let modDEX = modifiers["DEX"];
+  let modCON = modifiers["CON"];
+  let modINT = modifiers["INT"];
+  let modWIS = modifiers["WIS"];
+  let modCHA = modifiers["CHA"];
+  let armorClass = 10 + modDEX
   // special cases of Barbarian and Monk
-  if (classChoice === 'Barbarian') {
-    armorClass = 10 + modDEX + modSTR
-  } else if (classChoice === 'Monk') {
-    armorClass = 10 + modDEX + modWIS
-  }
+  if (classChoice === "Barbarian") {
+    armorClass = 10 + modDEX + modCON;
+  } else if (classChoice === "Monk") {
+    armorClass = 10 + modDEX + modWIS;
+  };
   // normal cases of armor in inventory
-  if (equipmentList.includes('Chain Mail')) {
-    armorClass = 16
-  } else if (equipmentList.includes('Scale Mail')) {
+  if (equipmentList.includes("Chain Mail")) {
+    armorClass = 16;
+  } else if (equipmentList.includes("Scale Mail")) {
     if (modDEX >= 2) {
-      armorClass = 16
+      armorClass = 16;
     } else {
-      armorClass = 14 + modDEX
-    }
-  } else if (equipmentList.includes('Studded Leather Armor')) {
-    armorClass = 12 + modDEX
-  } else if (equipmentList.includes('Leather Armor')) {
-    armorClass = 11 + modDEX
-  }
-  if (equipmentList.includes('Shield')) {
-    armorClass = armorClass + 2
-  }
-  return armorClass
+      armorClass = 14 + modDEX;
+    };
+  } else if (equipmentList.includes("Studded Leather Armor")) {
+    armorClass = 12 + modDEX;
+  } else if (equipmentList.includes("Leather Armor")) {
+    armorClass = 11 + modDEX;
+  };
+  if (equipmentList.includes("Shield")) {
+    armorClass = armorClass + 2;
+  };
+  return armorClass;
 };
 
 //generates name
@@ -368,7 +375,7 @@ const generateEquipment = (classChoice, bgChoice) => {
 };
 
 // calculate proficiency bonus based on character level
-const calcProfBonus = (charLevel) => {
+const calcProfBonus1 = (charLevel) => {
   let profBonus = 2;
   if (charLevel >= 5) {
     profBonus = 3;
@@ -382,6 +389,22 @@ const calcProfBonus = (charLevel) => {
       }
     }
   }
+  return profBonus;
+};
+
+const calcProfBonus = (charLevel) => {
+  let profBonus = 0;
+  if (charLevel < 5) {
+    profBonus = 2;
+  } else if (charLevel < 9) {
+    profBonus = 3;
+  } else if (charLevel < 13 ) {
+    profBonus = 4;
+  } else if (charLevel < 17) {
+    profBonus = 5;
+  } else if (charLevel <= 20) {
+    profBonus = 6;
+  };
   return profBonus;
 };
 
@@ -480,12 +503,14 @@ export {
   generateRace,
   generateBackground,
   generateClass,
+  generateLevel,
   generateWeightedStats,
   generateUnweightedStats,
   generateStats,
   generateEquipment,
   generateProficiency,
   calcModFromScore,
+  calcProfBonus,
   calcArmorClass,
   calcHitpoints
 };

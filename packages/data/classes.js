@@ -17,7 +17,7 @@ const classes = {
                 "Bolt (20)",
                 "Thieves' Tools",
                 "Dungeoneer's Pack",
-                ["Studded Leather", "Scale Mail"]
+                ["Studded Leather Armor", "Scale Mail"]
         ]
     },
     "Barbarian": {
@@ -32,7 +32,7 @@ const classes = {
             }
         },
         "Equipment": [
-                "Explorer's Pack", 
+                "Explorer's Pack",
                 "Javelin (4)",
                 ["Greataxe", "Martial Melee"],
                 ["Handaxe (2)", "Simple"]
@@ -50,7 +50,7 @@ const classes = {
             }
         },
         "Equipment": [
-                "Leather", 
+                "Leather Armor",
                 "Dagger",
                 ["Rapier", "Longsword", "Simple"],
                 ["Diplomat's Pack", "Entertainer's Pack"],
@@ -69,10 +69,10 @@ const classes = {
             }
         },
         "Equipment": [
-                "Shield", 
+                "Shield",
                 "Holy Symbol",
                 ["Mace", "Warhammer"],
-                ["Scale Mail", "Leather", "Chain Mail"],
+                ["Scale Mail", "Leather Armor", "Chain Mail"],
                 [["Light Crossbow", "Bolt (20)"], "Simple"],
                 ["Priest's Pack", "Explorer's Pack"]
             ]
@@ -89,8 +89,8 @@ const classes = {
             }
         },
         "Equipment": [
-                "Leather", 
-                "Explorer's Pack", 
+                "Leather Armor",
+                "Explorer's Pack",
                 "Druidic Focus",
                 ["Shield", "Simple"],
                 ["Scimitar", "Simple Melee"]
@@ -108,7 +108,7 @@ const classes = {
             }
         },
         "Equipment": [
-                ["Chain Mail", ["Leather", "Longbow", "Bolt (20)"]],
+                ["Chain Mail", ["Leather Armor", "Longbow", "Bolt (20)"]],
                 [["Martial", "Shield"], ["Martial", "Martial"]],
                 [["Light Crossbow", "Bolt (20)"], "Handaxe (2)"]
             ]
@@ -164,7 +164,7 @@ const classes = {
                 "Longbow",
                 "Quiver",
                 "Arrow (20)",
-                ["Scale Mail", "Leather"],
+                ["Scale Mail", "Leather Armor"],
                 ["Shortsword (2)", ["Simple", "Simple"]],
                 ["Dungeoneer's Pack", "Explorer's Pack"]
             ]
@@ -181,7 +181,7 @@ const classes = {
             }
         },
         "Equipment": [
-                "Leather",
+                "Leather Armor",
                 "Dagger (2)",
                 "Thieves' Tools",
                 ["Rapier", "Shortsword"],
@@ -219,7 +219,7 @@ const classes = {
             }
         },
         "Equipment": [
-                "Leather",
+                "Leather Armor",
                 "Simple",
                 [["Light Crossbow", "Bolt (20)"], "Simple"],
                 ["Component Pouch", "Arcane Focus"],
@@ -244,6 +244,6 @@ const classes = {
                 ["Scholar's Pack", "Explorer's Pack"]
             ]
     }
-};
+}
 
 export default classes;

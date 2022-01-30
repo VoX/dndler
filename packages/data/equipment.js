@@ -383,7 +383,7 @@ const equipment = {
     },
     "Armor": {
         "Light": {
-            "Padded": {
+            "Padded Armor": {
                 "ArmorClass": 11,
                 "addDEX": true,
                 "DEXmax2": false,
@@ -392,7 +392,7 @@ const equipment = {
                 "Weight": 8,
                 "Cost": "5 Gp"
             },
-            "Leather": {
+            "Leather Armor": {
                 "ArmorClass": 11,
                 "addDEX": true,
                 "DEXmax2": false,
@@ -401,7 +401,7 @@ const equipment = {
                 "Weight": 10,
                 "Cost": "10 Gp"
             },
-            "Studded Leather": {
+            "Studded Leather Armor": {
                 "ArmorClass": 12,
                 "addDEX": true,
                 "DEXmax2": false,
@@ -552,86 +552,86 @@ const equipment = {
     ],
     "Adventurer's Packs": {
         "Burglar's Pack": [
-            "Backpack", 
-            "Ball bearing (1000)", 
-            "10 ft. String", 
-            "Bell", 
+            "Backpack",
+            "Ball bearing (1000)",
+            "10 ft. String",
+            "Bell",
             "Candle (5)",
-            "Crowbar", 
-            "Hammer", 
+            "Crowbar",
+            "Hammer",
             "Piton (10)",
-            "Hooded Lantern", 
-            "Flask of Oil (2)", 
-            "Ration (5)", 
-            "Tinderbox", 
-            "Waterskin", 
+            "Hooded Lantern",
+            "Flask of Oil (2)",
+            "Ration (5)",
+            "Tinderbox",
+            "Waterskin",
             "50 ft. Hempen Rope"
         ],
         "Diplomat's Pack": [
-            "Chest", 
-            "Map/Scroll Case (2)", 
+            "Chest",
+            "Map/Scroll Case (2)",
             "Set of Fine Clothes",
-            "Bottle of Ink", 
-            "Ink Pen", 
-            "Lamp", 
-            "Flasks of Oil (2)", 
-            "Sheet of Paper (5)", 
-            "Vial of Perfume", 
-            "Sealing Wax", 
+            "Bottle of Ink",
+            "Ink Pen",
+            "Lamp",
+            "Flasks of Oil (2)",
+            "Sheet of Paper (5)",
+            "Vial of Perfume",
+            "Sealing Wax",
             "Soap"
         ],
         "Dungeoneer's Pack": [
-            "Backpack", 
-            "Crowbar", 
-            "Hammer", 
-            "Piton (10)", 
-            "Torch (10)", 
-            "Tinderbox", 
-            "Ration (10)", 
-            "Waterskin", 
+            "Backpack",
+            "Crowbar",
+            "Hammer",
+            "Piton (10)",
+            "Torch (10)",
+            "Tinderbox",
+            "Ration (10)",
+            "Waterskin",
             "50 ft. Hempen Rope"
         ],
         "Entertainer's Pack": [
-            "Backpack", 
-            "Bedroll", 
-            "Costume (2)", 
-            "Candle (5)", 
-            "Ration (5)", 
-            "Waterskin", 
+            "Backpack",
+            "Bedroll",
+            "Costume (2)",
+            "Candle (5)",
+            "Ration (5)",
+            "Waterskin",
             "Disguise Kit"
         ],
         "Explorer's Pack": [
-            "Backpack", 
-            "Bedroll", 
-            "Mess Kit", 
-            "Tinderbox", 
-            "Torch (10)", 
+            "Backpack",
+            "Bedroll",
+            "Mess Kit",
+            "Tinderbox",
+            "Torch (10)",
             "Rations (10)",
-            "Waterskin", 
+            "Waterskin",
             "50 ft. Hempen Rope"
         ],
         "Priest's Pack": [
-            "Backpack", 
-            "Blanket", 
-            "Candle (10)", 
-            "Tinderbox", 
-            "Alms Box", 
+            "Backpack",
+            "Blanket",
+            "Candle (10)",
+            "Tinderbox",
+            "Alms Box",
             "Block of Incense (2)",
-            "Censer", 
-            "Vestments", 
-            "Ration (2)", 
+            "Censer",
+            "Vestments",
+            "Ration (2)",
             "Waterskin"
         ],
         "Scholar's Pack": [
-            "Backpack", 
-            "Book of Lore", 
-            "Bottle of Ink", 
-            "Ink Pen", 
+            "Backpack",
+            "Book of Lore",
+            "Bottle of Ink",
+            "Ink Pen",
             "Sheet of Parchment (10)",
-            "Little Bag of Sand", 
+            "Little Bag of Sand",
             "Small Knife"
         ]
     }
-};
+}
 
 export default equipment;
