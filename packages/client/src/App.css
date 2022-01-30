@@ -1,3 +1,4 @@
+/* GLOBAL */
 .inline-block {
   display: inline-block;
 }
@@ -6,6 +7,9 @@
 {
   text-align: left;
 }
+/* END GLOBAL */
+
+/* APP */
 
 .App {
   text-align: center;
@@ -42,6 +46,10 @@
 .App-link {
   color: #61dafb;
 }
+
+/* END APP */
+
+/* CUSTOM OPTIONS */
 
 .optionsTable {
   display: flex;
@@ -99,6 +107,16 @@
   background-color: rgb(45, 83, 58);
 }
 
+/* END CUSTOM OPTIONS*/
+
+/* NAV SHEET */
+
+.navButton {
+  display: inline-block;
+}
+
+/* END NAV SHEET */
+
 /* CHARACTER SHEET */
 
 .threeColumn {
@@ -111,12 +129,12 @@
   max-width:33%;
 }
 
-.characterPrimaries {
+.characterCombatProps {
   margin-top: 0.83em;
   display:flexbox;
 }
 
-.characterPrimary {
+.characterCombat {
   display: inline-block;
   margin: 0 15px;
 }
@@ -161,6 +179,8 @@ p.skillsValue {
 li.gearItem {
   margin: 0 auto;
 }
+
+/* END CHARACTER SHEET */
 
 @keyframes App-logo-spin {
   from {

@@ -11,7 +11,6 @@ class CharacterAttributes extends React.Component
     {
         return (
             <section className="characterStats">
-                <h2 className="statsHeader">STATS</h2>
                 <div className="STR">
                     <p className="attributeTitle">STRENGTH</p>
                     <p className="attributeValue">{this.props.attributes["Total Stats"].STR}</p>

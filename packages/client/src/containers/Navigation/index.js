@@ -25,6 +25,7 @@ class Navigation extends React.Component
             {
                 nav.push(
                     <OptionButton
+                        thisClass={"navButton"}
                         value={this.props.destinations[i].text}
                         onClick={this.props.destinations[i].callBack}
                         id={this.props.destinations[i].id}

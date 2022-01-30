@@ -2,7 +2,7 @@ import React from "react";
 import Attributes from "./Attributes"
 import Background from "./Background"
 import Skills from "./SkillProficiencies"
-import PrimaryStats from "./PrimaryStats"
+import CombatProperties from "./CombatProperties"
 import Equipment from "./Equipment"
 import SavingThrows from "./SavingThrows"
 import Navigation from "../Navigation"
@@ -87,7 +87,7 @@ class CharacterSheet extends React.Component
                                 />
                             </div>
                             <div className="characterColumn">
-                                <PrimaryStats
+                                <CombatProperties
                                     hp={this.state.character.hitpoints}
                                     ac={this.state.character.armorclass}
                                 />

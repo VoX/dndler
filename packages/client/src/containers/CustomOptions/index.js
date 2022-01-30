@@ -23,6 +23,7 @@ class CustomOptionsPage extends React.Component
         for(let availableOption in availableOptionsList)
         {
             tableValues.push(<OptionSwitch
+                className={"optionSwitch"}
                 key={keyIndex}
                 value={availableOptionsList[availableOption]['Name'] ?
                     availableOptionsList[availableOption]['Name'] :

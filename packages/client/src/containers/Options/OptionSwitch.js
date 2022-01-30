@@ -17,9 +17,9 @@ class OptionSwitch extends React.Component
                     onChange={this.props.handleToggle}
                     id={this.props.value}
                     type="checkbox"
-                    className="optionChoice hidden">
+                    className={this.props.className +" hidden"}>
                 </input>
-                <label htmlFor={this.props.value} className="optionChoice-label">
+                <label htmlFor={this.props.value} className={this.props.className+"-label"}>
                     <span className="optionChoice-span">{this.props.value}</span>
                 </label>
             </div>

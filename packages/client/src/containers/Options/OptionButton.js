@@ -15,9 +15,9 @@ class OptionButton extends React.Component
                 <button
                     onClick={this.props.onClick}
                     id={this.props.id}
-                    className="optionButton hidden">
+                    className={this.props.className + " hidden"}>
                 </button>
-                <label htmlFor={this.props.id} className="optionButton-label">
+                <label htmlFor={this.props.id} className={this.props.className+"-label"}>
                     <span className="optionButton-span">{this.props.value}</span>
                 </label>
             </div>

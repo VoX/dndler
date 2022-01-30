@@ -30,7 +30,7 @@ class CharacterBackground extends React.Component
         return(
             <section className="characterBackground">
                 <h2 className="backgroundHeader">BACKGROUND</h2>
-                <p className="backgroundName leftAlign"><strong>{this.props.background.Name}</strong></p>
+                <h3 className="backgroundName"><strong>{this.props.background.Name}</strong></h3>
                 <p className="backgroundTrait leftAlign"><strong>Traits:</strong> "{this.props.background.Trait}"</p>
                 <p className="backgroundIdeal leftAlign"><strong>Ideals:</strong> "{this.props.background.Ideal}"</p>
                 <p className="backgroundBond leftAlign"><strong>Bonds:</strong> "{this.props.background.Bond}"</p>
