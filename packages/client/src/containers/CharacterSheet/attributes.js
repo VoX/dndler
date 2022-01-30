@@ -12,6 +12,7 @@ class CharacterAttributes extends React.Component
         console.log(this.props.attributes);
         return (
             <section className="characterStats">
+                <h2 className="statsHeader">STATS</h2>
                 <div className="STR">
                     <p className="attributeTitle">STRENGTH</p>
                     <p className="attributeValue">{this.props.attributes.totalStats.STR}</p>

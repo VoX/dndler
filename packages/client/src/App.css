@@ -99,10 +99,16 @@
 
 .bigThree {
   display: flex;
+  justify-content: space-between;
 }
 
 .characterColumn {
   margin: 0 15px;
+  max-width:33%;
+}
+
+.characterPrimaries {
+  margin-top: 0.83em;
 }
 
 .characterPrimary {

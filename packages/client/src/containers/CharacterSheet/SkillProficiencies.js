@@ -6,7 +6,7 @@ class CharacterSkills extends React.Component
     {
         return (
             <React.Fragment>
-
+                <h2 className="skillsHeader">SKILLS</h2>
             </React.Fragment>
         );
     }
