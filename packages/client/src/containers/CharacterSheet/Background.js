@@ -7,39 +7,41 @@ class CharacterBackground extends React.Component
         super(props);
     }
 
-    gearList()
+    backgroundSubtype()
     {
-        let rows = [];
-        for(let gear in this.props.background.Gear)
+        for(let feature in this.props.background)
         {
-            let thisEquipment;
-            if(Array.isArray(gear))
+            if(feature !== "Name" && feature !== "Trait" && feature !== "Ideal"
+                && feature !== "Flaw" && feature !== "Gear" && feature !== "Bond")
             {
-                thisEquipment = this.props.background.Gear[gear][Math.floor(Math.random() * gear.length)];
+                return [feature, this.props.background[feature]];
             }
-            else thisEquipment = this.props.background.Gear[gear];
-            rows.push(<li className="gearItem leftAlign" key={gear}>
-                    {this.props.background.Gear[gear]}
-            </li>);
         }
-        return rows;
+        return "";
     }
 
     render()
     {
+        let subType = this.backgroundSubtype();
+        let additional;
+        if(subType)
+        {
+            additional =
+            <p className="backgroundAdditional"><strong>{subType[0]}:</strong> {subType[1]}</p>
+        }
+        else
+        {
+            additional = "";
+        }
         return(
             <section className="characterBackground">
                 <h2 className="backgroundHeader">BACKGROUND</h2>
                 <h3 className="backgroundName"><strong>{this.props.background.Name}</strong></h3>
+                {additional}
                 <p className="backgroundTrait leftAlign"><strong>Traits:</strong> "{this.props.background.Trait}"</p>
                 <p className="backgroundIdeal leftAlign"><strong>Ideals:</strong> "{this.props.background.Ideal}"</p>
                 <p className="backgroundBond leftAlign"><strong>Bonds:</strong> "{this.props.background.Bond}"</p>
                 <p className="backgroundFlaw leftAlign"><strong>Flaws:</strong> "{this.props.background.Flaw}"</p>
-                <p className="backgroundAdditional leftAlign"></p>
-                <p className="backgroundGear leftAlign"><strong>Gear:</strong></p>
-                <ul className="gearList">
-                    {this.gearList()}
-                </ul>
             </section>
         )
     }

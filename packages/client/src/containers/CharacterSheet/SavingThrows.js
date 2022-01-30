@@ -63,7 +63,7 @@ class SaveThrow extends React.Component
         return(
             <li className={"individualSave " + (this.props.prof ? "proficient" : "")}>
                 <p className="savesTitle inline-block leftAlign">{this.props.title}</p>
-                <p className="savesValue inline-block">{this.props.value}</p>
+                <p className="savesValue inline-block rightAlign">{this.props.value}</p>
             </li>
         );
     }

@@ -26,14 +26,6 @@ class App extends React.Component
           <img src={logo} className="App-logo" alt="logo" />
           <h1>THE DNDLER</h1>
         </header>
-        <nav className="App-nav">
-          <Navigation
-            curPage={this.state.pageChoice}
-            goHome={this.changePageHome}
-            goCustom={this.changePageCustom}
-            goCharacter={this.changePageCharacter}
-          />
-        </nav>
         <div className="App-body">
           {this.returnBody()}
         </div>

@@ -18,14 +18,13 @@ class Navigation extends React.Component
     navigationList()
     {
         let nav = [];
-        console.log(this.props.destinations);
         if(this.props.destinations)
         {
             for(let i = 0; i < this.props.destinations.length; ++i)
             {
                 nav.push(
                     <OptionButton
-                        thisClass={"navButton"}
+                        className={"navButton"}
                         value={this.props.destinations[i].text}
                         onClick={this.props.destinations[i].callBack}
                         id={this.props.destinations[i].id}
@@ -40,9 +39,9 @@ class Navigation extends React.Component
     render()
     {
         return (
-            <React.Fragment>
+            <nav className="App-nav">
                 {this.navigationList()}
-            </React.Fragment>
+            </nav>
         )
     }
 }

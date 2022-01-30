@@ -7,6 +7,11 @@
 {
   text-align: left;
 }
+
+.rightAlign
+{
+  text-align: right;
+}
 /* END GLOBAL */
 
 /* APP */
@@ -48,6 +53,18 @@
 }
 
 /* END APP */
+
+/* NAV */
+
+.App-nav .optionButton-container {
+  display:inline-block;
+}
+
+.navButton {
+  display: inline-block;
+}
+
+/* END NAV */
 
 /* CUSTOM OPTIONS */
 
@@ -109,14 +126,6 @@
 
 /* END CUSTOM OPTIONS*/
 
-/* NAV SHEET */
-
-.navButton {
-  display: inline-block;
-}
-
-/* END NAV SHEET */
-
 /* CHARACTER SHEET */
 
 .threeColumn {
@@ -139,20 +148,64 @@
   margin: 0 15px;
 }
 
-.attributeValue {
-  font-size: 28pt;
-  line-height: 28pt;
-  margin: 3px;
+.attributeEntry
+{
+  background-color: rgba(110, 110, 110, 0.3);
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  margin: 10px 0;
+  padding: 5px;
 }
 
 .attributeTitle {
+  margin: 0;
   font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.attributeValue {
+  background-color: rgba(110, 110, 110, 0.3);
+  max-width: 30%;
+  font-size: 20pt;
+  line-height: 20pt;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.attributeMod {
+  background-color: rgba(110, 110, 110, 0.2);
+  margin: 10px auto 0 auto;
+  padding-bottom: 5px;
+  max-width: 20%;
+}
+
+.characterSaves ul li:nth-child(even),
+.characterSkills li:nth-child(odd)
+{
+  background-color: rgba(110, 110, 110, 0.2);
+}
+
+.characterSaves ul li:nth-child(odd),
+.characterSkills li:nth-child(even)
+{
+  background-color: rgba(110, 110, 110, 0.4);
+}
+
+.characterSaves li,
+.characterSkills li,
+.characterEquipment li {
+  margin: 0;
 }
 
 .characterSaves li,
 .characterSkills li {
   list-style-type: circle;
-  margin: 0;
+}
+
+.characterEquipment li
+{
+  list-style-type: none;
 }
 
 .characterSaves li.proficient,
@@ -161,9 +214,17 @@
 }
 
 .characterSaves li p,
-.characterSkills li p
+.characterSkills li p,
+.characterEquipment li p
 {
   margin: 0 auto;
+}
+
+.characterEquipment li p,
+ul.proficiencies li
+{
+  text-indent: -20px;
+  padding-left: 20px;
 }
 
 p.savesTitle,
@@ -178,6 +239,17 @@ p.skillsValue {
 
 li.gearItem {
   margin: 0 auto;
+}
+
+ul.proficiencyList
+{
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.proficiencies {
+  padding: 0;
+  list-style-type: none;
 }
 
 /* END CHARACTER SHEET */

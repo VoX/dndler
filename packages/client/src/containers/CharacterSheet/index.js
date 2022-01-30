@@ -1,11 +1,13 @@
 import React from "react";
 import Attributes from "./Attributes"
+import Proficiencies from "./OtherProficiencies"
 import Background from "./Background"
 import Skills from "./SkillProficiencies"
 import CombatProperties from "./CombatProperties"
 import Equipment from "./Equipment"
 import SavingThrows from "./SavingThrows"
 import Navigation from "../Navigation"
+import Features from "./Features"
 
 class CharacterSheet extends React.Component
 {
@@ -52,6 +54,7 @@ class CharacterSheet extends React.Component
     {
         if(this.state.character.name)
         {
+            console.log(this.state.character);
             return (
                 <React.Fragment>
                     <Navigation
@@ -85,19 +88,27 @@ class CharacterSheet extends React.Component
                                 <Attributes
                                     attributes={this.state.character.stats}
                                 />
+                                <hr/>
+                                <Proficiencies
+                                    proficiencies={this.state.character.proficiency["Other"]}
+                                />
                             </div>
                             <div className="characterColumn">
                                 <CombatProperties
                                     hp={this.state.character.hitpoints}
                                     ac={this.state.character.armorclass}
+                                    hd={this.state.character.hitdice}
                                 />
+                                <hr/>
                                 <SavingThrows
                                     prof={this.state.character.proficiency["Proficient Throws"]}
                                     saves={this.state.character.proficiency["Saving Throws"]}
                                 />
+                                <hr/>
                                 <Skills
                                     skills={this.state.character.proficiency}
                                 />
+                                <hr/>
                                 <Equipment
                                     equipment={this.state.character.equipment}
                                 />
@@ -105,6 +116,10 @@ class CharacterSheet extends React.Component
                             <div className="characterColumn">
                                 <Background
                                     background={this.state.character.background}
+                                />
+                                <hr/>
+                                <Features
+                                    features=""
                                 />
                             </div>
                         </section>

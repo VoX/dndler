@@ -290,6 +290,11 @@ const generateClass = () => {
   return classchoice;
 };
 
+const calcHitDice = (classChoice, level) => {
+  let hitDice = level + classes[classChoice]["HitDice"];
+  return hitDice;
+}
+
 // generates background
 const generateBackground = () => {
   let background = sample(Object.keys(backgrounds));
@@ -419,10 +424,34 @@ const chooseProficientSkills = (classChoice) => {
   return proficientSkills;
 };
 
+const chooseOtherProficiencies = (classChoice, bgChoice) => {
+  let otherProficiencies = {
+    Armor: [],
+    Weapons: [],
+    Tools: []
+  }
+  for(let prof in classes[classChoice]["Proficiencies"]){
+    if(prof === "Armor")
+    {
+      otherProficiencies["Armor"].push(classes[classChoice]["Proficiencies"][prof]);
+    }
+    if(prof === "Weapons")
+    {
+      otherProficiencies["Weapons"].push(classes[classChoice]["Proficiencies"][prof]);
+    }
+    if(prof === "Tools")
+    {
+      otherProficiencies["Tools"].push(classes[classChoice]["Proficiencies"][prof]);
+    }
+  }
+  return otherProficiencies;
+}
+
 // generate skills object based on proficiencies selected
 const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
   let profBonus = calcProfBonus(charLevel);
   let proficientSkills = chooseProficientSkills(classChoice);
+  let otherProficiencies = chooseOtherProficiencies(classChoice, bgChoice);
   let proficientThrows = classes[classChoice]["Proficiencies"]["Saving Throws"];
   let savingThrows = {
     "STR": modObject["STR"],
@@ -462,34 +491,38 @@ const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
     "Proficient Skills": proficientSkills,
     "Proficient Throws": proficientThrows,
     "Saving Throws": savingThrows,
-    "Skills": skillsObject
+    "Skills": skillsObject,
+    "Other": otherProficiencies
   };
   return profObject;
 };
 
 //generates a full character sheet
 const generateAll = () => {
-  let level = 1;
+  let level = generateLevel();
   let race = generateRace();
   let name = generateName();
   let classchoice = generateClass();
+  let hitdice = calcHitDice(classchoice, level);
   let background = generateBackground();
   let stats = generateStats(race, classchoice, true);
-  let equipment = generateEquipment(classchoice, background)
-  let profObject = generateProficiency(stats["Total Modifiers"], classchoice, background, 1);
+  let equipment = generateEquipment(classchoice, background);
+  let armorclass = calcArmorClass(stats["Total Modifiers"], classchoice, equipment);
+  let profObject = generateProficiency(stats["Total Modifiers"], classchoice, background, level);
 
   const characterJSON = {
     race: race,
     name: name,
     class: classchoice,
-    level: 1,
-    hitpoints: calcHitpoints(stats["Total Modifiers"]['CON'], classchoice, 1),
-    armorclass: 0,
+    level: level,
+    hitdice: hitdice,
+    hitpoints: calcHitpoints(stats["Total Modifiers"]['CON'], classchoice, level),
+    armorclass: armorclass,
     background: background,
     stats: stats,
     features: [],
     proficiency: profObject,
-    equipment: [],
+    equipment: equipment,
     spells: {},
     weapons: {},
     sources: {}

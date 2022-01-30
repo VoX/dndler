@@ -42,7 +42,7 @@ class SkillEntry extends React.Component
         return(
             <li className={"individualSkill " + (this.props.prof ? "proficient" : "")}>
                 <p className="skillsTitle inline-block leftAlign">{this.props.skillName}</p>
-                <p className="skillsValue inline-block">{this.props.skillValue}</p>
+                <p className="skillsValue inline-block rightAlign">{(this.props.skillValue > 0 ? "+" : "") + this.props.skillValue}</p>
             </li>
         );
     }

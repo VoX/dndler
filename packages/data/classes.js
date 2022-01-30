@@ -1,5 +1,6 @@
 const classes = {
     "Artificer": {
+        "HitDice": "d8",
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Shield"],
             "Weapons": ["Simple"],
@@ -21,6 +22,7 @@ const classes = {
         ]
     },
     "Barbarian": {
+        "HitDice": "d12",
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Shield"],
             "Weapons": ["Simple", "Martial"],
@@ -39,6 +41,7 @@ const classes = {
             ]
     },
     "Bard": {
+        "HitDice": "d8",
         "Proficiencies": {
             "Armor": ["Light"],
             "Weapons": ["Simple", "Hand Crossbow", "Longsword", "Rapier", "Shortsword"],
@@ -58,6 +61,7 @@ const classes = {
             ]
     },
     "Cleric": {
+        "HitDice": "d8",
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Shield"],
             "Weapons": ["Simple"],
@@ -78,6 +82,7 @@ const classes = {
             ]
     },
     "Druid": {
+        "HitDice": "d8",
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Shield"],
             "Weapons": ["Club", "Dagger", "Dart", "Javelin", "Mace", "Quarterstaff", "Scimitar", "Sickle", "Sling", "Spear"],
@@ -97,6 +102,7 @@ const classes = {
             ]
     },
     "Fighter": {
+        "HitDice": "d10",
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Heavy", "Shield"],
             "Weapons": ["Simple", "Martial"],
@@ -114,6 +120,7 @@ const classes = {
             ]
     },
     "Monk": {
+        "HitDice": "d8",
         "Proficiencies": {
             "Armor": [],
             "Weapons": ["Simple", "Shortsword"],
@@ -131,6 +138,7 @@ const classes = {
             ]
     },
     "Paladin": {
+        "HitDice": "d10",
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Heavy", "Shield"],
             "Weapons": ["Simple", "Martial"],
@@ -150,6 +158,7 @@ const classes = {
             ]
     },
     "Ranger": {
+        "HitDice": "d10",
         "Proficiencies": {
             "Armor": ["Light", "Medium", "Shield"],
             "Weapons": ["Simple", "Martial"],
@@ -170,6 +179,7 @@ const classes = {
             ]
     },
     "Rogue": {
+        "HitDice": "d10",
         "Proficiencies": {
             "Armor": ["Light"],
             "Weapons": ["Simple", "Hand Crossbow", "Longsword", "Rapier", "Shortsword"],
@@ -190,6 +200,7 @@ const classes = {
             ]
     },
     "Sorcerer": {
+        "HitDice": "d6",
         "Proficiencies": {
             "Armor": [],
             "Weapons": ["Dagger", "Dart", "Sling", "Quarterstaff", "Light Crossbow"],
@@ -208,6 +219,7 @@ const classes = {
             ]
     },
     "Warlock": {
+        "HitDice": "d8",
         "Proficiencies": {
             "Armor": ["Light"],
             "Weapons": ["Simple"],
@@ -227,6 +239,7 @@ const classes = {
             ]
     },
     "Wizard":{
+        "HitDice": "d6",
         "Proficiencies": {
             "Armor": [],
             "Weapons": ["Dagger", "Dart", "Sling", "Quarterstaff", "Light Crossbow"],

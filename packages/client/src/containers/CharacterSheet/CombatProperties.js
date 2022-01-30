@@ -13,7 +13,7 @@ class CombatProperties extends React.Component
             <React.Fragment>
                 <section className="characterCombatProps">
                     <h2 className="characterCombat characterHP">HP: {this.props.hp} </h2>
-                    <h2 className="characterCombat characterHD">HitDice: </h2>
+                    <h2 className="characterCombat characterHD">HitDice: {this.props.hd}</h2>
                     <h2 className="characterCombat characterAC">AC: {this.props.ac}</h2>
                     <h2 className="characterCombat characterSpeed">Speed: 30ft</h2>
                 </section>
