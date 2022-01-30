@@ -4,6 +4,8 @@ import Background from "./Background"
 import Skills from "./SkillProficiencies"
 import PrimaryStats from "./PrimaryStats"
 import Equipment from "./Equipment"
+import SavingThrows from "./SavingThrows"
+import Navigation from "../Navigation"
 
 class CharacterSheet extends React.Component
 {
@@ -13,9 +15,20 @@ class CharacterSheet extends React.Component
         this.state = {
             character: {}
         };
+        this.fetchCharacter = this.fetchCharacter.bind(this);
     }
 
     componentDidMount()
+    {
+        this.fetchCharacter();
+    }
+
+    componentWillUnmount()
+    {
+
+    }
+
+    fetchCharacter()
     {
         fetch(`http://${window.location.hostname}:8000/custom`, {
             method: 'POST',
@@ -30,23 +43,36 @@ class CharacterSheet extends React.Component
                 character: json
             })
         })
-        .catch(() => {
-            console.log("Sorry, it borked");
+        .catch((error) => {
+            console.log(`Sorry, it borked cuz ${error}`);
         });
-    }
-
-    componentWillUnmount()
-    {
-
     }
 
     render()
     {
         if(this.state.character.name)
         {
-            console.log(this.state.character);
             return (
                 <React.Fragment>
+                    <Navigation
+                        destinations={[
+                            {
+                                "text": "HOME",
+                                "callBack": this.props.goHome,
+                                "id": "home"
+                            },
+                            {
+                                "text": "GIMME ANUDDER MIN!",
+                                "callBack": this.fetchCharacter,
+                                "id": "character"
+                            },
+                            {
+                                "text": "I wanna see da options",
+                                "callBack": this.props.goCustom,
+                                "id": "custom"
+                            }
+                        ]}
+                    />
                     <section className="characterContainer">
                         <h1 className="characterName">{this.state.character.name}</h1>
                         <h2 className="characterDescriptor">Level&nbsp;
@@ -54,7 +80,7 @@ class CharacterSheet extends React.Component
                             {this.state.character.race}&nbsp;
                             {this.state.character.class}
                         </h2>
-                        <section className="bigThree">
+                        <section className="threeColumn">
                             <div className="characterColumn">
                                 <Attributes
                                     attributes={this.state.character.stats}
@@ -64,6 +90,10 @@ class CharacterSheet extends React.Component
                                 <PrimaryStats
                                     hp={this.state.character.hitpoints}
                                     ac={this.state.character.armorclass}
+                                />
+                                <SavingThrows
+                                    prof={this.state.character.proficiency["Proficient Throws"]}
+                                    saves={this.state.character.proficiency["Saving Throws"]}
                                 />
                                 <Skills
                                     skills={this.state.character.proficiency}

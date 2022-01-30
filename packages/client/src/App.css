@@ -1,3 +1,7 @@
+.inline-block {
+  display: inline-block;
+}
+
 .leftAlign
 {
   text-align: left;
@@ -97,7 +101,7 @@
 
 /* CHARACTER SHEET */
 
-.bigThree {
+.threeColumn {
   display: flex;
   justify-content: space-between;
 }
@@ -109,10 +113,11 @@
 
 .characterPrimaries {
   margin-top: 0.83em;
+  display:flexbox;
 }
 
 .characterPrimary {
-  display: inline;
+  display: inline-block;
   margin: 0 15px;
 }
 
@@ -124,6 +129,37 @@
 
 .attributeTitle {
   font-weight: 800;
+}
+
+.characterSaves li,
+.characterSkills li {
+  list-style-type: circle;
+  margin: 0;
+}
+
+.characterSaves li.proficient,
+.characterSkills li.proficient {
+  list-style-type: disc;
+}
+
+.characterSaves li p,
+.characterSkills li p
+{
+  margin: 0 auto;
+}
+
+p.savesTitle,
+p.skillsTitle {
+  width: 80%;
+}
+
+p.savesValue,
+p.skillsValue {
+  width: 20%;
+}
+
+li.gearItem {
+  margin: 0 auto;
 }
 
 @keyframes App-logo-spin {

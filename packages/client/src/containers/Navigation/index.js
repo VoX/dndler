@@ -6,72 +6,6 @@ class Navigation extends React.Component
     constructor(props)
     {
         super(props);
-        this.state = { destinations: {
-
-        }};
-    }
-
-    componentDidMount()
-    {
-        switch(this.props.curPage)
-        {
-            case("Custom"):
-                this.setState({
-                    destinations: [
-                        {
-                            "text": "HOME",
-                            "callBack": this.props.goHome,
-                            "id": "home"
-                        },
-                        {
-                            "text": "LEMME SEE DA MIN!",
-                            "callBack": this.props.goCharacter,
-                            "id": "character"
-                        }
-                    ]
-                });
-                break;
-
-            case("Character"):
-                this.setState({
-                    destinations: [
-                        {
-                            "text": "HOME",
-                            "callBack": this.props.goHome,
-                            "id": "home"
-                        },
-                        {
-                            "text": "GIMME ANUDDER MIN!",
-                            "callBack": this.props.goCharacter,
-                            "id": "character"
-                        },
-                        {
-                            "text": "I wanna see da options",
-                            "callBack": this.props.goCustom,
-                            "id": "custom"
-                        }
-                    ]
-                });
-                break;
-            
-            case("Home"):
-            default:
-                this.setState({
-                    destinations: [
-                        {
-                            "text": "GIMME A MIN!",
-                            "callBack": this.props.goCharacter,
-                            "id": "character"
-                        },
-                        {
-                            "text": "I wanna choose things",
-                            "callBack": this.props.goCustom,
-                            "id": "custom"
-                        }
-                    ]
-                });
-                break;
-        }
     }
 
     componentWillUnmount()
@@ -84,20 +18,20 @@ class Navigation extends React.Component
     navigationList()
     {
         let nav = [];
-        let thisObj;
-        console.log(this.state);
-        for(let i = 0; i < this.state.destinations.length; ++i)
+        console.log(this.props.destinations);
+        if(this.props.destinations)
         {
-            thisObj = this.state.destinations[i];
-            console.log(thisObj);
-            nav.push(
-                <OptionButton
-                    value={thisObj.text}
-                    onClick={thisObj.callBack}
-                    id={thisObj.id}
-                    key={thisObj.id+i}
-                />
-            );
+            for(let i = 0; i < this.props.destinations.length; ++i)
+            {
+                nav.push(
+                    <OptionButton
+                        value={this.props.destinations[i].text}
+                        onClick={this.props.destinations[i].callBack}
+                        id={this.props.destinations[i].id}
+                        key={this.props.destinations[i].id+i}
+                    />
+                );
+            }
         }
         return nav;
     }

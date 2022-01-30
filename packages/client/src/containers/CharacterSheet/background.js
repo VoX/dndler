@@ -12,14 +12,21 @@ class CharacterBackground extends React.Component
         let rows = [];
         for(let gear in this.props.background.Gear)
         {
-            rows.push(<p className="gearItem leftAlign" key={gear}>{this.props.background.Gear[gear]}</p>);
+            let thisEquipment;
+            if(Array.isArray(gear))
+            {
+                thisEquipment = this.props.background.Gear[gear][Math.floor(Math.random() * gear.length)];
+            }
+            else thisEquipment = this.props.background.Gear[gear];
+            rows.push(<li className="gearItem leftAlign" key={gear}>
+                    {this.props.background.Gear[gear]}
+            </li>);
         }
         return rows;
     }
 
     render()
     {
-        console.log(this.props.background);
         return(
             <section className="characterBackground">
                 <h2 className="backgroundHeader">BACKGROUND</h2>
@@ -30,7 +37,9 @@ class CharacterBackground extends React.Component
                 <p className="backgroundFlaw leftAlign"><strong>Flaws:</strong> "{this.props.background.Flaw}"</p>
                 <p className="backgroundAdditional leftAlign"></p>
                 <p className="backgroundGear leftAlign"><strong>Gear:</strong></p>
-                {this.gearList()}
+                <ul className="gearList">
+                    {this.gearList()}
+                </ul>
             </section>
         )
     }

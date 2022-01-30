@@ -12,9 +12,10 @@ class PrimaryStats extends React.Component
         return (
             <React.Fragment>
                 <section className="characterPrimaries">
-                    <h2 className="characterPrimary">HP: {this.props.hp} </h2>
-                    <h2 className="characterPrimary">HitDice: </h2>
-                    <h2 className="characterPrimary">ArmorClass: {this.props.ac}</h2>
+                    <h2 className="characterPrimary characterHP">HP: {this.props.hp} </h2>
+                    <h2 className="characterPrimary characterHD">HitDice: </h2>
+                    <h2 className="characterPrimary characterAC">AC: {this.props.ac}</h2>
+                    <h2 className="characterPrimary characterSpeed">Speed: 30ft</h2>
                 </section>
             </React.Fragment>
         );

@@ -340,13 +340,13 @@ const equipmentReplace = (item) => {
 // generate equipment list based on class and background
 const generateEquipment = (classChoice, bgChoice) => {
   let needSwap = [
-    "Simple", 
-    "Simple Melee", 
-    "Simple Ranged", 
-    "Martial", 
+    "Simple",
+    "Simple Melee",
+    "Simple Ranged",
+    "Martial",
     "Martial Melee",
-    "Martial Ranged", 
-    "Artisan Choice", 
+    "Martial Ranged",
+    "Artisan Choice",
     "Instrument Choice"
   ];
   let equipment = [];
@@ -367,7 +367,7 @@ const generateEquipment = (classChoice, bgChoice) => {
   return equipment;
 };
 
-// calculate proficiency bonus based on character level 
+// calculate proficiency bonus based on character level
 const calcProfBonus = (charLevel) => {
   let profBonus = 2;
   if (charLevel >= 5) {
@@ -446,23 +446,26 @@ const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
 
 //generates a full character sheet
 const generateAll = () => {
+  let level = 1;
   let race = generateRace();
   let name = generateName();
   let classchoice = generateClass();
   let background = generateBackground();
-  let stats = generateUnweightedStats(race);
+  let stats = generateStats(race, classchoice, true);
+  let equipment = generateEquipment(classchoice, background)
+  let profObject = generateProficiency(stats["Total Modifiers"], classchoice, background, 1);
 
   const characterJSON = {
     race: race,
     name: name,
     class: classchoice,
     level: 1,
-    hitpoints: calcHitpoints(stats.totalModifiers['CON'], classchoice, 1),
+    hitpoints: calcHitpoints(stats["Total Modifiers"]['CON'], classchoice, 1),
     armorclass: 0,
     background: background,
     stats: stats,
     features: [],
-    proficiency: {},
+    proficiency: profObject,
     equipment: [],
     spells: {},
     weapons: {},

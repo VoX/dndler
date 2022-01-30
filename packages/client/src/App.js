@@ -61,12 +61,22 @@ class App extends React.Component
   {
     switch(this.state.pageChoice){
       case("Custom"):
-        return <CustomOptionsPage />;
+        return <CustomOptionsPage
+          goHome={this.changePageHome}
+          goCharacter={this.changePageCharacter}
+        />;
       case("Character"):
-        return <CharacterSheet />;
+        return <CharacterSheet
+          goHome={this.changePageHome}
+          goCustom={this.changePageCustom}
+        />;
       case("Home"):
       default:
-        return <HomePage/>;
+        return <HomePage
+          goHome={this.changePageHome}
+          goCharacter={this.changePageCharacter}
+          goCustom={this.changePageCustom}
+        />;
     }
   }
 }

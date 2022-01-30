@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import OptionSwitch from '../Options/OptionSwitch';
+import Navigation from '../Navigation'
 
 class CustomOptionsPage extends React.Component
 {
@@ -12,8 +13,8 @@ class CustomOptionsPage extends React.Component
             classes: [],
             races: []
         };
-    }  
-    
+    }
+
     makeTable(availableOptionsList)
     {
         console.log(availableOptionsList);
@@ -23,7 +24,7 @@ class CustomOptionsPage extends React.Component
         {
             tableValues.push(<OptionSwitch
                 key={keyIndex}
-                value={availableOptionsList[availableOption]['Name'] ? 
+                value={availableOptionsList[availableOption]['Name'] ?
                     availableOptionsList[availableOption]['Name'] :
                     availableOptionsList[availableOption]}
                 />);
@@ -72,6 +73,20 @@ class CustomOptionsPage extends React.Component
     {
         return (
             <React.Fragment>
+                <Navigation
+                    destinations={[
+                        {
+                            "text": "HOME",
+                            "callBack": this.props.goHome,
+                            "id": "home"
+                        },
+                        {
+                            "text": "GIMME A RANDO MIN!",
+                            "callBack": this.props.goCharacter,
+                            "id": "character"
+                        }
+                    ]}
+                />
                 <h2>SOURCE MATERIALS</h2>
                 <div className="optionsTable sourcesTable">
                     {this.makeTable(this.state.sources)}
