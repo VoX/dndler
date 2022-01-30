@@ -39,9 +39,13 @@ class Navigation extends React.Component
     render()
     {
         return (
-            <nav className="App-nav">
-                {this.navigationList()}
-            </nav>
+            <React.Fragment>
+                <nav className="App-nav">
+                    {this.navigationList()}
+                </nav>
+                <hr/>
+            </React.Fragment>
+
         )
     }
 }
