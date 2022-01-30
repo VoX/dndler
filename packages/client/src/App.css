@@ -40,7 +40,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   padding-top: 20px;
 }
 
@@ -58,6 +58,11 @@
 
 .App-nav .optionButton-container {
   display:inline-block;
+  margin: 8px;
+}
+
+.App-nav .optionButton-container label {
+  font-size: 18pt;
 }
 
 .navButton {
@@ -128,14 +133,20 @@
 
 /* CHARACTER SHEET */
 
+h1.characterName {
+  font-size: 36pt;
+  margin: 0 auto;
+}
+
 .threeColumn {
   display: flex;
   justify-content: space-between;
 }
 
 .characterColumn {
-  margin: 0 15px;
+  margin: 0 auto;
   max-width:33%;
+  padding: 0 5px;
 }
 
 .characterCombatProps {
