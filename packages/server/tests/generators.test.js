@@ -4,6 +4,7 @@ import {
     generateRace,
     generateBackground,
     generateClass,
+    generateStats,
     generateWeightedStats,
     generateUnweightedStats,
     calcModFromScore,
@@ -72,6 +73,25 @@ test('function \'calcHitPoints()\' generates correct hp', () => {
 
 test('function \'generateUnweightedStats()\' generates appropriate stats', () => {
     let stats = generateUnweightedStats(generateRace())
+
+    expect(stats).toBeDefined()
+    expect(typeof stats === 'object').toEqual(true);
+
+    Object.keys(stats).forEach(key => {
+
+        expect(stats[key]).toBeDefined()
+        expect(typeof stats[key] === 'object').toEqual(true);
+
+        Object.keys(stats[key]).forEach(stat => {
+            expect(stats[key][stat]).toBeDefined()
+            expect(typeof stats[key][stat] === 'number').toEqual(true)
+            expect(stats[key][stat] >= 3 && stats[key][stat] <= 18)
+        })
+    })
+})
+
+test('function \'generateStats()\' generates appropriate stats', () => {
+    let stats = generateStats(generateRace())
 
     expect(stats).toBeDefined()
     expect(typeof stats === 'object').toEqual(true);

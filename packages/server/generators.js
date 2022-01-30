@@ -1,12 +1,14 @@
 // import lodash library
 import pkg from 'lodash';
-const { sum, zipWith, add, shuffle, sample } = pkg;
+const { sum, zipWith, add, shuffle, sample, sampleSize, flatten, flattenDeep } = pkg;
 import {
   sourcebooks,
   names,
   backgrounds,
   races,
-  classFeatures
+  classes,
+  classFeatures,
+  equipment
 } from '../data/data.js';
 
 // array of ability score abbreviations
@@ -126,6 +128,76 @@ const generateWeightedStats = (raceChoice, classChoice) => {
   return statsObject;
 };
 
+const generateStats = (raceChoice, classChoice, isWeighted = false) => {
+  let baseStats = [];
+  if (isWeighted === true) {
+    let sortedStats = [
+      roll4DropLowest(),
+      roll4DropLowest(),
+      roll4DropLowest(),
+      roll4DropLowest(),
+      roll4DropLowest(),
+      roll4DropLowest()
+    ];
+    sortedStats.sort(function (a, b) {
+      return a - b;
+    }).reverse();
+    switch (classChoice) {
+      case 'Artificer':
+        baseStats = prioritizeStats(sortedStats, [3, 1]);
+        break;
+      case 'Barbarian':
+        baseStats = prioritizeStats(sortedStats, [0, 2, 1]);
+        break;
+      case 'Bard':
+        baseStats = prioritizeStats(sortedStats, [5, 1]);
+        break;
+      case 'Cleric':
+        baseStats = prioritizeStats(sortedStats, [4, 2]);
+        break;
+      case 'Druid':
+        baseStats = prioritizeStats(sortedStats, [4, 2]);
+        break;
+      case 'Fighter':
+        baseStats = prioritizeStats(sortedStats, [0, 1, 2]);
+        break;
+      case 'Monk':
+        baseStats = prioritizeStats(sortedStats, [1, 4, 2]);
+        break;
+      case 'Paladin':
+        baseStats = prioritizeStats(sortedStats, [5, 0, 3]);
+        break;
+      case 'Ranger':
+        baseStats = prioritizeStats(sortedStats, [1, 4]);
+        break;
+      case 'Rogue':
+        baseStats = prioritizeStats(sortedStats, [1]);
+        break;
+      case 'Sorcerer':
+        baseStats = prioritizeStats(sortedStats, [5, 2]);
+        break;
+      case 'Warlock':
+        baseStats = prioritizeStats(sortedStats, [5, 1]);
+        break;
+      case 'Wizard':
+        baseStats = prioritizeStats(sortedStats, [3]);
+        break;
+      default:
+        break;
+    };
+  } else {
+    baseStats = [roll4DropLowest(), roll4DropLowest(), roll4DropLowest(), roll4DropLowest(), roll4DropLowest(), roll4DropLowest()];
+  };
+  let totalStats = zipWith(baseStats, races[raceChoice]['bonuses'], add);
+  let totalModifiers = totalStats.map(i => calcModFromScore(i));
+  let statsObject = {
+    'Base Stats': zipStats(baseStats),
+    'Total Stats': zipStats(totalStats),
+    'Total Modifiers': zipStats(totalModifiers)
+  };
+  return statsObject;
+};
+
 // calculate hitpoints based on con mod, class, and char level
 const calcHitpoints = (conMod, classChoice, charLevel) => {
   let hitpoints = 0;
@@ -222,6 +294,156 @@ const generateBackground = () => {
   return bgObject;
 };
 
+// replace equipment keywords with actual choices
+const equipmentReplace = (item) => {
+  let choice = '';
+  let options = '';
+  switch (item) {
+    case 'Simple':
+      options = Object.keys(equipment["Weapons"]["Simple Melee"]).concat(Object.keys(equipment["Weapons"]["Simple Ranged"]));
+      choice = sample(options);
+      break;
+    case 'Simple Melee':
+      options = Object.keys(equipment["Weapons"]["Simple Melee"]);
+      choice = sample(options);
+      break;
+    case 'Simple Ranged':
+      options = Object.keys(equipment["Weapons"]["Simple Ranged"]);
+      choice = sample(options);
+      break;
+    case 'Martial':
+      options = Object.keys(equipment["Weapons"]['Martial Melee']).concat(Object.keys(equipment["Weapons"]['Martial Ranged']));
+      choice = sample(options);
+      break;
+    case 'Martial Melee':
+      options = Object.keys(equipment["Weapons"]["Martial Melee"]);
+      choice = sample(options);
+      break;
+    case 'Martial Ranged':
+      options = Object.keys(equipment["Weapons"]["Martial Ranged"]);
+      choice = sample(options);
+      break;
+    case 'Artisan Choice':
+      options = equipment["Artisan's Tools"];
+      choice = sample(options);
+      break;
+    case 'Instrument Choice':
+      options = equipment["Musical Instruments"];
+      choice = sample(options);
+      break;
+    default:
+      break;
+  }
+  return choice;
+};
+
+// generate equipment list based on class and background
+const generateEquipment = (classChoice, bgChoice) => {
+  let needSwap = [
+    "Simple", 
+    "Simple Melee", 
+    "Simple Ranged", 
+    "Martial", 
+    "Martial Melee",
+    "Martial Ranged", 
+    "Artisan Choice", 
+    "Instrument Choice"
+  ];
+  let equipment = [];
+  equipment.push(classes[classChoice]["Equipment"]);
+  equipment.push(bgChoice["Gear"]);
+  equipment = flatten(equipment);
+  for (let item in equipment) {
+    if (Array.isArray(equipment[item])) {
+      equipment[item] = sample(equipment[item]);
+    }
+  };
+  equipment = flattenDeep(equipment);
+  equipment.forEach(function (item, index) {
+    if (needSwap.includes(item)) {
+      equipment[index] = equipmentReplace(item);
+    }
+  });
+  return equipment;
+};
+
+// calculate proficiency bonus based on character level 
+const calcProfBonus = (charLevel) => {
+  let profBonus = 2;
+  if (charLevel >= 5) {
+    profBonus = 3;
+    if (charLevel >= 9) {
+      profBonus = 4;
+      if (charLevel >= 13) {
+        profBonus = 5;
+        if (charLevel >= 17) {
+          profBonus = 6;
+        }
+      }
+    }
+  }
+  return profBonus;
+};
+
+// choose skill proficiencies based on class and background
+// note: add bgChoice to arguments here after adding necessary data
+const chooseProficientSkills = (classChoice) => {
+  let proficientSkills = [];
+  let skillOptions = classes[classChoice]["Proficiencies"]["Skills"]["Choices"];
+  let numChoices = classes[classChoice]["Proficiencies"]["Skills"]["numChoices"];
+  proficientSkills.push(sampleSize(skillOptions, numChoices));
+  proficientSkills = flatten(proficientSkills);
+  return proficientSkills;
+};
+
+// generate skills object based on proficiencies selected
+const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
+  let profBonus = calcProfBonus(charLevel);
+  let proficientSkills = chooseProficientSkills(classChoice);
+  let proficientThrows = classes[classChoice]["Proficiencies"]["Saving Throws"];
+  let savingThrows = {
+    "STR": modObject["STR"],
+    "DEX": modObject["DEX"],
+    "CON": modObject["CON"],
+    "INT": modObject["INT"],
+    "WIS": modObject["WIS"],
+    "CHA": modObject["CHA"]
+  };
+  let skillsObject = {
+    "Acrobatics": modObject["DEX"],
+    "Animal": modObject["WIS"],
+    "Arcana": modObject["INT"],
+    "Athletics": modObject["STR"],
+    "Deception": modObject["CHA"],
+    "History": modObject["INT"],
+    "Insight": modObject["WIS"],
+    "Intimidation": modObject["CHA"],
+    "Investigation": modObject["INT"],
+    "Medicine": modObject["WIS"],
+    "Nature": modObject["INT"],
+    "Perception": modObject["WIS"],
+    "Performance": modObject["CHA"],
+    "Persuasion": modObject["CHA"],
+    "Religion": modObject["INT"],
+    "Sleight": modObject["DEX"],
+    "Stealth": modObject["DEX"],
+    "Survival": modObject["WIS"]
+  };
+  for (let skill of proficientSkills) {
+    skillsObject[skill] = skillsObject[skill] + profBonus;
+  };
+  for (let save in proficientThrows) {
+    savingThrows[save] = savingThrows[save] + profBonus;
+  };
+  let profObject = {
+    "Proficient Skills": proficientSkills,
+    "Proficient Throws": proficientThrows,
+    "Saving Throws": savingThrows,
+    "Skills": skillsObject
+  };
+  return profObject;
+};
+
 //generates a full character sheet
 const generateAll = () => {
   let race = generateRace();
@@ -257,6 +479,9 @@ export {
   generateClass,
   generateWeightedStats,
   generateUnweightedStats,
+  generateStats,
+  generateEquipment,
+  generateProficiency,
   calcModFromScore,
   calcArmorClass,
   calcHitpoints
