@@ -40,8 +40,8 @@ console.log("AC: " + armorClass);
 console.log()
 console.log("Background: " + background['Name']);
 console.log("");
-console.log("Stats:");
-Object.keys(stats["Total Stats"]).forEach(k => console.log(k + ": " + stats["Total Stats"][k]));
+console.log("Stats | Mods:");
+Object.keys(stats["Total Stats"]).forEach(k => console.log(k + ": " + stats["Total Stats"][k] + ", " + stats["Total Modifiers"][k]));
 console.log("");
 
 // SKILLS BLOCK

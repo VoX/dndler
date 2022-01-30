@@ -380,23 +380,6 @@ const generateEquipment = (classChoice, bgChoice) => {
 };
 
 // calculate proficiency bonus based on character level
-const calcProfBonus1 = (charLevel) => {
-  let profBonus = 2;
-  if (charLevel >= 5) {
-    profBonus = 3;
-    if (charLevel >= 9) {
-      profBonus = 4;
-      if (charLevel >= 13) {
-        profBonus = 5;
-        if (charLevel >= 17) {
-          profBonus = 6;
-        }
-      }
-    }
-  }
-  return profBonus;
-};
-
 const calcProfBonus = (charLevel) => {
   let profBonus = 0;
   if (charLevel < 5) {
