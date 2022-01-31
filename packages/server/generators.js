@@ -129,6 +129,7 @@ const generateWeightedStats = (raceChoice, classChoice) => {
   return statsObject;
 };
 
+// generate stats, weighted or unweighted based on bool
 const generateStats = (raceChoice, classChoice, isWeighted = false) => {
   let baseStats = [];
   if (isWeighted === true) {
@@ -200,10 +201,15 @@ const generateStats = (raceChoice, classChoice, isWeighted = false) => {
 };
 
 // generate character level
-const generateLevel = () => {
-  let charLevel = Math.ceil(Math.random()*20);
+const generateLevel = (min = 1, max = 20) => {
+  let charLevel = 0;
+  if (min === max) {
+    charLevel = min;
+  } else {
+    charLevel = Math.floor(Math.random() * (max) + min);
+  };
   return charLevel;
-}
+};
 
 // calculate hitpoints based on con mod, class, and char level
 const calcHitpoints = (conMod, classChoice, charLevel) => {
@@ -287,6 +293,7 @@ const generateRace = () => {
 // generates class
 const generateClass = () => {
   let classchoice = sample(Object.keys(classFeatures));
+  // let classchoice = "Bard"
   return classchoice;
 };
 
@@ -298,9 +305,13 @@ const calcHitDice = (classChoice, level) => {
 // generates background
 const generateBackground = () => {
   let background = sample(Object.keys(backgrounds));
+  // let background = "Witchlight Hand";
   let bgObject = {
     Name: background
   };
+  if (background === "House Agent") {
+    bgObject["House"] = "House " + sample(names['Last']);
+  }
   Object.keys(backgrounds[background]).forEach(k => bgObject[k] = sample(backgrounds[background][k]));
   bgObject['Gear'] = backgrounds[background]['Gear'];
   return bgObject;
@@ -408,27 +419,29 @@ const chooseProficientSkills = (classChoice) => {
 };
 
 const chooseOtherProficiencies = (classChoice, bgChoice) => {
+  let needSwap = [
+    "Artisan Choice",
+    "Instrument Choice",
+    "Language Choice"
+  ];
   let otherProficiencies = {
     Armor: [],
     Weapons: [],
     Tools: []
-  }
-  for(let prof in classes[classChoice]["Proficiencies"]){
-    if(prof === "Armor")
-    {
+  };
+  for (let prof in classes[classChoice]["Proficiencies"]) {
+    if (prof === "Armor") {
       otherProficiencies["Armor"].push(classes[classChoice]["Proficiencies"][prof]);
-    }
-    if(prof === "Weapons")
-    {
+    };
+    if (prof === "Weapons") {
       otherProficiencies["Weapons"].push(classes[classChoice]["Proficiencies"][prof]);
-    }
-    if(prof === "Tools")
-    {
+    };
+    if (prof === "Tools") {
       otherProficiencies["Tools"].push(classes[classChoice]["Proficiencies"][prof]);
-    }
-  }
+    };
+  };
   return otherProficiencies;
-}
+};
 
 // generate skills object based on proficiencies selected
 const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
@@ -482,7 +495,7 @@ const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
 
 //generates a full character sheet
 const generateAll = () => {
-  let level = generateLevel();
+  let level = generateLevel(1,5);
   let race = generateRace();
   let name = generateName();
   let classchoice = generateClass();

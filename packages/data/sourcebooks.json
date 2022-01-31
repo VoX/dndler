@@ -168,7 +168,10 @@
             "Cormanthor Refugee",
             "Gate Urchin",
             "Hillsfar Merchant",
-            "Hillsfar Smuggler"
+            "Hillsfar Smuggler",
+            "Secret Identity",
+            "Shade Fanatic",
+            "Trade Sheriff"
         ],
         "Classes": [],
         "Races": [],
@@ -231,7 +234,10 @@
     },
     "WLD": {
         "Name": "Wild Beyond the Witchlight",
-        "Backgrounds": [],
+        "Backgrounds": [
+            "Feylost",
+            "Witchlight Hand"
+        ],
         "Classes": [],
         "Races": [
             "Fairy",
@@ -276,6 +282,19 @@
         "Classes": [
             "Artificer"
         ],
+        "Races": [],
+        "Spells": []
+    },
+    "ACQ": {
+        "Name": "Acquisitions Incorporated",
+        "Backgrounds": [
+            "Celebrity Adventurer's Scion",
+            "Failed Merchant",
+            "Gambler",
+            "Plaintiff",
+            "Rival Intern"
+        ],
+        "Classes": [],
         "Races": [],
         "Spells": []
     }

@@ -30,12 +30,6 @@ def classfeatures_to_json():
             "Features": row['Features'].split(','),
             "Infusions Known": row['Infusions Known'],
             "Infused Items": row['Infused Items'],
-            "Cantrips Known": str(int(row['Cantrips Known'])),
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level']
         }
     # BARBARIAN
     # make class df
@@ -54,17 +48,6 @@ def classfeatures_to_json():
     for index, row in classdf.iterrows():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
-            "Cantrips Known": str(int(row['Cantrips Known'])),
-            "Spells Known": row['Spells Known'],
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level'],
-            "6th Level Slots": row['6th Level'],
-            "7th Level Slots": row['7th Level'],
-            "8th Level Slots": row['8th Level'],
-            "9th Level Slots": row['9th Level']
         }
     # CLERIC
     # make class df
@@ -73,16 +56,6 @@ def classfeatures_to_json():
     for index, row in classdf.iterrows():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
-            "Cantrips Known": str(int(row['Cantrips Known'])),
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level'],
-            "6th Level Slots": row['6th Level'],
-            "7th Level Slots": row['7th Level'],
-            "8th Level Slots": row['8th Level'],
-            "9th Level Slots": row['9th Level']
         }
     # DRUID
     # make class df
@@ -91,16 +64,6 @@ def classfeatures_to_json():
     for index, row in classdf.iterrows():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
-            "Cantrips Known": str(int(row['Cantrips Known'])),
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level'],
-            "6th Level Slots": row['6th Level'],
-            "7th Level Slots": row['7th Level'],
-            "8th Level Slots": row['8th Level'],
-            "9th Level Slots": row['9th Level']
         }
     # FIGHTER
     # make class df
@@ -128,11 +91,6 @@ def classfeatures_to_json():
     for index, row in classdf.iterrows():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level']
         }
     # RANGER
     # make class df
@@ -141,11 +99,6 @@ def classfeatures_to_json():
     for index, row in classdf.iterrows():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level']
         }
     # ROGUE
     # make class df
@@ -164,16 +117,6 @@ def classfeatures_to_json():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
             "Sorcery Points": row['Sorcery Points'],
-            "Cantrips Known": str(int(row['Cantrips Known'])),
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level'],
-            "6th Level Slots": row['6th Level'],
-            "7th Level Slots": row['7th Level'],
-            "8th Level Slots": row['8th Level'],
-            "9th Level Slots": row['9th Level']
         }
     # WARLOCK
     # make class df
@@ -183,10 +126,6 @@ def classfeatures_to_json():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
             "Invocations Known": row['Invocations Known'],
-            "Cantrips Known": str(int(row['Cantrips Known'])),
-            "Spells Known": row['Spells Known'],
-            "Spell Slots": str(int(row['Spell Slots'])),
-            "Slot Level": row['Slot Level'],
         }
     # WIZARD
     # make class df
@@ -195,16 +134,6 @@ def classfeatures_to_json():
     for index, row in classdf.iterrows():
         classFeatures[row['Class']][row['Level']] = {
             "Features": row['Features'].split(','),
-            "Cantrips Known": str(int(row['Cantrips Known'])),
-            "1st Level Slots": row['1st Level'],
-            "2nd Level Slots": row['2nd Level'],
-            "3rd Level Slots": row['3rd Level'],
-            "4th Level Slots": row['4th Level'],
-            "5th Level Slots": row['5th Level'],
-            "6th Level Slots": row['6th Level'],
-            "7th Level Slots": row['7th Level'],
-            "8th Level Slots": row['8th Level'],
-            "9th Level Slots": row['9th Level']
         }
     classfeaturesjson = json.dumps(classFeatures)
     with open("classFeatures.json", "w") as outfile:

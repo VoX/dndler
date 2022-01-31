@@ -104,9 +104,18 @@ const backgrounds = {
             "Tools of your Preferred Con",
             "15 GP"
         ],
-        "Features": ["Favorite Scheme", "False Identity"],
-        "Skills": ["Deception", "Sleight"],
-        "Tools": ["Disguise Kit", "Forgery Kit"],
+        "Features": [
+            "Favorite Scheme",
+            "False Identity"
+        ],
+        "Skills": [
+            "Deception",
+            "Sleight"
+        ],
+        "Tools": [
+            "Disguise Kit",
+            "Forgery Kit"
+        ],
         "Languages": []
     },
     "Criminal": {
@@ -159,12 +168,43 @@ const backgrounds = {
             "Set of Dark Common Clothes with a Hood",
             "15 GP"
         ],
-        "Features": ["Criminal Contact"],
-        "Skills": ["Deception", "Stealth"],
-        "Tools": ["Gaming Set Choice", "Thieves' Tools"],
+        "Features": [
+            "Criminal Contact"
+        ],
+        "Skills": [
+            "Deception",
+            "Stealth"
+        ],
+        "Tools": [
+            "Gaming Set Choice",
+            "Thieves' Tools"
+        ],
         "Languages": [],
         "Variants": {
-            "Spy": {}
+            "Spy": {},
+            "Urban Bounty Hunter": {
+                "Gear": [
+                    "Set of Clothes Based on your Duties",
+                    "20 GP"
+                ],
+                "Features": [
+                    "Ear to the Ground"
+                ],
+                "Skills": [
+                    [
+                        "Deception",
+                        "Insight",
+                        "Persuasion",
+                        "Stealth"
+                    ],
+                    [
+                        "Deception",
+                        "Insight",
+                        "Persuasion",
+                        "Stealth"
+                    ]
+                ]
+            }
         }
     },
     "Entertainer": {
@@ -220,9 +260,17 @@ const backgrounds = {
             "Costume",
             "15 GP"
         ],
-        "Features": ["By Popular Demand"],
-        "Skills": ["Acrobatics", "Performance"],
-        "Tools": ["Disguise Kit", "Instrument Choice"],
+        "Features": [
+            "By Popular Demand"
+        ],
+        "Skills": [
+            "Acrobatics",
+            "Performance"
+        ],
+        "Tools": [
+            "Disguise Kit",
+            "Instrument Choice"
+        ],
         "Languages": [],
         "Variants": {
             "Gladiator": {
@@ -289,10 +337,54 @@ const backgrounds = {
             "Set of Common Clothes",
             "10 GP"
         ],
-        "Features": ["Defining Event", "Rustic Hospitality"],
-        "Skills": ["Animal", "Survival"],
-        "Tools": ["Artisan Choice", "Land Vehicles"],
-        "Languages": []
+        "Features": [
+            "Defining Event",
+            "Rustic Hospitality"
+        ],
+        "Skills": [
+            "Animal",
+            "Survival"
+        ],
+        "Tools": [
+            "Artisan Choice",
+            "Land Vehicles"
+        ],
+        "Languages": [],
+        "Variants": {
+            "Inheritor": {
+                "Inheritance Clue": [
+                    "A document such as a map, a letter, or a journal",
+                    "A trinket",
+                    "An article of clothing",
+                    "A piece of jewelry",
+                    "An arcane book or formulary",
+                    "A written story, song, poem, or secret",
+                    "A tattoo or other body marking"
+                ],
+                "Gear": [
+                    "Set of Traveler's Clothes",
+                    "15 GP"
+                ],
+                "Features": [],
+                "Skills": [
+                    "Survival",
+                    [
+                        "Arcana",
+                        "History",
+                        "Religion"
+                    ]
+                ],
+                "Tools": [
+                    [
+                        "Gaming Set Choice",
+                        "Instrument Choice"
+                    ]
+                ],
+                "Languages": [
+                    "Language Choice"
+                ]
+            }
+        }
     },
     "Gladiator": {
         "Routine": [
@@ -411,19 +503,82 @@ const backgrounds = {
             "Set of Traveler's Clothes",
             "15 GP"
         ],
-        "Features": ["Guild Membership"],
-        "Skills": ["Insight", "Persuasion"],
-        "Tools": ["Artisan Choice"],
-        "Languages": ["Language Choice"],
+        "Features": [
+            "Guild Membership"
+        ],
+        "Skills": [
+            "Insight",
+            "Persuasion"
+        ],
+        "Tools": [
+            "Artisan Choice"
+        ],
+        "Languages": [
+            "Language Choice"
+        ],
         "Variants": {
             "Guild Merchant": {
-                "Tools": [["Artisan Choice", "Navigator's Tools"]],
-                "Languages": ["Language Choice", ["Language Choice", "Language Choice"]],
+                "Tools": [
+                    [
+                        "Artisan Choice",
+                        "Navigator's Tools"
+                    ]
+                ],
+                "Languages": [
+                    "Language Choice",
+                    [
+                        "Language Choice",
+                        "Language Choice"
+                    ]
+                ],
                 "Gear": [
                     "Mule and Cart",
                     "Letter of Introduction from Guild",
                     "Set of Traveler's Clothes",
                     "15 GP"
+                ]
+            },
+            "Clan Crafter": {
+                "Features": [
+                    "Respect of the Stout Folk"
+                ],
+                "Skills": [
+                    "History",
+                    "Insight"
+                ],
+                "Tools": [
+                    "Artisan Choice"
+                ],
+                "Languages": [
+                    [
+                        "Dwarvish",
+                        "Language Choice"
+                    ]
+                ],
+                "Gear": [
+                    "Artisan Choice",
+                    "Chisel to Mark your Handiwork",
+                    "Set of Traveler's Clothes",
+                    "Gem worth 10 GP",
+                    "5 GP"
+                ]
+            },
+            "Courtier": {
+                "Gear": [
+                    "Set of Fine Clothes",
+                    "5 GP"
+                ],
+                "Features": [
+                    "Court Functionary"
+                ],
+                "Skills": [
+                    "Insight",
+                    "Persuasion"
+                ],
+                "Tools": [],
+                "Languages": [
+                    "Language Choice",
+                    "Language Choice"
                 ]
             }
         }
@@ -544,10 +699,19 @@ const backgrounds = {
             "Herbalism Kit",
             "5 GP"
         ],
-        "Features": ["Discovery"],
-        "Skills": ["Medicine", "Religion"],
-        "Tools": ["Herbalism Kit"],
-        "Languages": ["Language Choice"]
+        "Features": [
+            "Discovery"
+        ],
+        "Skills": [
+            "Medicine",
+            "Religion"
+        ],
+        "Tools": [
+            "Herbalism Kit"
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "Knight": {
         "Trait": [
@@ -591,9 +755,24 @@ const backgrounds = {
             "25 GP"
         ],
         "Features": [],
-        "Skills": ["Persuasion", ["Arcana", "History", "Nature", "Religion"]],
-        "Tools": [["Gaming Set Choice", "Instrument Choice"]],
-        "Languages": ["Language Choice"]
+        "Skills": [
+            "Persuasion",
+            [
+                "Arcana",
+                "History",
+                "Nature",
+                "Religion"
+            ]
+        ],
+        "Tools": [
+            [
+                "Gaming Set Choice",
+                "Instrument Choice"
+            ]
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "Noble": {
         "Trait": [
@@ -636,10 +815,42 @@ const backgrounds = {
             "Scroll of Pedigree",
             "25 GP"
         ],
-        "Features": ["Position of Privilege"],
-        "Skills": ["History", "Persuasion"],
-        "Tools": ["Gaming Set Choice"],
-        "Languages": ["Language Choice"]
+        "Features": [
+            "Position of Privilege"
+        ],
+        "Skills": [
+            "History",
+            "Persuasion"
+        ],
+        "Tools": [
+            "Gaming Set Choice"
+        ],
+        "Languages": [
+            "Language Choice"
+        ],
+        "Variants": {
+            "Waterdhavian Noble": {
+                "Gear": [
+                    "Set of Fine Clothes",
+                    [
+                        "Signet Ring",
+                        "Brooch"
+                    ],
+                    "Scroll of Pedigree",
+                    "Skin of Fine zzar or Wine",
+                    "20 GP"
+                ],
+                "Features": [
+                    "Kept in Style"
+                ],
+                "Tools": [
+                    [
+                        "Gaming Set Choice",
+                        "Instrument Choice"
+                    ]
+                ]
+            }
+        }
     },
     "Outlander": {
         "Origin": [
@@ -695,10 +906,41 @@ const backgrounds = {
             "Set of Traveler's Clothes",
             "10 GP"
         ],
-        "Features": ["Wanderer"],
-        "Skills": ["Athletics", "Survival"],
-        "Tools": ["Instrument Choice"],
-        "Languages": ["Language Choice"]
+        "Features": [
+            "Wanderer"
+        ],
+        "Skills": [
+            "Athletics",
+            "Survival"
+        ],
+        "Tools": [
+            "Instrument Choice"
+        ],
+        "Languages": [
+            "Language Choice"
+        ],
+        "Variants": {
+            "Uthgardt Tribe Member": {
+                "Gear": [
+                    "Hunting Trap",
+                    [
+                        "Totemic Token",
+                        "Set of Tattoos Marking Loyalty"
+                    ],
+                    "Set of Traveler's Clothes",
+                    "10 GP"
+                ],
+                "Features": [
+                    "Uthgardt Heritage"
+                ],
+                "Tools": [
+                    [
+                        "Instrument Choice",
+                        "Artisan Choice"
+                    ]
+                ]
+            }
+        }
     },
     "Pirate": {
         "Trait": [
@@ -795,7 +1037,45 @@ const backgrounds = {
             "Letter from a Dead Colleague with an Unanswered Question",
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": [
+            "Researcher"
+        ],
+        "Skills": [
+            "Arcana",
+            "History"
+        ],
+        "Tools": [],
+        "Languages": [
+            "Language Choice",
+            "Language Choice"
+        ],
+        "Variants": {
+            "Cloistered Scholar": {
+                "Gear": [
+                    "Scholar's Robes of your Cloister",
+                    "Writing Kit",
+                    "Borrowed Book of your Current Study",
+                    "10 GP"
+                ],
+                "Features": [
+                    "Library Access"
+                ],
+                "Skills": [
+                    "History",
+                    [
+                        "Arcana",
+                        "Nature",
+                        "Religion"
+                    ]
+                ],
+                "Tools": [],
+                "Languages": [
+                    "Language Choice",
+                    "Language Choice"
+                ]
+            }
+        }
     },
     "Sailor": {
         "Trait": [
@@ -839,13 +1119,26 @@ const backgrounds = {
             "Set of Common Clothes",
             "10 GP"
         ],
-        "Features": ["Ship's Passage"],
-        "Skills": ["Athletics", "Perception"],
-        "Tools": ["Navigator's Tools", "Water Vehicles"],
+        "Features": [
+            "Ship's Passage"
+        ],
+        "Skills": [
+            "Athletics",
+            "Perception"
+        ],
+        "Tools": [
+            "Navigator's Tools",
+            "Water Vehicles"
+        ],
         "Languages": [],
         "Variants": {
             "Pirate": {
-                "Features": [["Ship's Passage", "Bad Reputation"]]
+                "Features": [
+                    [
+                        "Ship's Passage",
+                        "Bad Reputation"
+                    ]
+                ]
             }
         }
     },
@@ -897,14 +1190,80 @@ const backgrounds = {
         "Gear": [
             "Insignia of Rank",
             "Trophy from a Fallen Enemy",
-            ["Set of Bone Dice", "Deck of Cards"],
+            [
+                "Set of Bone Dice",
+                "Deck of Cards"
+            ],
             "Set of Common Clothes",
             "10 GP"
         ],
-        "Features": ["Military Rank"],
-        "Skills": ["Athletics", "Intimidation"],
-        "Tools": ["Gaming Set Choice", "Land Vehicles"],
-        "Languages": []
+        "Features": [
+            "Military Rank"
+        ],
+        "Skills": [
+            "Athletics",
+            "Intimidation"
+        ],
+        "Tools": [
+            "Gaming Set Choice",
+            "Land Vehicles"
+        ],
+        "Languages": [],
+        "Variants": {
+            "City Watch": {
+                "Features": [
+                    "Watcher's Eye"
+                ],
+                "Skills": [
+                    "Athletics",
+                    "Insight"
+                ],
+                "Languages": [
+                    "Language Choice",
+                    "Language Choice"
+                ],
+                "Gear": [
+                    "Uniform of your Unit Indicating your Rank",
+                    "Horn with which to Summon Help",
+                    "Set of Manacles",
+                    "10 GP"
+                ]
+            },
+            "Investigator": {
+                "Features": [
+                    "Watcher's Eye"
+                ],
+                "Skills": [
+                    "Investigation",
+                    "Insight"
+                ],
+                "Languages": [
+                    "Language Choice",
+                    "Language Choice"
+                ],
+                "Gear": [
+                    "Uniform of your Unit Indicating your Rank",
+                    "Horn with which to Summon Help",
+                    "Set of Manacles",
+                    "10 GP"
+                ]
+            },
+            "Mercenary Veteran": {
+                "Gear": [
+                    "Uniform of your Company",
+                    "Insignia of Rank",
+                    "Gaming Set Choice",
+                    "10 GP"
+                ],
+                "Features": [
+                    "Mercenary Life"
+                ],
+                "Skills": [
+                    "Athletics",
+                    "Persuasion"
+                ]
+            }
+        }
     },
     "Spy": {
         "Specialty": [
@@ -995,10 +1354,23 @@ const backgrounds = {
         "Gear": [
             "Small Knife",
             "Map of Home City",
+            "Pet Mouse",
             "Token to Remember Parents",
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": [
+            "City Secrets"
+        ],
+        "Skills": [
+            "Sleight",
+            "Stealth"
+        ],
+        "Tools": [
+            "Disguise Kit",
+            "Thieves' Tools"
+        ],
+        "Languages": []
     },
     "Anthropologist": {
         "Trait": [
@@ -1045,9 +1417,15 @@ const backgrounds = {
             "Cultural Chameleon",
             "Adept Linguist"
         ],
-        "Skills": ["Insight", "Religion"],
+        "Skills": [
+            "Insight",
+            "Religion"
+        ],
         "Tools": [],
-        "Languages": ["Language Choice", "Language Choice"]
+        "Languages": [
+            "Language Choice",
+            "Language Choice"
+        ]
     },
     "Archaeologist": {
         "Signature Item": [
@@ -1104,10 +1482,23 @@ const backgrounds = {
             "Trinket from a Dig Site",
             "25 GP"
         ],
-        "Features": ["Dust Digger", "Historical Knowledge"],
-        "Skills": ["History", "Survival"],
-        "Tools": [["Cartographer's Tools", "Navigator's Tools"]],
-        "Languages": ["Language Choice"]
+        "Features": [
+            "Dust Digger",
+            "Historical Knowledge"
+        ],
+        "Skills": [
+            "History",
+            "Survival"
+        ],
+        "Tools": [
+            [
+                "Cartographer's Tools",
+                "Navigator's Tools"
+            ]
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "Athlete": {
         "Favored Event": [
@@ -1155,15 +1546,31 @@ const backgrounds = {
             "I must be the captain of any group I join."
         ],
         "Gear": [
-            ["Bronze Discus", "Leather Ball"],
-            ["Lucky Charm", "Past Trophy"],
+            [
+                "Bronze Discus",
+                "Leather Ball"
+            ],
+            [
+                "Lucky Charm",
+                "Past Trophy"
+            ],
             "Set of Traveler's Clothes",
             "10 GP"
         ],
-        "Features": ["Favored Event", "Echoes of Victory"],
-        "Skills": ["Acrobatics", "Athletics"],
-        "Tools": ["Land Vehicles"],
-        "Languages": ["Language Choice"]
+        "Features": [
+            "Favored Event",
+            "Echoes of Victory"
+        ],
+        "Skills": [
+            "Acrobatics",
+            "Athletics"
+        ],
+        "Tools": [
+            "Land Vehicles"
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "City Watch": {
         "Role": [
@@ -1216,13 +1623,24 @@ const backgrounds = {
             "Set of Manacles",
             "10 GP"
         ],
-        "Features": ["Watcher's Eye"],
-        "Skills": ["Athletics", "Insight"],
+        "Features": [
+            "Watcher's Eye"
+        ],
+        "Skills": [
+            "Athletics",
+            "Insight"
+        ],
         "Tools": [],
-        "Languages": ["Language Choice", "Language Choice"],
+        "Languages": [
+            "Language Choice",
+            "Language Choice"
+        ],
         "Variants": {
             "Investigator": {
-                "Skills": ["Investigation", "Insight"]
+                "Skills": [
+                    "Investigation",
+                    "Insight"
+                ]
             }
         }
     },
@@ -1290,10 +1708,22 @@ const backgrounds = {
             "Gem worth 10 GP",
             "5 GP"
         ],
-        "Features": ["Respect of the Stout Folk"],
-        "Skills": ["History", "Insight"],
-        "Tools": ["Artisan Choice"],
-        "Languages": [["Dwarvish", "Language Choice"]]
+        "Features": [
+            "Respect of the Stout Folk"
+        ],
+        "Skills": [
+            "History",
+            "Insight"
+        ],
+        "Tools": [
+            "Artisan Choice"
+        ],
+        "Languages": [
+            [
+                "Dwarvish",
+                "Language Choice"
+            ]
+        ]
     },
     "Cloistered Scholar": {
         "Field of study": [
@@ -1346,10 +1776,22 @@ const backgrounds = {
             "Borrowed Book of your Current Study",
             "10 GP"
         ],
-        "Features": ["Library Access"],
-        "Skills": ["History", ["Arcana", "Nature", "Religion"]],
+        "Features": [
+            "Library Access"
+        ],
+        "Skills": [
+            "History",
+            [
+                "Arcana",
+                "Nature",
+                "Religion"
+            ]
+        ],
         "Tools": [],
-        "Languages": ["Language Choice", "Language Choice"]
+        "Languages": [
+            "Language Choice",
+            "Language Choice"
+        ]
     },
     "Courtier": {
         "Guild business": [
@@ -1412,10 +1854,18 @@ const backgrounds = {
             "Set of Fine Clothes",
             "5 GP"
         ],
-        "Features": ["Court Functionary"],
-        "Skills": ["Insight", "Persuasion"],
+        "Features": [
+            "Court Functionary"
+        ],
+        "Skills": [
+            "Insight",
+            "Persuasion"
+        ],
         "Tools": [],
-        "Languages": ["Language Choice", "Language Choice"]
+        "Languages": [
+            "Language Choice",
+            "Language Choice"
+        ]
     },
     "Faceless": {
         "Faceless Persona": [
@@ -1469,10 +1919,19 @@ const backgrounds = {
             "Costume",
             "10 GP"
         ],
-        "Features": ["Dual Personalities"],
-        "Skills": ["Deception", "Intimidation"],
-        "Tools": ["Disguise Kit"],
-        "Languages": ["Language Choice"]
+        "Features": [
+            "Dual Personalities"
+        ],
+        "Skills": [
+            "Deception",
+            "Intimidation"
+        ],
+        "Tools": [
+            "Disguise Kit"
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "Faction Agent": {
         "Trait": [
@@ -1515,10 +1974,23 @@ const backgrounds = {
             "Set of Common Clothes",
             "15 GP"
         ],
-        "Features": ["Factions of the Sword Coast", "Safe Haven"],
-        "Skills": ["Insight", ["Intelligence", "Wisdom", "Charisma"]],
+        "Features": [
+            "Factions of the Sword Coast",
+            "Safe Haven"
+        ],
+        "Skills": [
+            "Insight",
+            [
+                "Intelligence",
+                "Wisdom",
+                "Charisma"
+            ]
+        ],
         "Tools": [],
-        "Languages": ["Language Choice", "Language Choice"]
+        "Languages": [
+            "Language Choice",
+            "Language Choice"
+        ]
     },
     "Far Traveler": {
         "Reason for coming": [
@@ -1563,15 +2035,32 @@ const backgrounds = {
         ],
         "Gear": [
             "Set of Traveler's Clothes",
-            ["Instrument Choice", "Gaming Set"],
+            [
+                "Instrument Choice",
+                "Gaming Set Choice"
+            ],
             "Poorly Wrought Maps from Hometown",
             "Small Jewelery from your Hometown worth 10 GP",
             "5 GP"
         ],
-        "Features": ["Why Are You Here?", "Where Are You From?", "All Eyes on You"],
-        "Skills": ["Insight", "Perception"],
-        "Tools": [["Instrument Choice", "Gaming Set Choice"]],
-        "Languages": ["Language Choice"]
+        "Features": [
+            "Why Are You Here?",
+            "Where Are You From?",
+            "All Eyes on You"
+        ],
+        "Skills": [
+            "Insight",
+            "Perception"
+        ],
+        "Tools": [
+            [
+                "Instrument Choice",
+                "Gaming Set Choice"
+            ]
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "Fisher": {
         "Fisher Tale": [
@@ -1621,14 +2110,25 @@ const backgrounds = {
         "Gear": [
             "Fishing Tackle",
             "Net",
-            ["Favorite Fishing Lure", "Oiled Leather Wading Boots"],
+            [
+                "Favorite Fishing Lure",
+                "Oiled Leather Wading Boots"
+            ],
             "Set of Traveler's Clothes",
             "10 GP"
         ],
-        "Features": ["Harvest the Water", "Fishing Tale"],
-        "Skills": ["History", "Survival"],
+        "Features": [
+            "Harvest the Water",
+            "Fishing Tale"
+        ],
+        "Skills": [
+            "History",
+            "Survival"
+        ],
         "Tools": [],
-        "Languages": ["Language Choice"]
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "Haunted One": {
         "Harrowing Event": [
@@ -1683,13 +2183,28 @@ const backgrounds = {
             "Set of Common Clothes",
             "1 SP"
         ],
-        "Features": ["Heart of Darkness"],
+        "Features": [
+            "Heart of Darkness"
+        ],
         "Skills": [
-            ["Arcana", "Investigation", "Religion", "Survival"],
-            ["Arcana", "Investigation", "Religion", "Survival"]
+            [
+                "Arcana",
+                "Investigation",
+                "Religion",
+                "Survival"
+            ],
+            [
+                "Arcana",
+                "Investigation",
+                "Religion",
+                "Survival"
+            ]
         ],
         "Tools": [],
-        "Languages": ["Exotic Language Choice", "Language Choice"]
+        "Languages": [
+            "Exotic Language Choice",
+            "Language Choice"
+        ]
     },
     "House Agent": {
         "Role": [
@@ -1740,9 +2255,58 @@ const backgrounds = {
             "Identification Papers",
             "20 GP"
         ],
-        "Features": ["House Connection"],
-        "Skills": ["Investigation", "Persuasion"],
-        "Tools": [],
+        "Features": [
+            "House Connection"
+        ],
+        "Skills": [
+            "Investigation",
+            "Persuasion"
+        ],
+        "Tools": [
+            [
+                [
+                    "Alchemist's Supplies",
+                    "Tinker's Tools"
+                ],
+                [
+                    "Gaming Set Choice",
+                    "Land Vehicles"
+                ],
+                [
+                    "Brewer's Supplies",
+                    "Cook's Utensils"
+                ],
+                [
+                    "Alchemist's Supplies",
+                    "Herbalism Kit"
+                ],
+                [
+                    "Thieves' Tools",
+                    "Tinker's Tools"
+                ],
+                [
+                    "Navigator's Tools",
+                    "Air Vehicles",
+                    "Water Vehicles"
+                ],
+                [
+                    "Disguise Kit",
+                    "Thieves' Tools"
+                ],
+                [
+                    "Calligrapher's Tools",
+                    "Forgery Kit"
+                ],
+                [
+                    "Gaming Set Choice",
+                    "Poisoner's Kit"
+                ],
+                [
+                    "Herbalism Kit",
+                    "Land Vehicles"
+                ]
+            ]
+        ],
         "Languages": []
     },
     "Inheritor": {
@@ -1794,9 +2358,23 @@ const backgrounds = {
             "15 GP"
         ],
         "Features": [],
-        "Skills": ["Survival", ["Arcana", "History", "Religion"]],
-        "Tools": [["Gaming Set Choice", "Instrument Choice"]],
-        "Languages": ["Language Choice"]
+        "Skills": [
+            "Survival",
+            [
+                "Arcana",
+                "History",
+                "Religion"
+            ]
+        ],
+        "Tools": [
+            [
+                "Gaming Set Choice",
+                "Instrument Choice"
+            ]
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
     },
     "Knight of the Order": {
         "Specialty": [
@@ -1900,9 +2478,17 @@ const backgrounds = {
             "Set of Traveler's Clothes",
             "10 GP"
         ],
-        "Features": ["Steady"],
-        "Skills": ["Athletics", "Survival"],
-        "Tools": ["Land Vehicles", "Water Vehicles"],
+        "Features": [
+            "Steady"
+        ],
+        "Skills": [
+            "Athletics",
+            "Survival"
+        ],
+        "Tools": [
+            "Land Vehicles",
+            "Water Vehicles"
+        ],
         "Languages": []
     },
     "Mercenary Veteran": {
@@ -1953,12 +2539,20 @@ const backgrounds = {
         "Gear": [
             "Uniform of your Company",
             "Insignia of Rank",
-            "Gaming Set",
+            "Gaming Set Choice",
             "10 GP"
         ],
-        "Features": [],
-        "Skills": ["Athletics", "Persuasion"],
-        "Tools": ["Gaming Set Choice", "Land Vehicles"],
+        "Features": [
+            "Mercenary Life"
+        ],
+        "Skills": [
+            "Athletics",
+            "Persuasion"
+        ],
+        "Tools": [
+            "Gaming Set Choice",
+            "Land Vehicles"
+        ],
         "Languages": []
     },
     "Shipwright": {
@@ -2010,7 +2604,20 @@ const backgrounds = {
             "Ink Pen",
             "Set of Traveler's Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": [
+            "I'll Patch It!",
+            "Life at Sea"
+        ],
+        "Skills": [
+            "History",
+            "Perception"
+        ],
+        "Tools": [
+            "Carpenter's Tools",
+            "Water Vehicles"
+        ],
+        "Languages": []
     },
     "Smuggler": {
         "Claim to Fame": [
@@ -2056,10 +2663,24 @@ const backgrounds = {
             "Though I act charming, I feel nothing for others and don't know what friendship is."
         ],
         "Gear": [
-            ["Fancy Leather Vest", "Leather Boots"],
+            [
+                "Fancy Leather Vest",
+                "Leather Boots"
+            ],
             "Set of Common Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": [
+            "Down Low"
+        ],
+        "Skills": [
+            "Athletics",
+            "Deception"
+        ],
+        "Tools": [
+            "Water Vehicles"
+        ],
+        "Languages": []
     },
     "Urban Bounty Hunter": {
         "Specialty": [
@@ -2109,7 +2730,37 @@ const backgrounds = {
         "Gear": [
             "Set of Clothes Based on your Duties",
             "20 GP"
-        ]
+        ],
+        "Features": [
+            "Ear to the Ground"
+        ],
+        "Skills": [
+            [
+                "Deception",
+                "Insight",
+                "Persuasion",
+                "Stealth"
+            ],
+            [
+                "Deception",
+                "Insight",
+                "Persuasion",
+                "Stealth"
+            ]
+        ],
+        "Tools": [
+            [
+                "Gaming Set Choice",
+                "Instrument Choice",
+                "Thieves' Tools"
+            ],
+            [
+                "Gaming Set Choice",
+                "Instrument Choice",
+                "Thieves' Tools"
+            ]
+        ],
+        "Languages": []
     },
     "Uthgardt Tribe Member": {
         "Origin": [
@@ -2160,9 +2811,28 @@ const backgrounds = {
         ],
         "Gear": [
             "Hunting Trap",
-            ["Totemic Token", "Set of Tattoos Marking Loyalty"],
+            [
+                "Totemic Token",
+                "Set of Tattoos Marking Loyalty"
+            ],
             "Set of Traveler's Clothes",
             "10 GP"
+        ],
+        "Features": [
+            "Uthgardt Heritage"
+        ],
+        "Skills": [
+            "Athletics",
+            "Survival"
+        ],
+        "Tools": [
+            [
+                "Instrument Choice",
+                "Artisan Choice"
+            ]
+        ],
+        "Languages": [
+            "Language Choice"
         ]
     },
     "Waterdhavian Noble": {
@@ -2202,10 +2872,29 @@ const backgrounds = {
         ],
         "Gear": [
             "Set of Fine Clothes",
-            ["Signet Ring", "Brooch"],
+            [
+                "Signet Ring",
+                "Brooch"
+            ],
             "Scroll of Pedigree",
             "Skin of Fine zzar or Wine",
             "20 GP"
+        ],
+        "Features": [
+            "Kept in Style"
+        ],
+        "Skills": [
+            "History",
+            "Persuasion"
+        ],
+        "Tools": [
+            [
+                "Gaming Set Choice",
+                "Instrument Choice"
+            ]
+        ],
+        "Languages": [
+            "Language Choice"
         ]
     },
     "Black Fist Double Agent": {
@@ -2248,9 +2937,27 @@ const backgrounds = {
             "Set of Common Clothes",
             "Tears of Virulence Emblem",
             "Writ of Free Agency signed by Lord Regent",
-            ["Artisan Choice", "Gaming Set"],
+            [
+                "Artisan Choice",
+                "Gaming Set Choice"
+            ],
             "15 GP"
-        ]
+        ],
+        "Features": [
+            "Double Agent"
+        ],
+        "Skills": [
+            "Deception",
+            "Insight"
+        ],
+        "Tools": [
+            "Disguise Kit",
+            [
+                "Artisan Choice",
+                "Gaming Set Choice"
+            ]
+        ],
+        "Languages": []
     },
     "Dragon Casualty": {
         "Disfigurement": [
@@ -2301,7 +3008,70 @@ const backgrounds = {
             "Loaf of Moldy Bread",
             "Small Cast-off Scale of a Dragon",
             "5 GP"
-        ]
+        ],
+        "Features": [
+            "Dragonscarred"
+        ],
+        "Skills": [
+            "Intimidation",
+            "Survival"
+        ],
+        "Tools": [],
+        "Languages": [
+            "Draconic"
+        ],
+        "Origin": {
+            "Dockworker/Fisherman": {
+                "Tools": [
+                    "Water Vehicles"
+                ]
+            },
+            "Tradesperson/Merchant": {
+                "Tools": [
+                    "Artisan Choice"
+                ]
+            },
+            "Black Fist Soldier": {
+                "Tools": [
+                    [
+                        "Gaming Set Choice",
+                        "Land Vehicles"
+                    ]
+                ]
+            },
+            "Adventurer/Visitor": {
+                "Tools": [
+                    "Land Vehicles"
+                ]
+            },
+            "Entertainer": {
+                "Tools": [
+                    "Instrument Choice"
+                ]
+            },
+            "Scholar/Healer": {
+                "Tools": [
+                    [
+                        "Alchemist's Supplies",
+                        "Herbalism Kit"
+                    ]
+                ]
+            },
+            "Criminal": {
+                "Tools": [
+                    [
+                        "Thieves' Tools",
+                        "Forgery Kit",
+                        "Disguise Kit"
+                    ]
+                ]
+            },
+            "Unskilled Laborer": {
+                "Tools": [
+                    "Gaming Set Choice"
+                ]
+            }
+        }
     },
     "Iron Route Bandit": {
         "Trait": [
@@ -2343,7 +3113,19 @@ const backgrounds = {
             "Pack Saddle",
             "Burglar's Pack",
             "5 GP"
-        ]
+        ],
+        "Features": [
+            "Black-Market Breeder"
+        ],
+        "Skills": [
+            "Stealth",
+            "Animal"
+        ],
+        "Tools": [
+            "Gaming Set Choice",
+            "Land Vehicles"
+        ],
+        "Languages": []
     },
     "Phlan Insurgent": {
         "Origin": [
@@ -2396,7 +3178,19 @@ const backgrounds = {
             "Healer's Kit",
             "Set of Dark Common Clothes with a Cloak and Hood",
             "5 GP"
-        ]
+        ],
+        "Features": [
+            "Guerilla"
+        ],
+        "Skills": [
+            "Stealth",
+            "Survival"
+        ],
+        "Tools": [
+            "Artisan Choice",
+            "Land Vehicles"
+        ],
+        "Languages": []
     },
     "Stojanow Prisoner": {
         "Trait": [
@@ -2438,7 +3232,19 @@ const backgrounds = {
             "Set of Common Clothes",
             "Trinket of a Previous Life",
             "10 GP"
-        ]
+        ],
+        "Features": [
+            "Ex-Convict"
+        ],
+        "Skills": [
+            "Deception",
+            "Perception"
+        ],
+        "Tools": [
+            "Gaming Set Choice",
+            "Thieves' Tools"
+        ],
+        "Languages": []
     },
     "Ticklebelly Nomad": {
         "Trait": [
@@ -2480,6 +3286,19 @@ const backgrounds = {
             "Small Article of Jewelery Distinct to Tribe",
             "Set of Common Clothes",
             "5 GP"
+        ],
+        "Features": [
+            "At Home in the Wild"
+        ],
+        "Skills": [
+            "Nature",
+            "Animal"
+        ],
+        "Tools": [
+            "Herbalism Kit"
+        ],
+        "Languages": [
+            "Giant"
         ]
     },
     "Caravan Specialist": {
@@ -2523,6 +3342,19 @@ const backgrounds = {
             "Regional Map",
             "Set of Traveler's Clothes",
             "10 GP"
+        ],
+        "Features": [
+            "Wagonmaster"
+        ],
+        "Skills": [
+            "Animal",
+            "Survival"
+        ],
+        "Tools": [
+            "Land Vehicles"
+        ],
+        "Languages": [
+            "Language Choice"
         ]
     },
     "Earthspur Miner": {
@@ -2561,11 +3393,26 @@ const backgrounds = {
             "I'm afraid of the dark."
         ],
         "Gear": [
-            ["Shovel", "Miner's Pick"],
+            [
+                "Shovel",
+                "Miner's Pick"
+            ],
             "Block and Tackle",
             "Climber's Kit",
             "Set of Common Clothes",
             "5 GP"
+        ],
+        "Features": [
+            "Deep Miner"
+        ],
+        "Skills": [
+            "Athletics",
+            "Survival"
+        ],
+        "Tools": [],
+        "Languages": [
+            "Dwarven",
+            "Undercommon"
         ]
     },
     "Harborfolk": {
@@ -2610,7 +3457,19 @@ const backgrounds = {
             "Set of Common Clothes",
             "Rowboat",
             "5 GP"
-        ]
+        ],
+        "Features": [
+            "Harborfolk"
+        ],
+        "Skills": [
+            "Athletics",
+            "Sleight"
+        ],
+        "Tools": [
+            "Gaming Set Choice",
+            "Water Vehicles"
+        ],
+        "Languages": []
     },
     "Mulmaster Aristocrat": {
         "Trait": [
@@ -2648,10 +3507,25 @@ const backgrounds = {
             "I have no artistic sense. I hide that fact behind extreme opinions and have become a trendsetter."
         ],
         "Gear": [
-            ["Artisan Choice", "Instrument Choice"],
+            [
+                "Artisan Choice",
+                "Instrument Choice"
+            ],
             "Set of Fine Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": [
+            "Highborn"
+        ],
+        "Skills": [
+            "Deception",
+            "Performance"
+        ],
+        "Tools": [
+            "Artisan Choice",
+            "Instrument Choice"
+        ],
+        "Languages": []
     },
     "Phlan Refugee": {
         "Trait": [
@@ -2693,6 +3567,19 @@ const backgrounds = {
             "Token of Previous Life",
             "Set of Traveler's Clothes",
             "15 GP"
+        ],
+        "Features": [
+            "Phlan Survivor"
+        ],
+        "Skills": [
+            "Insight",
+            "Athletics"
+        ],
+        "Tools": [
+            "Artisan Choice"
+        ],
+        "Languages": [
+            "Language Choice"
         ]
     },
     "Cormanthor Refugee": {
@@ -2736,6 +3623,19 @@ const backgrounds = {
             "Holy Symbol",
             "Set of Traveler's Clothes",
             "5 GP"
+        ],
+        "Features": [
+            "Shelter of the Elven Clergy"
+        ],
+        "Skills": [
+            "Nature",
+            "Survival"
+        ],
+        "Tools": [
+            "Artisan Choice"
+        ],
+        "Languages": [
+            "Elvish"
         ]
     },
     "Gate Urchin": {
@@ -2777,10 +3677,25 @@ const backgrounds = {
             "Battered Alms Box",
             "Instrument Choice",
             "Cast-off Military Jacket",
-            ["Cap", "Scarf"],
+            [
+                "Cap",
+                "Scarf"
+            ],
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": [
+            "Red Plume / Mage Guild Contacts"
+        ],
+        "Skills": [
+            "Deception",
+            "Sleight"
+        ],
+        "Tools": [
+            "Thieves' Tools",
+            "Instrument Choice"
+        ],
+        "Languages": []
     },
     "Hillsfar Merchant": {
         "Trait": [
@@ -2822,7 +3737,22 @@ const backgrounds = {
             "Signet Ring",
             "Letter of Introduction from Family's Trading House",
             "25 GP"
-        ]
+        ],
+        "Features": [
+            [
+                "Factor",
+                "Trade Contact"
+            ]
+        ],
+        "Skills": [
+            "Insight",
+            "Persuasion"
+        ],
+        "Tools": [
+            "Land Vehicles",
+            "Water Vehicles"
+        ],
+        "Languages": []
     },
     "Hillsfar Smuggler": {
         "Trait": [
@@ -2863,6 +3793,19 @@ const backgrounds = {
             "Forgery Kit",
             "Set of Common Clothes",
             "5 GP"
+        ],
+        "Features": [
+            "Secret Passage"
+        ],
+        "Skills": [
+            "Perception",
+            "Stealth"
+        ],
+        "Tools": [
+            "Forgery Kit"
+        ],
+        "Languages": [
+            "Language Choice"
         ]
     },
     "Initiate": {
@@ -2903,10 +3846,14 @@ const backgrounds = {
         "Gear": [
             "Simple Puzzle Box",
             "Scroll of Basic Teachings of the Five Gods",
-            "Gaming Set",
+            "Gaming Set Choice",
             "Set of Common Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": ["Trial of the Five Gods"],
+        "Skills": ["Athletics", "Intimidation"],
+        "Tools": ["Gaming Set Choice", "Land Vehicles"],
+        "Languages": []
     },
     "Vizier": {
         "Trait": [
@@ -2946,12 +3893,19 @@ const backgrounds = {
             "I secretly believe the God-Pharaoh's return will not bring blessing to this world."
         ],
         "Gear": [
-            ["Artisan Choice", "Instrument Choice"],
+            [
+                "Artisan Choice",
+                "Instrument Choice"
+            ],
             "Scroll of your God's Teachings",
             "Vizier's Cartouche",
             "Set of Fine Clothes",
             "25 GP"
-        ]
+        ],
+        "Features": ["Voice of Authority"],
+        "Skills": ["History", "Religion"],
+        "Tools": ["Artisan Choice", "Instrument Choice"],
+        "Languages": []
     },
     "Inquisitor": {
         "Trait": [
@@ -2992,7 +3946,11 @@ const backgrounds = {
             "Holy Symbol",
             "Set of Traveler's Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": ["Legal Authorirty"],
+        "Skills": ["Investigation", "Religion"],
+        "Tools": ["Thieves' Tools", "Artisan Choice"],
+        "Languages": []
     },
     "Azorious Functionary": {
         "Trait": [
@@ -3036,7 +3994,11 @@ const backgrounds = {
             "Ink Pen",
             "Set of Fine Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": [],
+        "Skills": ["Insight", "Intimidation"],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Boros Legionnaire": {
         "Trait": [
@@ -3079,7 +4041,11 @@ const backgrounds = {
             "Tattered Piece of Boros Banner",
             "Set of Common Clothes",
             "2 GP"
-        ]
+        ],
+        "Features": ["Legion Station"],
+        "Skills": ["Athletics", "Intimidation"],
+        "Tools": ["Gaming Set Choice"],
+        "Languages": [["Celestial", "Draconic", "Goblin", "Minotaur"]]
     },
     "Dimir Operative": {
         "Reason for Infiltration": [
@@ -3130,7 +4096,11 @@ const backgrounds = {
             "Dimir Insignia",
             "Small Knife (3)",
             "Set of Dark Common Clothes"
-        ]
+        ],
+        "Features": [],
+        "Skills": ["Deception", "Stealth"],
+        "Tools": ["Disguise Kit"],
+        "Languages": ["Language Choice"]
     },
     "Golgari Agent": {
         "Trait": [
@@ -3169,10 +4139,17 @@ const backgrounds = {
         ],
         "Gear": [
             "Poisoner's Kit",
-            ["Pet Beetle", "Pet Spider"],
+            [
+                "Pet Beetle",
+                "Pet Spider"
+            ],
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Undercity Paths"],
+        "Skills": ["Nature", "Survival"],
+        "Tools": ["Poisoner's Kit"],
+        "Languages": [["Elvish", "Giant", "Kraul"]]
     },
     "Gruul Anarch": {
         "Trait": [
@@ -3217,7 +4194,11 @@ const backgrounds = {
             "Beast-hide Cloak",
             "Set of Traveler's Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Rubblebelt Refuge"],
+        "Skills": ["Animal", "Athletics"],
+        "Tools": ["Herbalism Kit"],
+        "Languages": [["Draconic", "Giant", "Goblin", "Sylvan"]]
     },
     "Izzet Engineer": {
         "Trait": [
@@ -3262,7 +4243,11 @@ const backgrounds = {
             "Block and Tackle",
             "Set of Common Clothes",
             "5 GP"
-        ]
+        ],
+        "Features": ["Urban Infrastructure"],
+        "Skills": ["Arcana", "Investigation"],
+        "Tools": ["Artisan Choice"],
+        "Languages": [["Draconic", "Goblin", "Vedalken"]]
     },
     "Orzhov Representative": {
         "Trait": [
@@ -3304,7 +4289,11 @@ const backgrounds = {
             "Foot-Long Chain of 10 Gold Coins",
             "Set of Fine Clothes",
             "1 PP"
-        ]
+        ],
+        "Features": ["Leverage"],
+        "Skills": ["Intimidation", "Religion"],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Rakdos Cultist": {
         "Type of Performer": [
@@ -3361,7 +4350,11 @@ const backgrounds = {
             "Torch (10)",
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Fearsome Reputation"],
+        "Skills": ["Acrobatics", "Performance"],
+        "Tools": ["Instrument Choice"],
+        "Languages": [["Abyssal", "Giant"]]
     },
     "Selesnya Initiate": {
         "Trait": [
@@ -3404,7 +4397,11 @@ const backgrounds = {
             "Robes",
             "Set of Common Clothes",
             "5 GP"
-        ]
+        ],
+        "Features": ["Conclave's Shelter"],
+        "Skills": ["Nature", "Persuasion"],
+        "Tools": [["Artisan Choice", "Instrument Choice"]],
+        "Languages": [["Elvish", "Loxodon", "Sylvan"]]
     },
     "Simic Scientist": {
         "Clade/Project": [
@@ -3462,7 +4459,11 @@ const backgrounds = {
             "Vial of Jellyfish Stingers",
             "Glass Bottle of Unidentified Slime",
             "10 GP"
-        ]
+        ],
+        "Features": ["Researcher"],
+        "Skills": ["Arcana", "Medicine"],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Grinner": {
         "Favorite Code-Song": [
@@ -3513,7 +4514,11 @@ const backgrounds = {
             "Instrument Choice",
             "Gold-Plated Ring of a Smiling Face",
             "15 GP"
-        ]
+        ],
+        "Features": ["Ballad of the Grinning Fool"],
+        "Skills": ["Deception", "Performance"],
+        "Tools": ["Instrument Choice", "Thieves' Tools"],
+        "Languages": []
     },
     "Volstrucker Agent": {
         "Tragedy": [
@@ -3557,7 +4562,564 @@ const backgrounds = {
             "Black Cloak with Hood",
             "Poisoner's Kit",
             "10 GP"
+        ],
+        "Features": ["Shadow Network"],
+        "Skills": ["Deception", "Stealth"],
+        "Tools": ["Poisoner's Kit"],
+        "Languages": ["Language Choice"]
+    },
+    "Feylost": {
+        "Fey Mark": [
+            "Your eyes swirl with iridescent colors.",
+            "You have a sweet scent, like that of nectar or honey.",
+            "You have long whiskers like those of a cat.",
+            "Your ears are covered with soft tufts of fur.",
+            "Your skin sparkles in moonlight.",
+            "Flowers either bloom or wilt (your choice) in your presence.",
+            "Your hair is made of vines or brambles and grows back to normal length within 1 hour of being cut.",
+            "Your have a tail like that of a dog or another animal."
+        ],
+        "Feywild Visitor": [
+            "Awakened creature (A Beast or an ordinary plant that has had the Awaken spell cast on it.",
+            "Centaur",
+            "Dryad",
+            "Faerie Dragon",
+            "Pixie",
+            "Satyr",
+            "Sprite",
+            "Unicorn"
+        ],
+        "Trait": [
+            "I'm haunted by fey laughter that only I can hear, though I knowo it's just my mind playing tricks on me.",
+            "Like a nomad, I can't settle down in one place for very long.",
+            "Good music makes me weep like a baby.",
+            "Wherever I go, I try to bring a little of the warmth and tranquility of home with me.",
+            "I have never lost my childlike sense of wonder.",
+            "When I have a new idea, I get wildly excited about it until I come up with another, better idea.",
+            "I live by my own set of weird and wonderful rules.",
+            "I can't bring myself to trust most adults."
+        ],
+        "Ideal": [
+            "Friendship. I never leave a friend behind. (Good)",
+            "Empathy. No creature should be made to suffer. (Good)",
+            "Wanderlust. I prefer to take the less traveled path. (Chaotic)",
+            "Changeability. Change is good, which is why I live by an ever-changing set of rules. (Chaotic)",
+            "Honor. A deal is a deal, and I would never break one. (Lawful)",
+            "Rule of Three. Everything in the multiverse happens in threes. I see the \"rule of three\" everywhere. (Lawful)",
+            "Obsession. I won't let go of a grudge. (Evil)",
+            "Greed. I will do whatever it takes to get what I want, regardless of the harm it might cause. (Evil)"
+        ],
+        "Bond": [
+            "I would never break my word.",
+            "I find magic in all its forms to be compelling. The more magical a place, the more I am drawn to it.",
+            "I do what I can to protect the natural world.",
+            "A trusted friend is the most important thing in the multiverse to me.",
+            "I can't bring myself to harm a Fey creature, either because I consider myself one or because I fear the repercussions.",
+            "The Witchlight Carnival feels like home to me.",
+            "I'm drawn to the Feywild and long to return there, if only for a short while.",
+            "I feel indebted to Mister Witch and Mister Light for giving me a home and a purpose."
+        ],
+        "Flaw": [
+            "I easily lose track of time. My poor sense of time means I'm always late.",
+            "I think the whole multiverse is out to get me.",
+            "I'm always operating under a tight timeline, and I'm obsessed wwith keeping everything on schedule.",
+            "I'm a kleptomaniac who covets shiny, sparkling treasure.",
+            "I'm forgetful. Sometimes I can't remember even the simplest things.",
+            "I never give away anything for free and always expect something in return.",
+            "I have many vices and tend to indulge them.",
+            "I'm always changing my mind-well, almost always."
+        ],
+        "Gear": [
+            "Instrument Choice",
+            "Set of Traveler's Clothes",
+            "Trinket Choice",
+            "Trinket Choice",
+            "Trinket Choice",
+            "8 GP"
+        ],
+        "Features": [
+            "Fey Mark",
+            "Feywild Visitor",
+            "Feywild Connection"
+        ],
+        "Skills": [
+            "Deception",
+            "Survival"
+        ],
+        "Tools": [
+            "Instrument Choice"
+        ],
+        "Languages": [
+            [
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Sylvan"
+            ]
         ]
+    },
+    "Witchlight Hand": {
+        "Carnival Companion": [
+            "Old, cantankerous Witchlight hand",
+            "Young, impressionable Witchlight hand",
+            "Performer (such as an acrobat, a clown, or a musician",
+            "Retired performer",
+            "Seasoned animal trainer",
+            "Old blink dog",
+            "Cheery sprite",
+            "Harmless, magical wisp of light (30 ft. fly speed, 5 ft. radius light)"
+        ],
+        "Trait": [
+            "I'm haunted by fey laughter that only I can hear, though I knowo it's just my mind playing tricks on me.",
+            "Like a nomad, I can't settle down in one place for very long.",
+            "Good music makes me weep like a baby.",
+            "Wherever I go, I try to bring a little of the warmth and tranquility of home with me.",
+            "I have never lost my childlike sense of wonder.",
+            "When I have a new idea, I get wildly excited about it until I come up with another, better idea.",
+            "I live by my own set of weird and wonderful rules.",
+            "I can't bring myself to trust most adults."
+        ],
+        "Ideal": [
+            "Friendship. I never leave a friend behind. (Good)",
+            "Empathy. No creature should be made to suffer. (Good)",
+            "Wanderlust. I prefer to take the less traveled path. (Chaotic)",
+            "Changeability. Change is good, which is why I live by an ever-changing set of rules. (Chaotic)",
+            "Honor. A deal is a deal, and I would never break one. (Lawful)",
+            "Rule of Three. Everything in the multiverse happens in threes. I see the \"rule of three\" everywhere. (Lawful)",
+            "Obsession. I won't let go of a grudge. (Evil)",
+            "Greed. I will do whatever it takes to get what I want, regardless of the harm it might cause. (Evil)"
+        ],
+        "Bond": [
+            "I would never break my word.",
+            "I find magic in all its forms to be compelling. The more magical a place, the more I am drawn to it.",
+            "I do what I can to protect the natural world.",
+            "A trusted friend is the most important thing in the multiverse to me.",
+            "I can't bring myself to harm a Fey creature, either because I consider myself one or because I fear the repercussions.",
+            "The Witchlight Carnival feels like home to me.",
+            "I'm drawn to the Feywild and long to return there, if only for a short while.",
+            "I feel indebted to Mister Witch and Mister Light for giving me a home and a purpose."
+        ],
+        "Flaw": [
+            "I easily lose track of time. My poor sense of time means I'm always late.",
+            "I think the whole multiverse is out to get me.",
+            "I'm always operating under a tight timeline, and I'm obsessed wwith keeping everything on schedule.",
+            "I'm a kleptomaniac who covets shiny, sparkling treasure.",
+            "I'm forgetful. Sometimes I can't remember even the simplest things.",
+            "I never give away anything for free and always expect something in return.",
+            "I have many vices and tend to indulge them.",
+            "I'm always changing my mind-well, almost always."
+        ],
+        "Gear": [
+            [
+                "Disguise Kit",
+                "Instrument Choice"
+            ],
+            "Deck of Cards",
+            "Carnival Uniform or Costume",
+            "Trinket Choice",
+            "8 GP"
+        ],
+        "Features": [
+            "Carnival Fixture"
+        ],
+        "Skills": [
+            "Performance",
+            "Sleight"
+        ],
+        "Tools": [
+            [
+                "Disguise Kit",
+                "Instrument Choice"
+            ]
+        ],
+        "Languages": [
+            "Language Choice"
+        ]
+    },
+    "Secret Identity": {
+        "Trait": [
+            "Despite its problems, I love Hillsfar, it's the greatest city in the world. The only one for me.",
+            "I move from place to place, never staying anywhere long and leaving nothing behind.",
+            "I think flattery is the best way to direct attention away from me.",
+            "I don't make friends easily. They're a liability I cannot afford.",
+            "Risk and danger exhilerate me. Pulling off schemes and deceptions is a rush.",
+            "The First Lord is right, humans are superior. I really admire them, despite the atrocities.",
+            "I avoid people of my own race, as well as things associated with my race, lest they give me away.",
+            "I live for the Arena. I admire gladiators and enjoy the thrill of blood on the sands!"
+        ],
+        "Ideal": [
+            "Quisling. Supporting the rulers of the land and following the laws is the road to salvation. (Lawful)",
+            "Scoflaw. The laws and lawmakers are corrupt. I follow laws only when it suits me. (Chaotic)",
+            "Optimist. Everyone is basically good. Though the government is misguided, it will all be okay. (Any)",
+            "Secretive. I am in the habit of not talking about myself. My business is none of yours. (Any)",
+            "Heroic. I do everything I can to help non-humans, regardless of the personal cost to me. (Good)",
+            "Depraved. I have lost my moral compass. The ends justify most any means. (Evil)"
+        ],
+        "Bond": [
+            "The humans of Hillsfar have inflicted terrible harm on me, my family, and my race. I wil have my revenge.",
+            "I am part of an underground network that smuggles non-humans into and out of the city.",
+            "I am a partisan. I commit minor acts of defiance against the First Lord and Red Plumes when I can.",
+            "I am a spy. I report on events in and around Hillsfar.",
+            "My secret identity is the only thing protecting me from the Arena. I will stop at nothing to maintain it.",
+            "I am madly in love with a human who does not know my true identity, and I fear rejection if I reveal it."
+        ],
+        "Flaw": [
+            "After years of denying who I am, I now despise myself and other members of my pathetic race.",
+            "Years of hiding have made me somewhat paranoid. I trust no one.",
+            "I've been lying so often and for so long that I can't help it anymore. I frequently lie for no reason at all.",
+            "I am ashamed. I failed to protect a member of my family who was seized and thrown into the Arena.",
+            "I am struggling with maintaining my secret identity. I subconsciously want to get caught and therefore sometimes let my secret identity slip.",
+            "Years of successfully deceiving others have made me cocky. I think no one can see through my lies."
+        ],
+        "Gear": [
+            "Disguise Kit",
+            "Forgery Kit",
+            "Set of Common Clothes",
+            "5 GP"
+        ],
+        "Features": [
+            "Secret Identity"
+        ],
+        "Skills": [
+            "Deception",
+            "Stealth"
+        ],
+        "Tools": [
+            "Disguise Kit",
+            "Forgery Kit"
+        ],
+        "Languages": []
+    },
+    "Shade Fanatic": {
+        "Trait": [
+            "I am a bully; I try to hide it though.",
+            "I let me actions speak for themselves.",
+            "I am important; I will not let anyone forget that.",
+            "You are either with me or against me.",
+            "I know it is only a matter of time before I am betrayed by those I care for.",
+            "I never understand why people get so emotional.",
+            "They are out to get me. It is only my cunning that keeps me ahead of them.",
+            "Everyone has a choice; the one I make is always right though."
+        ],
+        "Ideal": [
+            "Hope. I know even if I need to do evil acts, history will be my redemption. (Chaotic)",
+            "Dedicated. I can do anything I put my mind to. (Lawful)",
+            "Exciting. I have found the truth of the Shadovar and want to share it with everyone. (Any)",
+            "Frugal. I horde my possessions knowing that someday I will be called upon to give everything I have to the cause. (Any)",
+            "Eloquent. I use my words to sway others to my beliefs. (Any)",
+            "Compassionate. It is through love that others will join our cause. (Good)"
+        ],
+        "Bond": [
+            "They say the Shade broke the bonds of mortality; I want to find out how.",
+            "The whispers in my head remind me that t here is power to be found in the shadows.",
+            "For the glory of the Netheril, I will grow in power.",
+            "I once lived in Hillsfar; I was chased out before I was able to say farewell.",
+            "My true love was killed by the Red Plumes; I plot to make them suffer.",
+            "I had a loved one die in the Arena of Hillsfar; I am out to prove that I am stronger than them!"
+        ],
+        "Flaw": [
+            "I always overexaggerate my abilities.",
+            "I cannot bear to let those I care for out of my sight.",
+            "I am incapable of standing up for myself.",
+            "The group I am with has committed atrocities; I am always worried their actions will become public.",
+            "I always enjoy a good mug of ale... or five.",
+            "I know what I do is wrong, but I am afraid to speak up about it."
+        ],
+        "Gear": [
+            "Forgery Kit",
+            "Transparent Cylinder of Shadow with No Opening",
+            "Signet Ring",
+            "Set of Fine Clothes",
+            "15 GP"
+        ],
+        "Features": [
+            "Secret Society"
+        ],
+        "Skills": [
+            "Deception",
+            "Intimidation"
+        ],
+        "Tools": [
+            "Forgery Kit"
+        ],
+        "Languages": [
+            "Netherese"
+        ]
+    },
+    "Trade Sheriff": {
+        "Trait": [
+            "I am always polite and respectful.",
+            "I let my actions speak for themselves.",
+            "I am haunted by my past having seen the murder of a close friend or family member, and it is the one case I always needed to solve but have not been able to.",
+            "I am quick to judge and slow to vindicate.",
+            "I can be very persuasive and am able to ask questions where others might not be able to.",
+            "I have a quirky personality that seems to take others off their guard.",
+            "My sense of humor is considered by most to be awkward.",
+            "Everyone has a choice, and they can always make the right choice: mine!"
+        ],
+        "Ideal": [
+            "Hope. My job is to speak for the victim. (Good)",
+            "Dedicated. Once I start an investigation, until told to do so, I do not quit; no matter where it leads. (Lawful)",
+            "Nation. My city, nation, or people are all that matter. (Any)",
+            "Mercenary. When I do investigations, I expect answers immediately. (Any)",
+            "Eloquent. I use my words to sway others to give me answers. (Good)",
+            "Might. It is through threats and force that I get my answers. (Lawful)"
+        ],
+        "Bond": [
+            "To this day, an unsolved case will always leave me haunted and bother me.",
+            "Through the might of my personality, I will solve an investigation or puzzle.",
+            "It is my right to believe what I will, just try to stop me.",
+            "I need to prove my worth to my fellow Sheriffs.",
+            "Someone I cared for died under suspicious circumstances. I will find out what happened to them and bring their killer to justice.",
+            "I speak for those that cannot speak for themselves."
+        ],
+        "Flaw": [
+            "I always overexaggerate my abilities.",
+            "I cannot bear to let those I care for out of my sight.",
+            "I took a bribe to tank an investigation and I would do anything to keep it secret.",
+            "I have little respect for those that are of \"low\" intelligence or race",
+            "I always enjoy a good mug of ale... or five to cover up my past.",
+            "I speak for the First Lord of Hillsfar and make sure everyone knows it."
+        ],
+        "Gear": [
+            "Thieves' Tools",
+            "Gray Cloak",
+            "Sheriff's Insignia or Badge",
+            "Set of Fine Clothes",
+            "17 GP"
+        ],
+        "Features": ["Investigate Services"],
+        "Skills": ["Investigation", "Persuasion"],
+        "Tools": ["Thieves' Tools"],
+        "Languages": ["Elvish"]
+    },
+    "Celebrity Adventurer's Scion": {
+        "Trait": [
+            "I will never get out of my famous parent's shadow, and no one else will ever understand this burden.",
+            "I've seen enough of the adventuring life to have realistic expectations and empathy for my peers.",
+            "Living up to my legacy will be difficult, but I'm going to do it.",
+            "I'm used to the very best in life, and that's a hard habit to break.",
+            "My parent taught me a sense of duty. I strive to uphold it, even when the odds are against me.",
+            "No one can fake a smile, a handshake, or an interested nod like I can.",
+            "I've been part of the adventuring life since I was old enough to walk. Let me explain a few things to you.",
+            "No risk is too great for the rewards of defeating my enemies … and taking their stuff."
+        ],
+        "Ideal": [
+            "Power. The only way to get ahead in this world is to attain power and hold onto it with all your might. (Evil)",
+            "Peace. Those who can find or make peace in the chaotic world around them have everything. (Lawful)",
+            "Fame. I've seen what fame can bring. And I'll do anything to get all that for myself. (Neutral)",
+            "Training. Hard work, sacrifice, and training lead to success - and eventually to perfection. (Any)",
+            "Anonymity. I want to be successful. And alone. With lots of guards and wards between me and everyone else in the world. (Any)",
+            "Wisdom. Material wealth is an illusion. Wisdom is the real treasure. (Good)"
+        ],
+        "Bond": [
+            "While my parent was out adventuring, a servant raised me, and I care about that person more than anyone.",
+            "I consider every member of my parent's former adventuring party to be family.",
+            "Despite their absences, my famous parent was kind and generous. I love them and want to make them proud.",
+            "My parent once brought a cursed magic item home. It is my obsession.",
+            "My childhood home holds all my best memories, and its upkeep is my primary concern.",
+            "Growing up, I had an imaginary friend I could always count on. That friend is still with me."
+        ],
+        "Flaw": [
+            "You don't know what I'm going through. You never can.",
+            "You. Fetch my cloak. And maybe rub my feet for a while.",
+            "My comrades are brave, but I must defeat this threat alone to prove my worth.",
+            "Oh, yeah, that spell? Named after my parent's best friend. Let me tell you about them.",
+            "My best days are behind me. Ahead lies only toil, pain, and death.",
+            "You have to look out for yourself. No one else will."
+        ],
+        "Gear": [
+            "Disguise Kit",
+            "Set of Fine Clothes",
+            "30 GP"
+        ],
+        "Features": ["Name Dropping"],
+        "Skills": ["Perception", "Performance"],
+        "Tools": ["Disguise Kit"],
+        "Languages": ["Language Choice", "Language Choice"]
+    },
+    "Failed Merchant": {
+        "Trait": [
+            "I didn't have the cutthroat attitude necessary to succeed. I won't make that mistake again.",
+            "Even my competitors said I was affable and talented. Those traits should serve me well.",
+            "To prosper, you have to be in control.",
+            "The customer is always right.",
+            "I was cutting corners and breaking deals to maximize profit. That's why I failed.",
+            "When I get an idea, I am single-minded in its execution - even if it's a terrible idea.",
+            "If I can be everyone's friend, I'll always have support.",
+            "My heart wasn't in being a merchant, so I failed. I'm not all that keen on adventuring either, but I need the money."
+        ],
+        "Ideal": [
+            "Survival. Where there's life, there's hope. If I remain alive and flexible, I can succeed. (Any)",
+            "Generosity. People helped me when I was down. Now that I'm back on my feet, I'll pay it forward. (Good)",
+            "Excitement. Caution got me nowhere in my previous business. I'm not going to let it hold me back now. (Chaotic)",
+            "Wealth. With enough coin, I can buy comfort, power, knowledge, and even eternal life. Nothing will stand between me and money. (Evil)",
+            "Stability. The mercantile trade was too chaotic for me. I need a nice stable profession, like adventuring. (Lawful)",
+            "Redemption. Too many people consider me a failure. So I need to prove them wrong. (Any)"
+        ],
+        "Bond": [
+            "My family means everything to me. I failed them before, and I must not do so again.",
+            "My church provides a connection to my god, so I must ensure that it is protected and funded.",
+            "My former business partner fell ill, and then our business failed. Part of my new venture involves earning enough to take care of their family.",
+            "If I take care of my possessions, they'll take care of me. People come and go, but a weapon or a wand is something you can always rely on.",
+            "Although my business failed, the people of my community were kind to me. I'll do everything in my power to protect them.",
+            "I owe a dangerous person a lot of money. As long as they're happy, they let my debt rest unpaid."
+        ],
+        "Flaw": [
+            "Why spend gold here when you can buy the same thing for copper in the next town?",
+            "I must have the best of everything. Like, right now.",
+            "You haven't heard of me? I'm sure that's because of your ignorance and low breeding.",
+            "I failed, but I'm awesome. So when anyone else is successful, it must be because of nepotism, dishonesty, or dumb luck.",
+            "I find that most people are trustworthy. Hey, where's my belt pouch?",
+            "Nothing gets between me and danger except my fellow adventurers. So I'll be sure to put them there."
+        ],
+        "Gear": [
+            "Artisan Choice",
+            "Merchant's Scale",
+            "Set of Fine Clothes",
+            "10 GP"
+        ],
+        "Features": ["Supply Chain"],
+        "Skills": ["Investigation", "Persuasion"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
+    },
+    "Gambler": {
+        "Trait": [
+            "I plan for every contingency. Leave nothing to chance!",
+            "Every copper wants to be a silver. Each bet is an opportunity.",
+            "I'm one of Lady Luck's favored. Anything I try is destined to succeed.",
+            "I've lost so much to gambling that I refuse to spend money on anything anymore.",
+            "Nothing is certain. Planning is a coward's act.",
+            "I can't be sure who I've swindled, cheated, or defeated, so I keep a low profile in public.",
+            "The perfect bet is out there somewhere. I just have to keep my eyes open.",
+            "I have beaten my addiction, but all it takes is one weak moment and I'll be back at the card table."
+        ],
+        "Ideal": [
+            "Knowledge. Knowledge is power, and knowing which horse to back is the key to success. (Any)",
+            "Fate. Whatever happens is fated, regardless of any planning or striving. (Lawful)",
+            "Bravery. If you want to succeed, you have to take risks. (Chaotic)",
+            "Survival. You can't win if you're dead. Live to fight another day - when the odds might be more in your favor. (Any)",
+            "Reliability. When I was in need, I was able to rely on others. Now I want to be the one others rely on. (Good)",
+            "Victory. Winning is the real measure of a person. In the end, the only thing that matters is the scoreboard. (Evil)"
+        ],
+        "Bond": [
+            "One person in particular owes me a lot of money, and I need to keep them alive if I want to be repaid.",
+            "I'm loyal to the friend or family member who taught me how to gamble.",
+            "The person who saved me from my gambling addiction is the only reason I'm alive today.",
+            "A patron once fronted me money in exchange for a percentage of my winnings. I owe them a debt of gratitude. And a lot of cash.",
+            "A criminal syndicate I once played for isn't happy I left the game, and its enforcers are looking for me.",
+            "Urchins once helped me find marks for my games. Now I'm driven to help them escape the streets."
+        ],
+        "Flaw": [
+            "I don't know when to quit. Especially when everyone else is telling me to.",
+            "I save my sympathy for my friends, and I have no friends.",
+            "You think we're in trouble now? Let me tell you how bad things are likely to get!",
+            "You can loan me a little, right? I've got a sure thing. I'll double your money, guaranteed.",
+            "I was once a terribly flawed person, like you. Let me tell you how you can save yourself.",
+            "I'm a great gambler. I'm just bad at math and logic."
+        ],
+        "Gear": [
+            "Gaming Set Choice",
+            "Lucky Charm",
+            "Set of Fine Clothes",
+            "15 GP"
+        ],
+        "Features": ["Never Tell Me the Odds"],
+        "Skills": ["Deception", "Insight"],
+        "Tools": ["Gaming Set Choice"],
+        "Languages": ["Language Choice"]
+    },
+    "Plaintiff": {
+        "Trait": [
+            "I can't believe I have a chance to join Acquisitions Incorporated! The fun I'm going to have!",
+            "I've been wronged my entire life, and the world owes me.",
+            "I have always tried to make the best of a bad situation.",
+            "The law doesn't protect the honest and the hard working. I'm going to do whatever needs to be done to make things right.",
+            "I'm always in the wrong place at the wrong time.",
+            "My superiors are smarter and wiser than I am. I do what I'm told.",
+            "Never pass up the opportunity to make an easy bit of coin. That's my motto.",
+            "I'm beginning to feel like the gods are not on my side."
+        ],
+        "Ideal": [
+            "Justice. Those who break the law need to answer for their crimes. (Lawful)",
+            "Freedom. People must have the freedom to do what they want and pursue their dreams. (Chaotic)",
+            "Greed. Everyone I see is getting theirs, so I'm surely going to get mine. (Evil)",
+            "Chaos. You're out of order! And you're out of order! This whole realm is out of order! (Chaotic)",
+            "Humility. I'm just a small part of a larger whole. So is everyone else. (Neutral)",
+            "Responsibility. We all have our roles to play. I'll hold up my end of the bargain. (Any)"
+        ],
+        "Bond": [
+            "Others hurt in the same accident that hurt me are my new family. I'll make sure they're taken care of.",
+            "The rulers of this place were kind to me, and they have my lifelong devotion.",
+            "My parents worry about me, but I'll make them proud.",
+            "The only bond that matters is the one holding my money pouch to my belt.",
+            "The other new hires at Acquisitions Incorporated are my allies. We have each other's backs.",
+            "My legal counsel is my best friend. I owe all my forthcoming opportunities to their hard work."
+        ],
+        "Flaw": [
+            "The person who gains the most reward for the least effort wins.",
+            "Three magic beans for just one cow? What a deal!",
+            "I have only one vice, but it controls my life.",
+            "Sleep is for the weak. We need to keep training more if we're going to be ready for the challenges ahead.",
+            "Until my songs are sung in every tavern in this realm, I won't be satisfied.",
+            "If people find me unpleasant, that's their problem."
+        ],
+        "Gear": [
+            "Artisan Choice",
+            "Set of Fine Clothes",
+            "20 GP"
+        ],
+        "Features": ["Legalese"],
+        "Skills": ["Medicine", "Persuasion"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
+    },
+    "Rival Intern": {
+        "Trait": [
+            "My previous employer didn't respect me, and now I'll do whatever I can to gain respect.",
+            "The job is important, but the relationships I forge with my coworkers are even more so.",
+            "The job is everything to me. Who needs relaxation, hobbies, and a social life?",
+            "I know I'm not the best and brightest, but if I put my best self forward, I can overcome anything.",
+            "My former boss was an idiot. So was my boss before that. And before that. I'm sure those were all coincidences.",
+            "This company is so much better than my previous one. It will always be the best until they stop paying me.",
+            "I know this dagger belongs to the company, but I'm sure they won't miss it. Or this flask. Or this armor.",
+            "It's only a matter of time before I'll be upper management. I just have to kiss up to my superiors and kick down those beneath me."
+        ],
+        "Ideal": [
+            "Advancement. Money and power can be gained more easily within an organization. I plan to gain as much as possible. (Evil)",
+            "Structure. Life goes much more smoothly when you follow the rules and work within a system. (Lawful)",
+            "Uncertainty. The more chaos that swirls around me, the more opportunities I can find to profit. (Chaotic)",
+            "Justice. I can't stand people being treated unjustly. I do whatever it takes to stop injustice and those who flout the law. (Lawful)",
+            "Pleasure. What's the use of working hard and making money if you can't enjoy the finer things in life? (Any)",
+            "Power. Money is fine, but real power means never having to say you're sorry. (Evil)"
+        ],
+        "Bond": [
+            "I have a family member in need. I consider them in everything I do.",
+            "My peers keep me grounded.",
+            "My past mistakes cost someone else dearly. I have to rectify that.",
+            "A childhood mentor put me on my current path. If I succeed, I want to repay that mentor in some way.",
+            "I value an oath of loyalty I took to a group of friends over everything else in my life.",
+            "Although I don't get along well with people, my pet means the world to me."
+        ],
+        "Flaw": [
+            "I know what's best. Trust me.",
+            "Flaw? I have no flaws. I'm perfect.",
+            "My loyalties are … fluid.",
+            "If anything goes wrong, it must be someone else's fault. Let me explain that in detail.",
+            "There's right and there's wrong, and there's no gray area in between.",
+            "Our superiors might not like what you're doing. I'm going to have to put that in my report."
+        ],
+        "Gear": [
+            "Artisan Choice",
+            "Ledger from Previous Employer",
+            "Set of Fine Clothes",
+            "10 GP"
+        ],
+        "Features": ["Inside Informant"],
+        "Skills": ["History", "Investigation"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
     }
 }
 
