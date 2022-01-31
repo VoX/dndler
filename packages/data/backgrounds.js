@@ -41,6 +41,18 @@ const backgrounds = {
             "Vestments",
             "Set of Common Clothes",
             "15 GP"
+        ],
+        "Features": [
+            "Shelter of the Faithful"
+        ],
+        "Skills": [
+            "Insight",
+            "Religion"
+        ],
+        "Tools": [],
+        "Languages": [
+            "Language Choice",
+            "Language Choice"
         ]
     },
     "Charlatan": {
@@ -91,7 +103,11 @@ const backgrounds = {
             "Disguise Kit",
             "Tools of your Preferred Con",
             "15 GP"
-        ]
+        ],
+        "Features": ["Favorite Scheme", "False Identity"],
+        "Skills": ["Deception", "Sleight"],
+        "Tools": ["Disguise Kit", "Forgery Kit"],
+        "Languages": []
     },
     "Criminal": {
         "Specialty": [
@@ -142,7 +158,14 @@ const backgrounds = {
             "Crowbar",
             "Set of Dark Common Clothes with a Hood",
             "15 GP"
-        ]
+        ],
+        "Features": ["Criminal Contact"],
+        "Skills": ["Deception", "Stealth"],
+        "Tools": ["Gaming Set Choice", "Thieves' Tools"],
+        "Languages": [],
+        "Variants": {
+            "Spy": {}
+        }
     },
     "Entertainer": {
         "Routine": [
@@ -196,7 +219,21 @@ const backgrounds = {
             "Favor of an Admirer",
             "Costume",
             "15 GP"
-        ]
+        ],
+        "Features": ["By Popular Demand"],
+        "Skills": ["Acrobatics", "Performance"],
+        "Tools": ["Disguise Kit", "Instrument Choice"],
+        "Languages": [],
+        "Variants": {
+            "Gladiator": {
+                "Gear": [
+                    "Inexpensive but Unusual Weapon",
+                    "Favor of an Admirer",
+                    "Costume",
+                    "15 GP"
+                ]
+            }
+        }
     },
     "Folk Hero": {
         "Defining event": [
@@ -251,7 +288,11 @@ const backgrounds = {
             "Iron Pot",
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Defining Event", "Rustic Hospitality"],
+        "Skills": ["Animal", "Survival"],
+        "Tools": ["Artisan Choice", "Land Vehicles"],
+        "Languages": []
     },
     "Gladiator": {
         "Routine": [
@@ -369,7 +410,23 @@ const backgrounds = {
             "Letter of Introduction from Guild",
             "Set of Traveler's Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": ["Guild Membership"],
+        "Skills": ["Insight", "Persuasion"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"],
+        "Variants": {
+            "Guild Merchant": {
+                "Tools": [["Artisan Choice", "Navigator's Tools"]],
+                "Languages": ["Language Choice", ["Language Choice", "Language Choice"]],
+                "Gear": [
+                    "Mule and Cart",
+                    "Letter of Introduction from Guild",
+                    "Set of Traveler's Clothes",
+                    "15 GP"
+                ]
+            }
+        }
     },
     "Guild Merchant": {
         "Guild business": [
@@ -486,7 +543,11 @@ const backgrounds = {
             "Set of Common Clothes",
             "Herbalism Kit",
             "5 GP"
-        ]
+        ],
+        "Features": ["Discovery"],
+        "Skills": ["Medicine", "Religion"],
+        "Tools": ["Herbalism Kit"],
+        "Languages": ["Language Choice"]
     },
     "Knight": {
         "Trait": [
@@ -528,7 +589,11 @@ const backgrounds = {
             "Signet Ring",
             "Scroll of Pedigree",
             "25 GP"
-        ]
+        ],
+        "Features": [],
+        "Skills": ["Persuasion", ["Arcana", "History", "Nature", "Religion"]],
+        "Tools": [["Gaming Set Choice", "Instrument Choice"]],
+        "Languages": ["Language Choice"]
     },
     "Noble": {
         "Trait": [
@@ -570,7 +635,11 @@ const backgrounds = {
             "Signet Ring",
             "Scroll of Pedigree",
             "25 GP"
-        ]
+        ],
+        "Features": ["Position of Privilege"],
+        "Skills": ["History", "Persuasion"],
+        "Tools": ["Gaming Set Choice"],
+        "Languages": ["Language Choice"]
     },
     "Outlander": {
         "Origin": [
@@ -625,7 +694,11 @@ const backgrounds = {
             "Trophy of a Slain Animal",
             "Set of Traveler's Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Wanderer"],
+        "Skills": ["Athletics", "Survival"],
+        "Tools": ["Instrument Choice"],
+        "Languages": ["Language Choice"]
     },
     "Pirate": {
         "Trait": [
@@ -765,7 +838,16 @@ const backgrounds = {
             "Lucky Charm",
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Ship's Passage"],
+        "Skills": ["Athletics", "Perception"],
+        "Tools": ["Navigator's Tools", "Water Vehicles"],
+        "Languages": [],
+        "Variants": {
+            "Pirate": {
+                "Features": [["Ship's Passage", "Bad Reputation"]]
+            }
+        }
     },
     "Soldier": {
         "Role": [
@@ -815,10 +897,14 @@ const backgrounds = {
         "Gear": [
             "Insignia of Rank",
             "Trophy from a Fallen Enemy",
-            "Set of Bone Dice or Deck of Cards",
+            ["Set of Bone Dice", "Deck of Cards"],
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Military Rank"],
+        "Skills": ["Athletics", "Intimidation"],
+        "Tools": ["Gaming Set Choice", "Land Vehicles"],
+        "Languages": []
     },
     "Spy": {
         "Specialty": [
@@ -954,7 +1040,14 @@ const backgrounds = {
             "Set of Traveler's Clothes",
             "Trinket of Special Significance",
             "10 GP"
-        ]
+        ],
+        "Features": [
+            "Cultural Chameleon",
+            "Adept Linguist"
+        ],
+        "Skills": ["Insight", "Religion"],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Archaeologist": {
         "Signature Item": [
@@ -1010,7 +1103,11 @@ const backgrounds = {
             "Two-Person Tent",
             "Trinket from a Dig Site",
             "25 GP"
-        ]
+        ],
+        "Features": ["Dust Digger", "Historical Knowledge"],
+        "Skills": ["History", "Survival"],
+        "Tools": [["Cartographer's Tools", "Navigator's Tools"]],
+        "Languages": ["Language Choice"]
     },
     "Athlete": {
         "Favored Event": [
@@ -1062,7 +1159,11 @@ const backgrounds = {
             ["Lucky Charm", "Past Trophy"],
             "Set of Traveler's Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Favored Event", "Echoes of Victory"],
+        "Skills": ["Acrobatics", "Athletics"],
+        "Tools": ["Land Vehicles"],
+        "Languages": ["Language Choice"]
     },
     "City Watch": {
         "Role": [
@@ -1114,7 +1215,16 @@ const backgrounds = {
             "Horn with which to Summon Help",
             "Set of Manacles",
             "10 GP"
-        ]
+        ],
+        "Features": ["Watcher's Eye"],
+        "Skills": ["Athletics", "Insight"],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"],
+        "Variants": {
+            "Investigator": {
+                "Skills": ["Investigation", "Insight"]
+            }
+        }
     },
     "Clan Crafter": {
         "Clan business": [
@@ -1179,7 +1289,11 @@ const backgrounds = {
             "Set of Traveler's Clothes",
             "Gem worth 10 GP",
             "5 GP"
-        ]
+        ],
+        "Features": ["Respect of the Stout Folk"],
+        "Skills": ["History", "Insight"],
+        "Tools": ["Artisan Choice"],
+        "Languages": [["Dwarvish", "Language Choice"]]
     },
     "Cloistered Scholar": {
         "Field of study": [
@@ -1231,7 +1345,11 @@ const backgrounds = {
             "Writing Kit",
             "Borrowed Book of your Current Study",
             "10 GP"
-        ]
+        ],
+        "Features": ["Library Access"],
+        "Skills": ["History", ["Arcana", "Nature", "Religion"]],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Courtier": {
         "Guild business": [
@@ -1293,7 +1411,11 @@ const backgrounds = {
         "Gear": [
             "Set of Fine Clothes",
             "5 GP"
-        ]
+        ],
+        "Features": ["Court Functionary"],
+        "Skills": ["Insight", "Persuasion"],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Faceless": {
         "Faceless Persona": [
@@ -1346,7 +1468,11 @@ const backgrounds = {
             "Disguise Kit",
             "Costume",
             "10 GP"
-        ]
+        ],
+        "Features": ["Dual Personalities"],
+        "Skills": ["Deception", "Intimidation"],
+        "Tools": ["Disguise Kit"],
+        "Languages": ["Language Choice"]
     },
     "Faction Agent": {
         "Trait": [
@@ -1388,7 +1514,11 @@ const backgrounds = {
             "Copy of a Seminal Faction Text or Code-Book",
             "Set of Common Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": ["Factions of the Sword Coast", "Safe Haven"],
+        "Skills": ["Insight", ["Intelligence", "Wisdom", "Charisma"]],
+        "Tools": [],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Far Traveler": {
         "Reason for coming": [
@@ -1437,7 +1567,11 @@ const backgrounds = {
             "Poorly Wrought Maps from Hometown",
             "Small Jewelery from your Hometown worth 10 GP",
             "5 GP"
-        ]
+        ],
+        "Features": ["Why Are You Here?", "Where Are You From?", "All Eyes on You"],
+        "Skills": ["Insight", "Perception"],
+        "Tools": [["Instrument Choice", "Gaming Set Choice"]],
+        "Languages": ["Language Choice"]
     },
     "Fisher": {
         "Fisher Tale": [
@@ -1490,7 +1624,11 @@ const backgrounds = {
             ["Favorite Fishing Lure", "Oiled Leather Wading Boots"],
             "Set of Traveler's Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Harvest the Water", "Fishing Tale"],
+        "Skills": ["History", "Survival"],
+        "Tools": [],
+        "Languages": ["Language Choice"]
     },
     "Haunted One": {
         "Harrowing Event": [
@@ -1544,7 +1682,14 @@ const backgrounds = {
             "Trinket of Special Significance",
             "Set of Common Clothes",
             "1 SP"
-        ]
+        ],
+        "Features": ["Heart of Darkness"],
+        "Skills": [
+            ["Arcana", "Investigation", "Religion", "Survival"],
+            ["Arcana", "Investigation", "Religion", "Survival"]
+        ],
+        "Tools": [],
+        "Languages": ["Exotic Language Choice", "Language Choice"]
     },
     "House Agent": {
         "Role": [
@@ -1594,7 +1739,11 @@ const backgrounds = {
             "Signet Ring of your House",
             "Identification Papers",
             "20 GP"
-        ]
+        ],
+        "Features": ["House Connection"],
+        "Skills": ["Investigation", "Persuasion"],
+        "Tools": [],
+        "Languages": []
     },
     "Inheritor": {
         "Inheritance Clue": [
@@ -1643,7 +1792,11 @@ const backgrounds = {
         "Gear": [
             "Set of Traveler's Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": [],
+        "Skills": ["Survival", ["Arcana", "History", "Religion"]],
+        "Tools": [["Gaming Set Choice", "Instrument Choice"]],
+        "Languages": ["Language Choice"]
     },
     "Knight of the Order": {
         "Specialty": [
@@ -1746,7 +1899,11 @@ const backgrounds = {
             "Folded Rag with Symbol of Ship or Company",
             "Set of Traveler's Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Steady"],
+        "Skills": ["Athletics", "Survival"],
+        "Tools": ["Land Vehicles", "Water Vehicles"],
+        "Languages": []
     },
     "Mercenary Veteran": {
         "Specialty": [
@@ -1798,7 +1955,11 @@ const backgrounds = {
             "Insignia of Rank",
             "Gaming Set",
             "10 GP"
-        ]
+        ],
+        "Features": [],
+        "Skills": ["Athletics", "Persuasion"],
+        "Tools": ["Gaming Set Choice", "Land Vehicles"],
+        "Languages": []
     },
     "Shipwright": {
         "Seas Influence": [
@@ -3398,6 +3559,6 @@ const backgrounds = {
             "10 GP"
         ]
     }
-};
+}
 
 export default backgrounds;
