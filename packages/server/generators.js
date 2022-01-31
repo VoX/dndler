@@ -297,6 +297,7 @@ const generateClass = () => {
   return classchoice;
 };
 
+// calculates hit dice available based on class and level
 const calcHitDice = (classChoice, level) => {
   let hitDice = level + classes[classChoice]["HitDice"];
   return hitDice;
@@ -305,7 +306,7 @@ const calcHitDice = (classChoice, level) => {
 // generates background
 const generateBackground = () => {
   let background = sample(Object.keys(backgrounds));
-  // let background = "Witchlight Hand";
+  // let background = "Knight of the Order";
   let bgObject = {
     Name: background
   };
@@ -313,7 +314,11 @@ const generateBackground = () => {
     bgObject["House"] = "House " + sample(names['Last']);
   }
   Object.keys(backgrounds[background]).forEach(k => bgObject[k] = sample(backgrounds[background][k]));
-  bgObject['Gear'] = backgrounds[background]['Gear'];
+  bgObject["Gear"] = backgrounds[background]["Gear"];
+  bgObject["Features"] = backgrounds[background]["Features"];
+  bgObject["Skills"] = backgrounds[background]["Skills"];
+  bgObject["Tools"] = backgrounds[background]["Tools"];
+  bgObject["Languages"] = backgrounds[background]["Languages"];
   return bgObject;
 };
 
@@ -361,7 +366,7 @@ const equipmentReplace = (item) => {
 };
 
 // generate equipment list based on class and background
-const generateEquipment = (classChoice, bgChoice) => {
+const generateEquipment = (classChoice, bgObject) => {
   let needSwap = [
     "Simple",
     "Simple Melee",
@@ -374,7 +379,7 @@ const generateEquipment = (classChoice, bgChoice) => {
   ];
   let equipment = [];
   equipment.push(classes[classChoice]["Equipment"]);
-  equipment.push(bgChoice["Gear"]);
+  equipment.push(bgObject["Gear"]);
   equipment = flatten(equipment);
   for (let item in equipment) {
     if (Array.isArray(equipment[item])) {
@@ -407,14 +412,45 @@ const calcProfBonus = (charLevel) => {
   return profBonus;
 };
 
+// check if two arrays share any element(s)
+const sharesElement = (array1, array2) => {
+  let shares = false;
+  for (let index in array1) {
+    if (array2.includes(array1[index])) {
+      shares = true;
+      break;
+    }
+  }
+  return shares;
+}
+
 // choose skill proficiencies based on class and background
-// note: add bgChoice to arguments here after adding necessary data
-const chooseProficientSkills = (classChoice) => {
-  let proficientSkills = [];
-  let skillOptions = classes[classChoice]["Proficiencies"]["Skills"]["Choices"];
+const chooseProficientSkills = (classChoice, bgObject) => {
+  //console.log("")
+  //console.log("Class: " + classChoice);
+  //console.log("Background: " + bgObject["Name"]);
+  let bgSkills = bgObject["Skills"];
+  //console.log("From BG: " + bgSkills);
+  for (let index in bgSkills) {
+    if (Array.isArray(bgSkills[index])) {
+      bgSkills[index] = sample(bgSkills[index]);
+    };
+  };
+  //console.log("From BG (after choices): " + bgSkills);
+  let classSkillOptions = classes[classChoice]["Proficiencies"]["Skills"]["Choices"];
   let numChoices = classes[classChoice]["Proficiencies"]["Skills"]["numChoices"];
-  proficientSkills.push(sampleSize(skillOptions, numChoices));
+  //console.log("From class: " + numChoices + " choices out of " + classSkillOptions);
+  let classSkills = sampleSize(classSkillOptions, numChoices);
+  //console.log("From class (after choices): " + classSkills);
+  //console.log(sharesElement(bgSkills, classSkills));
+  while (sharesElement(bgSkills, classSkills)) {
+    classSkills = sampleSize(classSkillOptions, numChoices);
+    //console.log("From class (after choices): " + classSkills);
+  }
+  //console.log(sharesElement(bgSkills, classSkills));
+  let proficientSkills = bgSkills.concat(classSkills);
   proficientSkills = flatten(proficientSkills);
+  //console.log(proficientSkills);
   return proficientSkills;
 };
 
@@ -444,10 +480,10 @@ const chooseOtherProficiencies = (classChoice, bgChoice) => {
 };
 
 // generate skills object based on proficiencies selected
-const generateProficiency = (modObject, classChoice, bgChoice, charLevel) => {
+const generateProficiency = (modObject, classChoice, bgObject, charLevel) => {
   let profBonus = calcProfBonus(charLevel);
-  let proficientSkills = chooseProficientSkills(classChoice);
-  let otherProficiencies = chooseOtherProficiencies(classChoice, bgChoice);
+  let proficientSkills = chooseProficientSkills(classChoice, bgObject);
+  let otherProficiencies = chooseOtherProficiencies(classChoice, bgObject);
   let proficientThrows = classes[classChoice]["Proficiencies"]["Saving Throws"];
   let savingThrows = {
     "STR": modObject["STR"],
