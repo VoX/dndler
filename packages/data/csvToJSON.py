@@ -1,6 +1,10 @@
 import pandas as pd
 import json
 
+## BACKGROUNDS CSV TO JSON
+# read in csv as df
+backgrounds_df = pd.read_csv('backgrounds.csv', index_c)
+
 ## NAMES CSV TO JSON
 # read in names csv
 names = pd.read_csv('./src/data/names.csv')

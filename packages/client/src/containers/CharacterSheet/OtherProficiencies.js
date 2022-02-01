@@ -11,7 +11,7 @@ class OtherProficiencies extends React.Component
             rows.push(<ProficiencyEntry
                 key={prof}
                 category={prof}
-                entries={this.props.proficiencies[prof][0]}
+                entries={this.props.proficiencies[prof]}
             />);
         }
         return rows;

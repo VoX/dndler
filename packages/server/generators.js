@@ -292,8 +292,8 @@ const generateRace = () => {
 
 // generates class
 const generateClass = () => {
-  let classchoice = sample(Object.keys(classFeatures));
-  // let classchoice = "Bard"
+  // let classchoice = sample(Object.keys(classFeatures));
+  let classchoice = "Monk"
   return classchoice;
 };
 
@@ -455,26 +455,23 @@ const chooseProficientSkills = (classChoice, bgObject) => {
 };
 
 const chooseOtherProficiencies = (classChoice, bgChoice) => {
-  let needSwap = [
+  /*let needSwap = [
     "Artisan Choice",
     "Instrument Choice",
     "Language Choice"
-  ];
+  ];*/
+  /*
+  let otherProficiencies = {
+    Armor: ["ARMOR1", "ARMOR2"],
+    Weapons: ["WEAPON1", "WEAPON2"],
+    Tools: ["TOOL1", "TOOL2"],
+    Languages: ["LANGUAGE1", "LANGUAGE2"]
+  }; */
   let otherProficiencies = {
     Armor: [],
     Weapons: [],
-    Tools: []
-  };
-  for (let prof in classes[classChoice]["Proficiencies"]) {
-    if (prof === "Armor") {
-      otherProficiencies["Armor"].push(classes[classChoice]["Proficiencies"][prof]);
-    };
-    if (prof === "Weapons") {
-      otherProficiencies["Weapons"].push(classes[classChoice]["Proficiencies"][prof]);
-    };
-    if (prof === "Tools") {
-      otherProficiencies["Tools"].push(classes[classChoice]["Proficiencies"][prof]);
-    };
+    Tools: [],
+    Languages: []
   };
   return otherProficiencies;
 };
