@@ -9,7 +9,8 @@ import {
   races,
   classes,
   classFeatures,
-  equipment
+  equipment,
+  miscRollTable
 } from '../data/data.js';
 
 // array of ability score abbreviations
@@ -292,8 +293,8 @@ const generateRace = () => {
 
 // generates class
 const generateClass = () => {
-  // let classchoice = sample(Object.keys(classFeatures));
-  let classchoice = "Monk"
+  let classchoice = sample(Object.keys(classFeatures));
+  // let classchoice = "Monk"
   return classchoice;
 };
 
@@ -352,11 +353,23 @@ const equipmentReplace = (item) => {
       choice = sample(options);
       break;
     case 'Artisan Choice':
-      options = equipment["Artisan's Tools"];
+      options = miscRollTable["Artisan's Tools"];
       choice = sample(options);
       break;
     case 'Instrument Choice':
-      options = equipment["Musical Instruments"];
+      options = miscRollTable["Musical Instruments"];
+      choice = sample(options);
+      break;
+    case 'Gaming Set Choice':
+      options = miscRollTable["Gaming Sets"];
+      choice = sample(options);
+      break;
+    case 'Language Choice':
+      options = miscRollTable["Languages"];
+      choice = sample(options);
+      break;
+    case 'Exotic Language Choice':
+      options = miscRollTable["Exotic Languages"];
       choice = sample(options);
       break;
     default:
@@ -375,7 +388,8 @@ const generateEquipment = (classChoice, bgObject) => {
     "Martial Melee",
     "Martial Ranged",
     "Artisan Choice",
-    "Instrument Choice"
+    "Instrument Choice",
+    "Trinket Choice"
   ];
   let equipment = [];
   equipment.push(classes[classChoice]["Equipment"]);
@@ -455,23 +469,75 @@ const chooseProficientSkills = (classChoice, bgObject) => {
 };
 
 const chooseOtherProficiencies = (classChoice, bgChoice) => {
-  /*let needSwap = [
+  let needSwap = [
     "Artisan Choice",
     "Instrument Choice",
-    "Language Choice"
-  ];*/
-  /*
-  let otherProficiencies = {
-    Armor: ["ARMOR1", "ARMOR2"],
-    Weapons: ["WEAPON1", "WEAPON2"],
-    Tools: ["TOOL1", "TOOL2"],
-    Languages: ["LANGUAGE1", "LANGUAGE2"]
-  }; */
+    "Language Choice",
+    "Gaming Set Choice"
+  ];
   let otherProficiencies = {
     Armor: [],
     Weapons: [],
     Tools: [],
     Languages: []
+  };
+  for (let key of Object.keys(otherProficiencies)) {
+    switch (key) {
+      case 'Armor':
+        otherProficiencies[key] = classes[classChoice]["Proficiencies"][key];
+        otherProficiencies[key].forEach(function (item, index) {
+          if (Array.isArray(otherProficiencies[key][index])) {
+            otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
+          };
+        });
+        otherProficiencies[key].forEach(function (item, index) {
+          if (needSwap.includes(item)) {
+            otherProficiencies[index] = equipmentReplace(item);
+          };
+        });
+        break;
+      case 'Weapons':
+        otherProficiencies[key] = classes[classChoice]["Proficiencies"][key];
+        otherProficiencies[key].forEach(function (item, index) {
+          if (Array.isArray(otherProficiencies[key][index])) {
+            otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
+          };
+        });
+        otherProficiencies[key].forEach(function (item, index) {
+          if (needSwap.includes(item)) {
+            otherProficiencies[index] = equipmentReplace(item);
+          };
+        });
+        break;
+      case 'Tools':
+        let classTools = classes[classChoice]["Proficiencies"][key];
+        let bgTools = bgChoice[key];
+        otherProficiencies[key] = classTools.concat(bgTools);
+        otherProficiencies[key].forEach(function (item, index) {
+          if (Array.isArray(otherProficiencies[key][index])) {
+            otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
+          };
+        });
+        otherProficiencies[key].forEach(function (item, index) {
+          if (needSwap.includes(item)) {
+            otherProficiencies[key][index] = equipmentReplace(item);
+          };
+        });
+        break;
+      case 'Languages':
+        otherProficiencies[key] = bgChoice[key];
+        otherProficiencies[key].forEach(function (item, index) {
+          if (Array.isArray(otherProficiencies[key][index])) {
+            otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
+          };
+        });
+        otherProficiencies[key].forEach(function (item, index) {
+          if (needSwap.includes(item)) {
+            otherProficiencies[key][index] = equipmentReplace(item);
+          };
+        });
+        break;
+    };
   };
   return otherProficiencies;
 };
@@ -526,30 +592,42 @@ const generateProficiency = (modObject, classChoice, bgObject, charLevel) => {
   return profObject;
 };
 
+const generateFeatures = (classChoice, bgChoice, charLevel) => {
+  let iter = 1;
+  let features = bgChoice["Features"];
+  while (iter <= charLevel) {
+    features.push(classFeatures[classChoice][String(iter)]["Features"]);
+    iter += 1;
+  };
+  features = flatten(features);
+  return features;
+};
+
 //generates a full character sheet
 const generateAll = () => {
   let level = generateLevel(1,5);
   let race = generateRace();
   let name = generateName();
-  let classchoice = generateClass();
-  let hitdice = calcHitDice(classchoice, level);
+  let classChoice = generateClass();
+  let hitdice = calcHitDice(classChoice, level);
   let background = generateBackground();
-  let stats = generateStats(race, classchoice, true);
-  let equipment = generateEquipment(classchoice, background);
-  let armorclass = calcArmorClass(stats["Total Modifiers"], classchoice, equipment);
-  let profObject = generateProficiency(stats["Total Modifiers"], classchoice, background, level);
+  let stats = generateStats(race, classChoice, true);
+  let equipment = generateEquipment(classChoice, background);
+  let armorclass = calcArmorClass(stats["Total Modifiers"], classChoice, equipment);
+  let profObject = generateProficiency(stats["Total Modifiers"], classChoice, background, level);
+  let features = generateFeatures(classChoice, background, level);
 
   const characterJSON = {
     race: race,
     name: name,
-    class: classchoice,
+    class: classChoice,
     level: level,
     hitdice: hitdice,
-    hitpoints: calcHitpoints(stats["Total Modifiers"]['CON'], classchoice, level),
+    hitpoints: calcHitpoints(stats["Total Modifiers"]['CON'], classChoice, level),
     armorclass: armorclass,
     background: background,
     stats: stats,
-    features: [],
+    features: features,
     proficiency: profObject,
     equipment: equipment,
     spells: {},
