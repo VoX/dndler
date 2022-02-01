@@ -42,7 +42,6 @@ def classFeatures_to_csv():
     classFeatures_df.to_csv('classFeatures.csv')
 
 ## EQUIPMENT JSON TO CSV
-## THIS ONE DOESN'T WORK
 def equipment_to_csv():
     # read in json file as dict
     with open('equipment.json') as json_file:
@@ -51,6 +50,16 @@ def equipment_to_csv():
     equipment_df = pd.DataFrame.from_dict(equipment, 'index')
     # write df to csv
     equipment_df.to_csv('equipment.csv')
+
+## ROLLTABLES JSON TO CSV
+def rolltables_to_csv():
+    # read in json file as dict
+    with open('miscRollTable.json') as json_file:
+        rolltables = json.load(json_file)
+    # turn dict into df
+    rolltables_df = pd.DataFrame.from_dict(rolltables, 'index')
+    # write df to csv
+    rolltables_df.to_csv('miscRollTable.csv')
 
 ## NAMES JSON TO CSV
 def names_to_csv():
@@ -97,7 +106,8 @@ def all_to_csv():
     backgroundTraits_to_csv()
     classes_to_csv()
     classFeatures_to_csv()
-    # equipment_to_csv()
+    equipment_to_csv()
+    rolltables_to_csv()
     names_to_csv()
     races_to_csv()
     sourcebooks_to_csv()

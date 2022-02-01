@@ -43,15 +43,6 @@ const zipStats = (statArray) => {
   return zippedArray;
 };
 
-// generate stats, assigned randomly to ability scores
-const generateUnweightedStats = (raceChoice) => {
-  let baseStats = [roll4DropLowest(), roll4DropLowest(), roll4DropLowest(), roll4DropLowest(), roll4DropLowest(), roll4DropLowest()];
-  let totalStats = zipWith(baseStats, races[raceChoice]['bonuses'], add);
-  let totalModifiers = totalStats.map(i => calcModFromScore(i));
-  let statsObject = { baseStats: zipStats(baseStats), totalStats: zipStats(totalStats), totalModifiers: zipStats(totalModifiers) };
-  return statsObject;
-};
-
 // stat generator helper function
 const prioritizeStats = (sortedStats, priorityStats) => {
   let baseStats = [0, 0, 0, 0, 0, 0];
@@ -61,73 +52,6 @@ const prioritizeStats = (sortedStats, priorityStats) => {
   sortedStats = shuffle(sortedStats);
   remainingStats.forEach(stat => baseStats[stat] = sortedStats.shift());
   return baseStats;
-};
-
-// generate stats, assign with priority to certain scores, assign rest randomly
-const generateWeightedStats = (raceChoice, classChoice) => {
-  let baseStats = []
-  let sortedStats = [
-    roll4DropLowest(),
-    roll4DropLowest(),
-    roll4DropLowest(),
-    roll4DropLowest(),
-    roll4DropLowest(),
-    roll4DropLowest()
-  ];
-  sortedStats.sort(function (a, b) {
-    return a - b;
-  }).reverse();
-  switch (classChoice) {
-    case 'Artificer':
-      baseStats = prioritizeStats(sortedStats, [3, 1]);
-      break;
-    case 'Barbarian':
-      baseStats = prioritizeStats(sortedStats, [0, 2, 1]);
-      break;
-    case 'Bard':
-      baseStats = prioritizeStats(sortedStats, [5, 1]);
-      break;
-    case 'Cleric':
-      baseStats = prioritizeStats(sortedStats, [4, 2]);
-      break;
-    case 'Druid':
-      baseStats = prioritizeStats(sortedStats, [4, 2]);
-      break;
-    case 'Fighter':
-      baseStats = prioritizeStats(sortedStats, [0, 1, 2]);
-      break;
-    case 'Monk':
-      baseStats = prioritizeStats(sortedStats, [1, 4, 2]);
-      break;
-    case 'Paladin':
-      baseStats = prioritizeStats(sortedStats, [5, 0, 3]);
-      break;
-    case 'Ranger':
-      baseStats = prioritizeStats(sortedStats, [1, 4]);
-      break;
-    case 'Rogue':
-      baseStats = prioritizeStats(sortedStats, [1]);
-      break;
-    case 'Sorcerer':
-      baseStats = prioritizeStats(sortedStats, [5, 2]);
-      break;
-    case 'Warlock':
-      baseStats = prioritizeStats(sortedStats, [5, 1]);
-      break;
-    case 'Wizard':
-      baseStats = prioritizeStats(sortedStats, [3]);
-      break;
-    default:
-      break;
-  }
-  let totalStats = zipWith(baseStats, races[raceChoice]['bonuses'], add);
-  let totalModifiers = totalStats.map(i => calcModFromScore(i));
-  let statsObject = {
-    'Base Stats': zipStats(baseStats),
-    'Total Stats': zipStats(totalStats),
-    'Total Modifiers': zipStats(totalModifiers)
-  };
-  return statsObject;
 };
 
 // generate stats, weighted or unweighted based on bool
@@ -484,18 +408,6 @@ const chooseOtherProficiencies = (classChoice, bgChoice) => {
   for (let key of Object.keys(otherProficiencies)) {
     switch (key) {
       case 'Armor':
-        otherProficiencies[key] = classes[classChoice]["Proficiencies"][key];
-        otherProficiencies[key].forEach(function (item, index) {
-          if (Array.isArray(otherProficiencies[key][index])) {
-            otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
-          };
-        });
-        otherProficiencies[key].forEach(function (item, index) {
-          if (needSwap.includes(item)) {
-            otherProficiencies[index] = equipmentReplace(item);
-          };
-        });
-        break;
       case 'Weapons':
         otherProficiencies[key] = classes[classChoice]["Proficiencies"][key];
         otherProficiencies[key].forEach(function (item, index) {
@@ -525,7 +437,9 @@ const chooseOtherProficiencies = (classChoice, bgChoice) => {
         });
         break;
       case 'Languages':
-        otherProficiencies[key] = bgChoice[key];
+        let bgLangs = bgChoice[key];
+        // raceLangs = raceChoice[key]
+        otherProficiencies[key] = bgLangs // .concat(raceChoice[key])
         otherProficiencies[key].forEach(function (item, index) {
           if (Array.isArray(otherProficiencies[key][index])) {
             otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
@@ -644,8 +558,6 @@ export {
   generateBackground,
   generateClass,
   generateLevel,
-  generateWeightedStats,
-  generateUnweightedStats,
   generateStats,
   generateEquipment,
   generateProficiency,

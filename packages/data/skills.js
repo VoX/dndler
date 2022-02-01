@@ -1,5 +1,0 @@
-const skills = [
-    "Acrobatics",
-    "Athletics",
-    
-]
