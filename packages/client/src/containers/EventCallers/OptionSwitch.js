@@ -1,18 +1,18 @@
 import React from "react";
 
-const OptionSwitch = () =>
+const OptionSwitch = (props) =>
 {
     return (
         <div className="optionSwitch-container">
             <input
-                checked={this.props.isOn}
-                onChange={this.props.handleToggle}
-                id={this.props.value}
+                checked={props.isOn}
+                onChange={props.handleToggle}
+                id={props.value}
                 type="checkbox"
-                className={this.props.className +" hidden"}>
+                className={props.className +" hidden"}>
             </input>
-            <label htmlFor={this.props.value} className={this.props.className+"-label"}>
-                <span className="optionChoice-span">{this.props.value}</span>
+            <label htmlFor={props.value} className={props.className+"-label"}>
+                <span className="optionChoice-span">{props.value}</span>
             </label>
         </div>
     );
