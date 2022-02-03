@@ -6,6 +6,7 @@ import races from './races.js';
 import classFeatures from './classFeatures.js';
 import classes from './classes.js'
 import equipment from './equipment.js'
+import miscRollTable from './miscRollTable.js';
 
 
 export {
@@ -15,5 +16,6 @@ export {
     races,
     classFeatures,
     classes,
-    equipment
+    equipment,
+    miscRollTable
 };

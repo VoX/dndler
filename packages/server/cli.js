@@ -6,8 +6,6 @@ import {
     generateEquipment,
     generateAll,
     generateLevel,
-    generateWeightedStats,
-    generateUnweightedStats,
     generateStats,
     generateProficiency,
     calcModFromScore,

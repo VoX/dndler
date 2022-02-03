@@ -135,5 +135,4 @@ dist
 dndler_py/
 data/firstnames.json
 data/lastnames.json
-csvToJSON.py
 */.DS_Store

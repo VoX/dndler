@@ -438,7 +438,11 @@ const backgrounds = {
             "Favor of an Admirer",
             "Costume",
             "15 GP"
-        ]
+        ],
+        "Features": ["By Popular Demand"],
+        "Skills": ["Acrobatics", "Performance"],
+        "Tools": ["Disguise Kit", "Instrument Choice"],
+        "Languages": []
     },
     "Guild Artisan": {
         "Guild business": [
@@ -645,7 +649,11 @@ const backgrounds = {
             "Letter of Introduction from Guild",
             "Set of Traveler's Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": ["Guild Membership"],
+        "Skills": ["Insight", "Persuasion"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
     },
     "Hermit": {
         "Life of seclusion": [
@@ -983,7 +991,11 @@ const backgrounds = {
             "Lucky Charm",
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Bad Reputation"],
+        "Skills": ["Athletics", "Perception"],
+        "Tools": ["Navigator's Tools", "Water Vehicles"],
+        "Languages": []
     },
     "Sage": {
         "Field of study": [
@@ -1314,7 +1326,11 @@ const backgrounds = {
             "Crowbar",
             "Set of Dark Common Clothes with a Hood",
             "15 GP"
-        ]
+        ],
+        "Features": ["Criminal Contact"],
+        "Skills": ["Deception", "Stealth"],
+        "Tools": ["Gaming Set Choice", "Thieves' Tools"],
+        "Languages": []
     },
     "Urchin": {
         "Trait": [
@@ -1981,9 +1997,19 @@ const backgrounds = {
         "Skills": [
             "Insight",
             [
-                "Intelligence",
-                "Wisdom",
-                "Charisma"
+                "Animal",
+                "Arcana",
+                "Deception",
+                "History",
+                "Intimidation",
+                "Investigation",
+                "Medicine",
+                "Nature",
+                "Perception",
+                "Performance",
+                "Persuasion",
+                "Religion",
+                "Survival"
             ]
         ],
         "Tools": [],
@@ -2427,7 +2453,11 @@ const backgrounds = {
             "Banner",
             "Seal Representing Place or Rank",
             "10 GP"
-        ]
+        ],
+        "Features": [],
+        "Skills": ["Persuasion", ["Arcana", "History", "Nature", "Religion"]],
+        "Tools": [["Gaming Set Choice", "Instrument Choice"]],
+        "Languages": ["Language Choice"]
     },
     "Marine": {
         "Hardship Endured": [

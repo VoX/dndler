@@ -438,7 +438,11 @@
             "Favor of an Admirer",
             "Costume",
             "15 GP"
-        ]
+        ],
+        "Features": ["By Popular Demand"],
+        "Skills": ["Acrobatics", "Performance"],
+        "Tools": ["Disguise Kit", "Instrument Choice"],
+        "Languages": []
     },
     "Guild Artisan": {
         "Guild business": [
@@ -645,7 +649,11 @@
             "Letter of Introduction from Guild",
             "Set of Traveler's Clothes",
             "15 GP"
-        ]
+        ],
+        "Features": ["Guild Membership"],
+        "Skills": ["Insight", "Persuasion"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
     },
     "Hermit": {
         "Life of seclusion": [
@@ -983,7 +991,11 @@
             "Lucky Charm",
             "Set of Common Clothes",
             "10 GP"
-        ]
+        ],
+        "Features": ["Bad Reputation"],
+        "Skills": ["Athletics", "Perception"],
+        "Tools": ["Navigator's Tools", "Water Vehicles"],
+        "Languages": []
     },
     "Sage": {
         "Field of study": [
@@ -1314,7 +1326,11 @@
             "Crowbar",
             "Set of Dark Common Clothes with a Hood",
             "15 GP"
-        ]
+        ],
+        "Features": ["Criminal Contact"],
+        "Skills": ["Deception", "Stealth"],
+        "Tools": ["Gaming Set Choice", "Thieves' Tools"],
+        "Languages": []
     },
     "Urchin": {
         "Trait": [
@@ -1981,9 +1997,19 @@
         "Skills": [
             "Insight",
             [
-                "Intelligence",
-                "Wisdom",
-                "Charisma"
+                "Animal",
+                "Arcana",
+                "Deception",
+                "History",
+                "Intimidation",
+                "Investigation",
+                "Medicine",
+                "Nature",
+                "Perception",
+                "Performance",
+                "Persuasion",
+                "Religion",
+                "Survival"
             ]
         ],
         "Tools": [],
@@ -2427,7 +2453,11 @@
             "Banner",
             "Seal Representing Place or Rank",
             "10 GP"
-        ]
+        ],
+        "Features": [],
+        "Skills": ["Persuasion", ["Arcana", "History", "Nature", "Religion"]],
+        "Tools": [["Gaming Set Choice", "Instrument Choice"]],
+        "Languages": ["Language Choice"]
     },
     "Marine": {
         "Hardship Endured": [
@@ -3850,17 +3880,9 @@
             "Set of Common Clothes",
             "15 GP"
         ],
-        "Features": [
-            "Trial of the Five Gods"
-        ],
-        "Skills": [
-            "Athletics",
-            "Intimidation"
-        ],
-        "Tools": [
-            "Gaming Set Choice",
-            "Land Vehicles"
-        ],
+        "Features": ["Trial of the Five Gods"],
+        "Skills": ["Athletics", "Intimidation"],
+        "Tools": ["Gaming Set Choice", "Land Vehicles"],
         "Languages": []
     },
     "Vizier": {
@@ -3910,17 +3932,9 @@
             "Set of Fine Clothes",
             "25 GP"
         ],
-        "Features": [
-            "Voice of Authority"
-        ],
-        "Skills": [
-            "History",
-            "Religion"
-        ],
-        "Tools": [
-            "Artisan Choice",
-            "Instrument Choice"
-        ],
+        "Features": ["Voice of Authority"],
+        "Skills": ["History", "Religion"],
+        "Tools": ["Artisan Choice", "Instrument Choice"],
         "Languages": []
     },
     "Inquisitor": {
@@ -3963,17 +3977,9 @@
             "Set of Traveler's Clothes",
             "15 GP"
         ],
-        "Features": [
-            "Legal Authorirty"
-        ],
-        "Skills": [
-            "Investigation",
-            "Religion"
-        ],
-        "Tools": [
-            "Thieves' Tools",
-            "Artisan Choice"
-        ],
+        "Features": ["Legal Authorirty"],
+        "Skills": ["Investigation", "Religion"],
+        "Tools": ["Thieves' Tools", "Artisan Choice"],
         "Languages": []
     },
     "Azorious Functionary": {
@@ -4020,15 +4026,9 @@
             "10 GP"
         ],
         "Features": [],
-        "Skills": [
-            "Insight",
-            "Intimidation"
-        ],
+        "Skills": ["Insight", "Intimidation"],
         "Tools": [],
-        "Languages": [
-            "Language Choice",
-            "Language Choice"
-        ]
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Boros Legionnaire": {
         "Trait": [
@@ -4072,24 +4072,10 @@
             "Set of Common Clothes",
             "2 GP"
         ],
-        "Features": [
-            "Legion Station"
-        ],
-        "Skills": [
-            "Athletics",
-            "Intimidation"
-        ],
-        "Tools": [
-            "Gaming Set Choice"
-        ],
-        "Languages": [
-            [
-                "Celestial",
-                "Draconic",
-                "Goblin",
-                "Minotaur"
-            ]
-        ]
+        "Features": ["Legion Station"],
+        "Skills": ["Athletics", "Intimidation"],
+        "Tools": ["Gaming Set Choice"],
+        "Languages": [["Celestial", "Draconic", "Goblin", "Minotaur"]]
     },
     "Dimir Operative": {
         "Reason for Infiltration": [
@@ -4142,16 +4128,9 @@
             "Set of Dark Common Clothes"
         ],
         "Features": [],
-        "Skills": [
-            "Deception",
-            "Stealth"
-        ],
-        "Tools": [
-            "Disguise Kit"
-        ],
-        "Languages": [
-            "Language Choice"
-        ]
+        "Skills": ["Deception", "Stealth"],
+        "Tools": ["Disguise Kit"],
+        "Languages": ["Language Choice"]
     },
     "Golgari Agent": {
         "Trait": [
@@ -4197,23 +4176,10 @@
             "Set of Common Clothes",
             "10 GP"
         ],
-        "Features": [
-            "Undercity Paths"
-        ],
-        "Skills": [
-            "Nature",
-            "Survival"
-        ],
-        "Tools": [
-            "Poisoner's Kit"
-        ],
-        "Languages": [
-            [
-                "Elvish",
-                "Giant",
-                "Kraul"
-            ]
-        ]
+        "Features": ["Undercity Paths"],
+        "Skills": ["Nature", "Survival"],
+        "Tools": ["Poisoner's Kit"],
+        "Languages": [["Elvish", "Giant", "Kraul"]]
     },
     "Gruul Anarch": {
         "Trait": [
@@ -4259,24 +4225,10 @@
             "Set of Traveler's Clothes",
             "10 GP"
         ],
-        "Features": [
-            "Rubblebelt Refuge"
-        ],
-        "Skills": [
-            "Animal",
-            "Athletics"
-        ],
-        "Tools": [
-            "Herbalism Kit"
-        ],
-        "Languages": [
-            [
-                "Draconic",
-                "Giant",
-                "Goblin",
-                "Sylvan"
-            ]
-        ]
+        "Features": ["Rubblebelt Refuge"],
+        "Skills": ["Animal", "Athletics"],
+        "Tools": ["Herbalism Kit"],
+        "Languages": [["Draconic", "Giant", "Goblin", "Sylvan"]]
     },
     "Izzet Engineer": {
         "Trait": [
@@ -4322,23 +4274,10 @@
             "Set of Common Clothes",
             "5 GP"
         ],
-        "Features": [
-            "Urban Infrastructure"
-        ],
-        "Skills": [
-            "Arcana",
-            "Investigation"
-        ],
-        "Tools": [
-            "Artisan Choice"
-        ],
-        "Languages": [
-            [
-                "Draconic",
-                "Goblin",
-                "Vedalken"
-            ]
-        ]
+        "Features": ["Urban Infrastructure"],
+        "Skills": ["Arcana", "Investigation"],
+        "Tools": ["Artisan Choice"],
+        "Languages": [["Draconic", "Goblin", "Vedalken"]]
     },
     "Orzhov Representative": {
         "Trait": [
@@ -4381,18 +4320,10 @@
             "Set of Fine Clothes",
             "1 PP"
         ],
-        "Features": [
-            "Leverage"
-        ],
-        "Skills": [
-            "Intimidation",
-            "Religion"
-        ],
+        "Features": ["Leverage"],
+        "Skills": ["Intimidation", "Religion"],
         "Tools": [],
-        "Languages": [
-            "Language Choice",
-            "Language Choice"
-        ]
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Rakdos Cultist": {
         "Type of Performer": [
@@ -4450,22 +4381,10 @@
             "Set of Common Clothes",
             "10 GP"
         ],
-        "Features": [
-            "Fearsome Reputation"
-        ],
-        "Skills": [
-            "Acrobatics",
-            "Performance"
-        ],
-        "Tools": [
-            "Instrument Choice"
-        ],
-        "Languages": [
-            [
-                "Abyssal",
-                "Giant"
-            ]
-        ]
+        "Features": ["Fearsome Reputation"],
+        "Skills": ["Acrobatics", "Performance"],
+        "Tools": ["Instrument Choice"],
+        "Languages": [["Abyssal", "Giant"]]
     },
     "Selesnya Initiate": {
         "Trait": [
@@ -4509,26 +4428,10 @@
             "Set of Common Clothes",
             "5 GP"
         ],
-        "Features": [
-            "Conclave's Shelter"
-        ],
-        "Skills": [
-            "Nature",
-            "Persuasion"
-        ],
-        "Tools": [
-            [
-                "Artisan Choice",
-                "Instrument Choice"
-            ]
-        ],
-        "Languages": [
-            [
-                "Elvish",
-                "Loxodon",
-                "Sylvan"
-            ]
-        ]
+        "Features": ["Conclave's Shelter"],
+        "Skills": ["Nature", "Persuasion"],
+        "Tools": [["Artisan Choice", "Instrument Choice"]],
+        "Languages": [["Elvish", "Loxodon", "Sylvan"]]
     },
     "Simic Scientist": {
         "Clade/Project": [
@@ -4587,18 +4490,10 @@
             "Glass Bottle of Unidentified Slime",
             "10 GP"
         ],
-        "Features": [
-            "Researcher"
-        ],
-        "Skills": [
-            "Arcana",
-            "Medicine"
-        ],
+        "Features": ["Researcher"],
+        "Skills": ["Arcana", "Medicine"],
         "Tools": [],
-        "Languages": [
-            "Language Choice",
-            "Language Choice"
-        ]
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Grinner": {
         "Favorite Code-Song": [
@@ -4650,17 +4545,9 @@
             "Gold-Plated Ring of a Smiling Face",
             "15 GP"
         ],
-        "Features": [
-            "Ballad of the Grinning Fool"
-        ],
-        "Skills": [
-            "Deception",
-            "Performance"
-        ],
-        "Tools": [
-            "Instrument Choice",
-            "Thieves' Tools"
-        ],
+        "Features": ["Ballad of the Grinning Fool"],
+        "Skills": ["Deception", "Performance"],
+        "Tools": ["Instrument Choice", "Thieves' Tools"],
         "Languages": []
     },
     "Volstrucker Agent": {
@@ -4706,19 +4593,10 @@
             "Poisoner's Kit",
             "10 GP"
         ],
-        "Features": [
-            "Shadow Network"
-        ],
-        "Skills": [
-            "Deception",
-            "Stealth"
-        ],
-        "Tools": [
-            "Poisoner's Kit"
-        ],
-        "Languages": [
-            "Language Choice"
-        ]
+        "Features": ["Shadow Network"],
+        "Skills": ["Deception", "Stealth"],
+        "Tools": ["Poisoner's Kit"],
+        "Languages": ["Language Choice"]
     },
     "Feylost": {
         "Fey Mark": [
@@ -5040,19 +4918,10 @@
             "Set of Fine Clothes",
             "17 GP"
         ],
-        "Features": [
-            "Investigate Services"
-        ],
-        "Skills": [
-            "Investigation",
-            "Persuasion"
-        ],
-        "Tools": [
-            "Thieves' Tools"
-        ],
-        "Languages": [
-            "Elvish"
-        ]
+        "Features": ["Investigate Services"],
+        "Skills": ["Investigation", "Persuasion"],
+        "Tools": ["Thieves' Tools"],
+        "Languages": ["Elvish"]
     },
     "Celebrity Adventurer's Scion": {
         "Trait": [
@@ -5094,20 +4963,10 @@
             "Set of Fine Clothes",
             "30 GP"
         ],
-        "Features": [
-            "Name Dropping"
-        ],
-        "Skills": [
-            "Perception",
-            "Performance"
-        ],
-        "Tools": [
-            "Disguise Kit"
-        ],
-        "Languages": [
-            "Language Choice",
-            "Language Choice"
-        ]
+        "Features": ["Name Dropping"],
+        "Skills": ["Perception", "Performance"],
+        "Tools": ["Disguise Kit"],
+        "Languages": ["Language Choice", "Language Choice"]
     },
     "Failed Merchant": {
         "Trait": [
@@ -5150,19 +5009,10 @@
             "Set of Fine Clothes",
             "10 GP"
         ],
-        "Features": [
-            "Supply Chain"
-        ],
-        "Skills": [
-            "Investigation",
-            "Persuasion"
-        ],
-        "Tools": [
-            "Artisan Choice"
-        ],
-        "Languages": [
-            "Language Choice"
-        ]
+        "Features": ["Supply Chain"],
+        "Skills": ["Investigation", "Persuasion"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
     },
     "Gambler": {
         "Trait": [
@@ -5205,19 +5055,10 @@
             "Set of Fine Clothes",
             "15 GP"
         ],
-        "Features": [
-            "Never Tell Me the Odds"
-        ],
-        "Skills": [
-            "Deception",
-            "Insight"
-        ],
-        "Tools": [
-            "Gaming Set Choice"
-        ],
-        "Languages": [
-            "Language Choice"
-        ]
+        "Features": ["Never Tell Me the Odds"],
+        "Skills": ["Deception", "Insight"],
+        "Tools": ["Gaming Set Choice"],
+        "Languages": ["Language Choice"]
     },
     "Plaintiff": {
         "Trait": [
@@ -5259,19 +5100,10 @@
             "Set of Fine Clothes",
             "20 GP"
         ],
-        "Features": [
-            "Legalese"
-        ],
-        "Skills": [
-            "Medicine",
-            "Persuasion"
-        ],
-        "Tools": [
-            "Artisan Choice"
-        ],
-        "Languages": [
-            "Language Choice"
-        ]
+        "Features": ["Legalese"],
+        "Skills": ["Medicine", "Persuasion"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
     },
     "Rival Intern": {
         "Trait": [
@@ -5314,18 +5146,9 @@
             "Set of Fine Clothes",
             "10 GP"
         ],
-        "Features": [
-            "Inside Informant"
-        ],
-        "Skills": [
-            "History",
-            "Investigation"
-        ],
-        "Tools": [
-            "Artisan Choice"
-        ],
-        "Languages": [
-            "Language Choice"
-        ]
+        "Features": ["Inside Informant"],
+        "Skills": ["History", "Investigation"],
+        "Tools": ["Artisan Choice"],
+        "Languages": ["Language Choice"]
     }
 }

@@ -752,8 +752,8 @@ const classFeatures = {
                 "Martial Arts"
             ],
             "Martial Arts": "1d4",
-            "Ki Points": "\u2013",
-            "Unarmored Movement": "\u2013\u00a0"
+            "Ki Points": "",
+            "Unarmored Movement": ""
         },
         "2": {
             "Features": [

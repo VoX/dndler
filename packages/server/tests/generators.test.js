@@ -11,7 +11,7 @@ import {
     calcArmorClass,
     calcHitpoints
 } from '../generators.js'
- 
+
 test('function \'generateName()\' generates a name as a string', () => {
     let name = generateName()
     expect(name).toBeDefined()
@@ -71,6 +71,7 @@ test('function \'calcHitPoints()\' generates correct hp', () => {
     expect(calcHitpoints(2, 'Druid', 1)).toEqual(10)
 })
 
+/*
 test('function \'generateUnweightedStats()\' generates appropriate stats', () => {
     let stats = generateUnweightedStats(generateRace())
 
@@ -88,7 +89,7 @@ test('function \'generateUnweightedStats()\' generates appropriate stats', () =>
             expect(stats[key][stat] >= 3 && stats[key][stat] <= 18)
         })
     })
-})
+}) */
 
 test('function \'generateStats()\' generates appropriate stats', () => {
     let stats = generateStats(generateRace())
