@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import OptionSwitch from '../Options/OptionSwitch';
+import OptionSwitch from '../EventCallers/OptionSwitch';
 import Navigation from '../Navigation'
 
-class CustomOptionsPage extends React.Component
+const CustomOptionsPage = ({ props }) =>
 {
-    constructor(props)
+    /*constructor(props)
     {
         super(props);
         this.state = {
@@ -13,9 +13,9 @@ class CustomOptionsPage extends React.Component
             classes: [],
             races: []
         };
-    }
+    }*/
 
-    makeTable(availableOptionsList)
+    const makeTable = (availableOptionsList) =>
     {
         console.log(availableOptionsList);
         let keyIndex = 0;
@@ -34,7 +34,7 @@ class CustomOptionsPage extends React.Component
         return tableValues;
     }
 
-    subList(sub)
+    const subList = (sub) =>
     {
         let dummy = [];
         for(let source in this.state.sources)
@@ -50,7 +50,7 @@ class CustomOptionsPage extends React.Component
         return dummy;
     }
 
-    componentDidMount()
+    /*componentDidMount()
     {
         fetch(`http://${window.location.hostname}:8000/sources`, {
             method: 'GET',
@@ -68,43 +68,40 @@ class CustomOptionsPage extends React.Component
         .catch(() => {
             console.log("Sorry, it borked");
         });
-    }
+    }*/
 
-    render()
-    {
-        return (
-            <React.Fragment>
-                <Navigation
-                    destinations={[
-                        {
-                            "text": "HOME",
-                            "callBack": this.props.goHome,
-                            "id": "home"
-                        },
-                        {
-                            "text": "GIMME A RANDO MIN!",
-                            "callBack": this.props.goCharacter,
-                            "id": "character"
-                        }
-                    ]}
-                />
-                <h2>SOURCE MATERIALS</h2>
-                <div className="optionsTable sourcesTable">
-                    {this.makeTable(this.state.sources)}
-                </div>
-                <hr/>
-                <h2>CLASSES</h2>
-                <div className="optionsTable classesTable">
-                    {this.makeTable(this.subList('Classes'))}
-                </div>
-                <hr/>
-                <h2>RACES</h2>
-                <div className="optionsTable racesTable">
-                    {this.makeTable(this.subList('Races'))}
-                </div>
-            </React.Fragment>
-        )
-    }
+    return (
+        <React.Fragment>
+            <Navigation
+                destinations={[
+                    {
+                        "text": "HOME",
+                        "callBack": this.props.goHome,
+                        "id": "home"
+                    },
+                    {
+                        "text": "GIMME A RANDO MIN!",
+                        "callBack": this.props.goCharacter,
+                        "id": "character"
+                    }
+                ]}
+            />
+            <h2>SOURCE MATERIALS</h2>
+            <div className="optionsTable sourcesTable">
+                {makeTable(this.state.sources)}
+            </div>
+            <hr/>
+            <h2>CLASSES</h2>
+            <div className="optionsTable classesTable">
+                {makeTable(subList('Classes'))}
+            </div>
+            <hr/>
+            <h2>RACES</h2>
+            <div className="optionsTable racesTable">
+                {makeTable(subList('Races'))}
+            </div>
+        </React.Fragment>
+    )
 }
 
 export default CustomOptionsPage;
