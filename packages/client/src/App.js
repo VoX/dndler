@@ -33,6 +33,7 @@ const App = () =>
         break;
       case("Home"):
       default:
+        console.log("WADDUP HOME");
         body = <HomePage
         />;
         break;
