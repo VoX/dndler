@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import OptionSwitch from '../EventCallers/OptionSwitch';
 import Navigation from '../Navigation'
 
-const CustomOptionsPage = ({ props }) =>
+const CustomOptionsPage = ( props  ) =>
 {
     /*constructor(props)
     {

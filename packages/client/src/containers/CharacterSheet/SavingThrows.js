@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SavingThrows = ({ props }) =>
+const SavingThrows = ( props ) =>
 {
     return (
         <React.Fragment>

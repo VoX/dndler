@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OtherProficiencies = ({ props }) =>
+const OtherProficiencies = ( props ) =>
 {
     const proficiencyList = () =>
     {

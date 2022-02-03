@@ -3,7 +3,7 @@ import OptionSwitch from "../EventCallers/OptionSwitch";
 
 let options = [];
 
-const OptionsTable = ({ props }) =>
+const OptionsTable = (props) =>
 {
 
     let rows = [];

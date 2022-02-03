@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CharacterBackground = ({ props }) =>
+const CharacterBackground = ( props ) =>
 {
     const backgroundSubtype = () =>
     {

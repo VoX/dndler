@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CharacterEquipment = ({ props }) =>
+const CharacterEquipment = ( props ) =>
 {
     const equipmentList = () =>
     {
@@ -16,7 +16,7 @@ const CharacterEquipment = ({ props }) =>
         <>
             <h2 className="equipHeader">EQUIPMENT</h2>
             <ul className="characterEquipment">
-                { this.equipmentList() }
+                { equipmentList() }
             </ul>
         </>
     )

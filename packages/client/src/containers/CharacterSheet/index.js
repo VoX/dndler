@@ -32,7 +32,7 @@ const CharacterSheet = (props) =>
 
     useEffect(() => {
         fetchCharacter();
-    });
+    }, []);
 
     if(character)
     {
@@ -48,7 +48,7 @@ const CharacterSheet = (props) =>
                         },
                         {
                             "text": "GIMME ANUDDER MIN!",
-                            "callBack": this.fetchCharacter,
+                            "callBack": fetchCharacter,
                             "id": "character"
                         },
                         {
