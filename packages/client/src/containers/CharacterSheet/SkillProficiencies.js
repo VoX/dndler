@@ -27,7 +27,7 @@ const CharacterSkills = ( props ) =>
     );
 }
 
-const SkillEntry = ({ props }) =>
+const SkillEntry = ( props ) =>
 {
     return(
         <li className={"individualSkill " + (props.prof ? "proficient" : "")}>

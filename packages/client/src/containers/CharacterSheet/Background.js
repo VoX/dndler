@@ -7,8 +7,12 @@ const CharacterBackground = ( props ) =>
         for(let feature in props.background)
         {
             if(feature !== "Name" && feature !== "Trait" && feature !== "Ideal"
-                && feature !== "Flaw" && feature !== "Gear" && feature !== "Bond")
+                && feature !== "Flaw" && feature !== "Gear" && feature !== "Bond"
+                && feature !== "Features" && feature !== "Languages" && feature !== "Skills"
+                && feature !== "Tools" && feature !== "Variants")
             {
+                console.log(feature);
+                console.log(props.background[feature]);
                 return [feature, props.background[feature]];
             }
         }

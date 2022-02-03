@@ -4,9 +4,8 @@ import Clock from '../Clock';
 const HomePage = () =>
 {
     return(
-        <>
-            <Clock/>
-        </>
+        <React.Fragment>
+        </React.Fragment>
     )
 }
 

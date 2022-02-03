@@ -7,12 +7,12 @@ const Navigation = (props) =>
     {
         switch(props.curPage)
         {
-            case("Home"):
-                return ["Character", "Custom"];
             case("Character"):
-                return ["Home", "Character", "Custom"];
+                return ["Home", "Custom"];
             case("Custom"):
                 return ["Home", "Character"];
+            default:
+                return ["Character", "Custom"];
         }
     }
 
@@ -37,12 +37,12 @@ const Navigation = (props) =>
     }
 
     return (
-        <>
+        <React.Fragment>
             <nav className="App-nav">
                 {navigationList()}
             </nav>
             <hr/>
-        </>
+        </React.Fragment>
 
     )
 }

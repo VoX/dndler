@@ -2,18 +2,9 @@ import React, { useState, useEffect } from 'react';
 import OptionSwitch from '../EventCallers/OptionSwitch';
 import Navigation from '../Navigation'
 
-const CustomOptionsPage = ( props  ) =>
+const CustomOptionsPage = ( props ) =>
 {
-    /*constructor(props)
-    {
-        super(props);
-        this.state = {
-            sources: [],
-            activeSources: [],
-            classes: [],
-            races: []
-        };
-    }*/
+    const [sources, setSources] = useState(null);
 
     const makeTable = (availableOptionsList) =>
     {
@@ -37,20 +28,20 @@ const CustomOptionsPage = ( props  ) =>
     const subList = (sub) =>
     {
         let dummy = [];
-        for(let source in this.state.sources)
+        for(let source in sources)
         {
-            if(this.state.sources[source][sub])
+            if(sources[source][sub])
             {
-                for(let cla in this.state.sources[source][sub])
+                for(let cla in sources[source][sub])
                 {
-                    dummy.push(this.state.sources[source][sub][cla]);
+                    dummy.push(sources[source][sub][cla]);
                 }
             }
         }
         return dummy;
     }
 
-    /*componentDidMount()
+    useEffect(() =>
     {
         fetch(`http://${window.location.hostname}:8000/sources`, {
             method: 'GET',
@@ -60,35 +51,18 @@ const CustomOptionsPage = ( props  ) =>
         })
         .then(response => response.json())
         .then((json) => {
-            this.setState({
-                ...this.state,
-                sources: json
-            })
+            setSources(json);
         })
         .catch(() => {
             console.log("Sorry, it borked");
         });
-    }*/
+    }, []);
 
     return (
-        <React.Fragment>
-            <Navigation
-                destinations={[
-                    {
-                        "text": "HOME",
-                        "callBack": this.props.goHome,
-                        "id": "home"
-                    },
-                    {
-                        "text": "GIMME A RANDO MIN!",
-                        "callBack": this.props.goCharacter,
-                        "id": "character"
-                    }
-                ]}
-            />
+        <>
             <h2>SOURCE MATERIALS</h2>
             <div className="optionsTable sourcesTable">
-                {makeTable(this.state.sources)}
+                {makeTable(sources)}
             </div>
             <hr/>
             <h2>CLASSES</h2>
@@ -100,7 +74,7 @@ const CustomOptionsPage = ( props  ) =>
             <div className="optionsTable racesTable">
                 {makeTable(subList('Races'))}
             </div>
-        </React.Fragment>
+        </>
     )
 }
 

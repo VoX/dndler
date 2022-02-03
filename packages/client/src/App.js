@@ -10,32 +10,28 @@ import Navigation from './containers/Navigation';
 const App = () =>
 {
   const [curPage, setPage] = useState("Home");
+  const [body, setBody] = useState(null);
 
   const changePage = (pageChoice) =>
   {
     setPage(pageChoice);
   }
 
-  let body;
-
   useEffect(() =>
   {
     switch(curPage){
       case("Custom"):
         console.log("WADDUP CUSTOM");
-        body = <CustomOptionsPage
-        />;
+        setBody(<CustomOptionsPage/>);
         break;
       case("Character"):
         console.log("WADDUP CHARACTER");
-        body = <CharacterSheet
-        />;
+        setBody(<CharacterSheet/>);
         break;
       case("Home"):
       default:
         console.log("WADDUP HOME");
-        body = <HomePage
-        />;
+        setBody(<HomePage/>);
         break;
     }
   }, [curPage]);

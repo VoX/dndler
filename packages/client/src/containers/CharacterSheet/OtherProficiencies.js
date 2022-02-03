@@ -27,7 +27,7 @@ const OtherProficiencies = ( props ) =>
     );
 }
 
-const ProficiencyEntry = ({ props }) =>
+const ProficiencyEntry = ( props ) =>
 {
     const proficiencyValues = () =>
     {

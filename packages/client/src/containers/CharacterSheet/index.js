@@ -8,6 +8,7 @@ import Equipment from "./Equipment"
 import SavingThrows from "./SavingThrows"
 import Navigation from "../Navigation"
 import Features from "./CharacterFeatures"
+import OptionButton from "../EventCallers/OptionButton";
 
 const CharacterSheet = (props) =>
 {
@@ -38,25 +39,13 @@ const CharacterSheet = (props) =>
     {
         console.log(character);
         return (
-            <>
-                <Navigation
-                    destinations={[
-                        {
-                            "text": "HOME",
-                            "callBack": props.goHome,
-                            "id": "home"
-                        },
-                        {
-                            "text": "GIMME ANUDDER MIN!",
-                            "callBack": fetchCharacter,
-                            "id": "character"
-                        },
-                        {
-                            "text": "I wanna see da options",
-                            "callBack": props.goCustom,
-                            "id": "custom"
-                        }
-                    ]}
+            <React.Fragment>
+                <OptionButton
+                    label={"GIMME ANUDDER MIN!"}
+                    onClick={fetchCharacter}
+                    value={""}
+                    id={"reroll"}
+                    className={"reroll"}
                 />
                 <section className="characterContainer">
                     <h1 className="characterName">{character.name}</h1>
@@ -107,15 +96,13 @@ const CharacterSheet = (props) =>
                     </section>
 
                 </section>
-            </>
+            </React.Fragment>
         )
     }
     else
     {
         return (
-            <>
-                <h2>Loading character...</h2>
-            </>
+            <h2>Loading character...</h2>
         )
     }
 }

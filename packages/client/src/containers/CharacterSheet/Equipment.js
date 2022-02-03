@@ -13,12 +13,12 @@ const CharacterEquipment = ( props ) =>
     }
 
     return(
-        <>
+        <React.Fragment>
             <h2 className="equipHeader">EQUIPMENT</h2>
             <ul className="characterEquipment">
                 { equipmentList() }
             </ul>
-        </>
+        </React.Fragment>
     )
 }
 
