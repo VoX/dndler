@@ -1,72 +1,54 @@
 import React from 'react';
 
-class SavingThrows extends React.Component
+const SavingThrows = ( props ) =>
 {
-    constructor(props)
-    {
-        super(props);
-    }
-
-    render()
-    {
-        return (
-            <React.Fragment>
-                <section className="characterSaves">
-                    <h2 className="savesHeader">SAVING THROWS</h2>
-                    <ul>
-                        <SaveThrow
-                            title={"STR"}
-                            value={this.props.saves["STR"]}
-                            prof={this.props.prof.includes("STR")}
-                        />
-                        <SaveThrow
-                            title={"DEX"}
-                            value={this.props.saves["DEX"]}
-                            prof={this.props.prof.includes("DEX")}
-                        />
-                        <SaveThrow
-                            title={"CON"}
-                            value={this.props.saves["CON"]}
-                            prof={this.props.prof.includes("CON")}
-                        />
-                        <SaveThrow
-                            title={"INT"}
-                            value={this.props.saves["INT"]}
-                            prof={this.props.prof.includes("INT")}
-                        />
-                        <SaveThrow
-                            title={"WIS"}
-                            value={this.props.saves["WIS"]}
-                            prof={this.props.prof.includes("WIS")}
-                        />
-                        <SaveThrow
-                            title={"CHA"}
-                            value={this.props.saves["CHA"]}
-                            prof={this.props.prof.includes("CHA")}
-                        />
-                    </ul>
-                </section>
-            </React.Fragment>
-        );
-    }
+    return (
+        <section className="characterSaves">
+            <h2 className="savesHeader">SAVING THROWS</h2>
+            <ul>
+                <SaveThrow
+                    title={"STR"}
+                    value={props.saves["STR"]}
+                    prof={props.prof.includes("STR")}
+                />
+                <SaveThrow
+                    title={"DEX"}
+                    value={props.saves["DEX"]}
+                    prof={props.prof.includes("DEX")}
+                />
+                <SaveThrow
+                    title={"CON"}
+                    value={props.saves["CON"]}
+                    prof={props.prof.includes("CON")}
+                />
+                <SaveThrow
+                    title={"INT"}
+                    value={props.saves["INT"]}
+                    prof={props.prof.includes("INT")}
+                />
+                <SaveThrow
+                    title={"WIS"}
+                    value={props.saves["WIS"]}
+                    prof={props.prof.includes("WIS")}
+                />
+                <SaveThrow
+                    title={"CHA"}
+                    value={props.saves["CHA"]}
+                    prof={props.prof.includes("CHA")}
+                />
+            </ul>
+        </section>
+    );
 }
 
-class SaveThrow extends React.Component
+const SaveThrow = ( props ) =>
 {
-    constructor(props)
-    {
-        super(props);
-    }
-
-    render()
-    {
-        return(
-            <li className={"individualSave " + (this.props.prof ? "proficient" : "")}>
-                <p className="savesTitle inline-block leftAlign">{this.props.title}</p>
-                <p className="savesValue inline-block rightAlign">{(this.props.value > 0 ? "+" : "") + this.props.value}</p>
-            </li>
-        );
-    }
+    return(
+        <li className={"individualSave " + (props.prof ? "proficient" : "")}>
+            <p className="savesTitle inline-block leftAlign">{props.title}</p>
+            <p className="savesValue inline-block rightAlign">{(props.value > 0 ? "+" : "") + props.value}</p>
+        </li>
+    );
 }
 
 export default SavingThrows;

@@ -1,33 +1,25 @@
 import React from 'react';
 
-class CharacterEquipment extends React.Component
+const CharacterEquipment = ( props ) =>
 {
-    constructor(props)
-    {
-        super(props);
-    }
-
-    equipmentList()
+    const equipmentList = () =>
     {
         let rows = [];
-        for(let equipEntry in this.props.equipment)
+        for(let equipEntry in props.equipment)
         {
-            rows.push(<li className="characterEquipEntry leftAlign" key={equipEntry}><p>{this.props.equipment[equipEntry]}</p></li>)
+            rows.push(<li className="characterEquipEntry leftAlign" key={equipEntry}><p>{props.equipment[equipEntry]}</p></li>)
         }
         return rows;
     }
 
-    render()
-    {
-        return(
-            <React.Fragment>
-                <h2 className="equipHeader">EQUIPMENT</h2>
-                <ul className="characterEquipment">
-                    { this.equipmentList() }
-                </ul>
-            </React.Fragment>
-        )
-    }
+    return(
+        <React.Fragment>
+            <h2 className="equipHeader">EQUIPMENT</h2>
+            <ul className="characterEquipment">
+                { equipmentList() }
+            </ul>
+        </React.Fragment>
+    )
 }
 
 export default CharacterEquipment;

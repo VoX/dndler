@@ -1,53 +1,50 @@
-import React from 'react';
-import OptionButton from '../Options/OptionButton';
+import React, { useState, useEffect } from 'react';
+import OptionButton from '../EventCallers/OptionButton';
 
-class Navigation extends React.Component
+const Navigation = (props) =>
 {
-    constructor(props)
+    const getDestinations = () =>
     {
-        super(props);
-    }
-
-    componentWillUnmount()
-    {
-        this.setState({
-            destinations: {}
-        });
-    }
-
-    navigationList()
-    {
-        let nav = [];
-        if(this.props.destinations)
+        switch(props.curPage)
         {
-            for(let i = 0; i < this.props.destinations.length; ++i)
-            {
-                nav.push(
-                    <OptionButton
-                        className={"navButton"}
-                        value={this.props.destinations[i].text}
-                        onClick={this.props.destinations[i].callBack}
-                        id={this.props.destinations[i].id}
-                        key={this.props.destinations[i].id+i}
-                    />
-                );
-            }
+            case("Character"):
+                return ["Home", "Custom"];
+            case("Custom"):
+                return ["Home", "Character"];
+            default:
+                return ["Character", "Custom"];
+        }
+    }
+
+    const navigationList = () =>
+    {
+        let destinations = getDestinations();
+        let nav = [];
+        for(let i = 0; i < destinations.length; ++i)
+        {
+            nav.push(
+                <OptionButton
+                    className={"navButton"}
+                    label={destinations[i]}
+                    value={destinations[i]}
+                    onClick={props.changePage}
+                    id={destinations[i]+"-button"}
+                    key={destinations[i]}
+                />
+            )
         }
         return nav;
     }
 
-    render()
-    {
-        return (
-            <React.Fragment>
-                <nav className="App-nav">
-                    {this.navigationList()}
-                </nav>
-                <hr/>
-            </React.Fragment>
+    return (
+        <React.Fragment>
+            <nav className="App-nav">
+                {navigationList()}
+            </nav>
+            <hr/>
+        </React.Fragment>
 
-        )
-    }
+    )
 }
 
 export default Navigation;

@@ -1,25 +1,15 @@
 import React from 'react';
 
-class CombatProperties extends React.Component
+const CombatProperties = (props) =>
 {
-    constructor(props)
-    {
-        super(props);
-    }
-
-    render()
-    {
-        return (
-            <React.Fragment>
-                <section className="characterCombatProps">
-                    <h2 className="characterCombat characterHP">HP: {this.props.hp} </h2>
-                    <h2 className="characterCombat characterHD">HitDice: {this.props.hd}</h2>
-                    <h2 className="characterCombat characterAC">AC: {this.props.ac}</h2>
-                    <h2 className="characterCombat characterSpeed">Speed: 30ft</h2>
-                </section>
-            </React.Fragment>
-        );
-    }
+    return (
+        <section className="characterCombatProps">
+            <h2 className="characterCombat characterHP">HP: {props.hp} </h2>
+            <h2 className="characterCombat characterHD">HitDice: {props.hd}</h2>
+            <h2 className="characterCombat characterAC">AC: {props.ac}</h2>
+            <h2 className="characterCombat characterSpeed">Speed: 30ft</h2>
+        </section>
+    );
 }
 
 export default CombatProperties;

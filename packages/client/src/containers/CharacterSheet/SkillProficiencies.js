@@ -1,51 +1,40 @@
 import React from 'react';
 
-class CharacterSkills extends React.Component
+const CharacterSkills = ( props ) =>
 {
-    constructor(props)
-    {
-        super(props);
-    }
-
-    skillsList()
+    const skillsList = () =>
     {
         let rows = [];
-        for(let skillTag in this.props.skills.Skills)
+        for(let skillTag in props.skills.Skills)
         {
             rows.push(<SkillEntry
                 key={skillTag}
                 skillName={skillTag}
-                skillValue={this.props.skills.Skills[skillTag]}
-                prof={this.props.skills['Proficient Skills'].includes(skillTag)}
+                skillValue={props.skills.Skills[skillTag]}
+                prof={props.skills['Proficient Skills'].includes(skillTag)}
             />);
         }
         return rows;
     }
 
-    render()
-    {
-        return (
-            <React.Fragment>
-                <h2 className="skillsHeader">SKILLS</h2>
-                <ul className="characterSkills">
-                    {this.skillsList()}
-                </ul>
-            </React.Fragment>
-        );
-    }
+    return (
+        <React.Fragment>
+            <h2 className="skillsHeader">SKILLS</h2>
+            <ul className="characterSkills">
+                {skillsList()}
+            </ul>
+        </React.Fragment>
+    );
 }
 
-class SkillEntry extends React.Component
+const SkillEntry = ( props ) =>
 {
-    render()
-    {
-        return(
-            <li className={"individualSkill " + (this.props.prof ? "proficient" : "")}>
-                <p className="skillsTitle inline-block leftAlign">{this.props.skillName}</p>
-                <p className="skillsValue inline-block rightAlign">{(this.props.skillValue > 0 ? "+" : "") + this.props.skillValue}</p>
-            </li>
-        );
-    }
+    return(
+        <li className={"individualSkill " + (props.prof ? "proficient" : "")}>
+            <p className="skillsTitle inline-block leftAlign">{props.skillName}</p>
+            <p className="skillsValue inline-block rightAlign">{(props.skillValue > 0 ? "+" : "") + props.skillValue}</p>
+        </li>
+    );
 }
 
 export default CharacterSkills;

@@ -1,59 +1,52 @@
 import React from 'react'
 
-class OtherProficiencies extends React.Component
+const OtherProficiencies = ( props ) =>
 {
-    proficiencyList()
+    const proficiencyList = () =>
     {
-        console.log(this.props.proficiencies);
+        console.log(props.proficiencies);
         let rows = [];
-        for(let prof in this.props.proficiencies)
+        for(let prof in props.proficiencies)
         {
             rows.push(<ProficiencyEntry
                 key={prof}
                 category={prof}
-                entries={this.props.proficiencies[prof]}
+                entries={props.proficiencies[prof]}
             />);
         }
         return rows;
     }
 
-    render()
-    {
-        return(
-            <section className="characterProficiencies">
-                <h2 className="proficiencyHeader">PROFICIENCIES</h2>
-                <ul className="proficiencyList">
-                    {this.proficiencyList()}
-                </ul>
-            </section>
-        );
-    }
+    return(
+        <section className="characterProficiencies">
+            <h2 className="proficiencyHeader">PROFICIENCIES</h2>
+            <ul className="proficiencyList">
+                {proficiencyList()}
+            </ul>
+        </section>
+    );
 }
 
-class ProficiencyEntry extends React.Component
+const ProficiencyEntry = ( props ) =>
 {
-    proficiencyValues()
+    const proficiencyValues = () =>
     {
-        console.log(this.props.entries);
         let rows = [];
-        for(let entry in this.props.entries)
+        for(let entry in props.entries)
         {
-            rows.push(<li className="innerProfEntry leftAlign" key={entry}>{this.props.entries[entry]}</li>);
+            rows.push(<li className="innerProfEntry leftAlign" key={entry}>{props.entries[entry]}</li>);
         }
         return rows;
     }
 
-    render()
-    {
-        return(
-            <li className="proficiencyEntry">
-                <h4 className="proficiencyEntryHeader leftAlign">{this.props.category}</h4>
-                <ul className="proficiencies">
-                    {this.proficiencyValues()}
-                </ul>
-            </li>
-        );
-    }
+    return(
+        <li className="proficiencyEntry">
+            <h4 className="proficiencyEntryHeader leftAlign">{props.category}</h4>
+            <ul className="proficiencies">
+                {proficiencyValues()}
+            </ul>
+        </li>
+    );
 }
 
 export default OtherProficiencies;
