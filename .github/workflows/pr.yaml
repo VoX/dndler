@@ -9,8 +9,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache --check-cache
+        run: yarn workspace server install --immutable --immutable-cache --check-cache
       - name: Run test suite
-        run: yarn test
+        run: yarn workspace server test
       - name: Run cli
-        run: yarn cli
+        run: yarn workspace server cli

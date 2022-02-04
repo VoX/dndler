@@ -1,0 +1,355 @@
+/* GLOBAL */
+
+html,body {
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 0.8em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+h4 {
+  font-size: 0.8em;
+}
+
+h5 {
+  font-size: 0.6em;
+}
+
+@media only screen and (min-width: 768px)
+{
+  /* FOR DESKTOP */
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.4em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.leftAlign
+{
+  text-align: left;
+}
+
+.rightAlign
+{
+  text-align: right;
+}
+
+.threeColumn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thirdColumn {
+  margin: 0 auto;
+  max-width: 30%;
+}
+
+/* END GLOBAL */
+
+/* APP */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 3s cubic-bezier(0.63, -0.01, 0.2, 1);
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 8px;
+  padding-top: 20px;
+}
+
+.App-header h1 {
+  font-size: larger;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* END APP */
+
+/* EVENT CALLERS */
+
+.optionSwitch-container,
+.optionButton-container {
+  flex: 0 0 21%;
+}
+
+.optionSwitch-container {
+  margin: 8px 5px;
+}
+
+.optionButton-container {
+  margin: 16px;
+}
+
+.optionSwitch-container label,
+.optionButton-container label {
+  padding: 4px;
+  transition: background-color 0.1s 0s;
+  background-color: #eee;
+  border: solid 1px #ddd;
+}
+
+.optionButton-container label {
+  font-size: 16pt;
+}
+
+@media only screen and (min-width: 768px)
+{
+  /* FOR DESKTOP */
+  .optionButton-container label {
+    font-size: 24pt;
+  }
+}
+
+.optionSwitch-container input[type=checkbox] + label:hover,
+.optionButton-container button + label:hover {
+  background-color: rgb(151, 151, 151);
+}
+
+.optionSwitch-container input[type=checkbox].hidden,
+.optionButton-container button.hidden  {
+  opacity: 0;
+  position: absolute;
+  z-index: -3;
+}
+
+.optionSwitch-container input[type=checkbox]:checked + label,
+.optionButton-container button:active + label {
+  background-color: rgb(73, 138, 96);
+  color: #fff;
+}
+
+.optionSwitch-container input[type=checkbox]:checked + label:hover,
+.optionButton-container button:active + label:hover {
+  background-color: rgb(45, 83, 58);
+}
+
+/* END EVENT CALLERS */
+
+/* NAV */
+
+.App-nav .optionButton-container {
+  display:inline-block;
+  margin: 8px;
+}
+
+.App-nav .optionButton-container label {
+  font-size: 18pt;
+}
+
+.navButton {
+  display: inline-block;
+}
+
+/* END NAV */
+
+/* CUSTOM OPTIONS */
+
+.optionsTable {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+  flex-wrap: wrap;
+}
+
+/* END CUSTOM OPTIONS*/
+
+/* CHARACTER SHEET */
+
+h1.characterName {
+  font-size: 36pt;
+  margin: 0 auto;
+}
+
+h2.characterDescriptor {
+  font-size: 14pt;
+}
+
+.characterCombatProps {
+  margin-top: 0.83em;
+  display:flexbox;
+}
+
+.characterCombat {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.attributeEntry
+{
+  background-color: rgba(110, 110, 110, 0.3);
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  margin: 10px 0;
+  padding: 5px;
+  max-width: 160px;
+}
+
+.attributeTitle {
+  margin: 0;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.attributeValue {
+  background-color: rgba(110, 110, 110, 0.3);
+  max-width: 30%;
+  font-size: 20pt;
+  line-height: 20pt;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.attributeMod {
+  background-color: rgba(110, 110, 110, 0.2);
+  margin: 10px auto 0 auto;
+  padding-bottom: 5px;
+  max-width: 20%;
+}
+
+ul.characterSaves,
+ul.characterSkills,
+ul.characterProficiencies,
+ul.characterEquipment,
+ul.characterFeatures
+{
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.proficiencyEntries {
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+.characterSaves li:nth-child(even),
+.characterSkills li:nth-child(odd)
+{
+  background-color: rgba(110, 110, 110, 0.2);
+}
+
+.characterSaves li:nth-child(odd),
+.characterSkills li:nth-child(even)
+{
+  background-color: rgba(110, 110, 110, 0.4);
+}
+
+.characterSaves li,
+.characterSkills li,
+.characterEquipment li,
+.characterFeatures li {
+  list-style-position: inside;
+  margin: 0;
+}
+
+.characterSaves li,
+.characterSkills li {
+  list-style-type: circle;
+}
+
+.characterEquipment li,
+.characterFeatures li {
+  list-style-type: none;
+}
+
+.characterSaves li.proficient,
+.characterSkills li.proficient {
+  list-style-type: disc;
+}
+
+.characterEquipment li p {
+  margin: 0 auto;
+}
+
+.characterEquipment li p,
+ul.proficiencies li {
+  text-indent: -20px;
+  padding-left: 20px;
+}
+
+p.savesTitle,
+p.skillsTitle {
+  width: 60%;
+  margin: 0 10px 0 -10px;
+}
+
+p.savesValue,
+p.skillsValue {
+  margin: 0;
+  width: 20%;
+}
+
+li.gearItem {
+  margin: 0 auto;
+}
+
+h4.featureEntry-title {
+  margin-bottom: 0;
+}
+
+h5.featureEntry-source {
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0;
+  margin-left: 5px;
+}
+
+p.featureEntry-desc {
+  margin: 0 10px;
+}
+
+/* END CHARACTER SHEET */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
