@@ -533,7 +533,7 @@ const generateFeatures = (classChoice, bgChoice, charLevel) => {
   for (let feature of bgChoice["Features"]) {
     features[ind] = {
         "Name": feature,
-        "Description": '',
+        "Description": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         "Source": bgChoice["Name"]
     };
     ind += 1;
@@ -544,7 +544,7 @@ const generateFeatures = (classChoice, bgChoice, charLevel) => {
     for (let feature of classFeatures[classChoice][String(iter)]["Features"]) {
       features[ind] = {
           "Name": feature,
-          "Description": '',
+          "Description": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
           "Source": classChoice + ' ' + String(iter)
       };
       ind += 1;

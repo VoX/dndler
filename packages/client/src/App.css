@@ -16,6 +16,10 @@ h4 {
   font-size: 0.8em;
 }
 
+h5 {
+  font-size: 0.6em;
+}
+
 @media only screen and (min-width: 768px)
 {
   /* FOR DESKTOP */
@@ -30,6 +34,14 @@ h4 {
   h4 {
     font-size: 1.2em;
   }
+
+  h5 {
+    font-size: 1em;
+  }
+}
+
+.inline {
+  display: inline;
 }
 
 .inline-block {
@@ -314,6 +326,21 @@ p.skillsValue {
 
 li.gearItem {
   margin: 0 auto;
+}
+
+h4.featureEntry-title {
+  margin-bottom: 0;
+}
+
+h5.featureEntry-source {
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0;
+  margin-left: 5px;
+}
+
+p.featureEntry-desc {
+  margin: 0 10px;
 }
 
 /* END CHARACTER SHEET */
