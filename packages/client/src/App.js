@@ -21,16 +21,13 @@ const App = () =>
   {
     switch(curPage){
       case("Custom"):
-        console.log("WADDUP CUSTOM");
         setBody(<CustomOptionsPage/>);
         break;
       case("Character"):
-        console.log("WADDUP CHARACTER");
         setBody(<CharacterSheet/>);
         break;
       case("Home"):
       default:
-        console.log("WADDUP HOME");
         setBody(<HomePage/>);
         break;
     }
