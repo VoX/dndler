@@ -218,7 +218,7 @@ const generateRace = () => {
 // generates class
 const generateClass = () => {
   let classchoice = sample(Object.keys(classFeatures));
-  // let classchoice = "Monk"
+  // let classchoice = "Bard"
   return classchoice;
 };
 
@@ -231,7 +231,7 @@ const calcHitDice = (classChoice, level) => {
 // generates background
 const generateBackground = () => {
   let background = sample(Object.keys(backgrounds));
-  // let background = "Knight of the Order";
+  // let background = "Sage";
   let bgObject = {
     Name: background
   };
@@ -424,15 +424,27 @@ const chooseOtherProficiencies = (classChoice, bgChoice) => {
       case 'Tools':
         let classTools = classes[classChoice]["Proficiencies"][key];
         let bgTools = bgChoice[key];
-        otherProficiencies[key] = classTools.concat(bgTools);
+        if (classTools === bgTools) { // add this check to Languages after adding race languages
+          otherProficiencies[key] = classTools;
+        } else {
+          otherProficiencies[key] = classTools.concat(bgTools);
+        }
         otherProficiencies[key].forEach(function (item, index) {
           if (Array.isArray(otherProficiencies[key][index])) {
-            otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
+            let choice = sample(otherProficiencies[key][index]);
+            while (otherProficiencies[key].includes(choice)) {
+              choice = sample(otherProficiencies[key][index]);
+            };
+            otherProficiencies[key][index] = choice;
           };
         });
         otherProficiencies[key].forEach(function (item, index) {
           if (needSwap.includes(item)) {
-            otherProficiencies[key][index] = equipmentReplace(item);
+            let choice = equipmentReplace(item);
+            while (otherProficiencies[key].includes(choice)) {
+              choice = equipmentReplace(item);
+            }
+            otherProficiencies[key][index] = choice;
           };
         });
         break;
@@ -442,12 +454,20 @@ const chooseOtherProficiencies = (classChoice, bgChoice) => {
         otherProficiencies[key] = bgLangs // .concat(raceChoice[key])
         otherProficiencies[key].forEach(function (item, index) {
           if (Array.isArray(otherProficiencies[key][index])) {
+            let choice = sample(otherProficiencies[key][index]);
+            while (otherProficiencies[key].includes(choice)) {
+              choice = sample(otherProficiencies[key][index])
+            };
             otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
           };
         });
         otherProficiencies[key].forEach(function (item, index) {
           if (needSwap.includes(item)) {
-            otherProficiencies[key][index] = equipmentReplace(item);
+            let choice = equipmentReplace(item);
+            while (otherProficiencies[key].includes(choice)) {
+              choice = equipmentReplace(item);
+            }
+            otherProficiencies[key][index] = choice;
           };
         });
         break;
@@ -506,15 +526,32 @@ const generateProficiency = (modObject, classChoice, bgObject, charLevel) => {
   return profObject;
 };
 
+// combine features from background and class, still need to add race
 const generateFeatures = (classChoice, bgChoice, charLevel) => {
+  let ind = 0;
+  let features = {};
+  for (let feature of bgChoice["Features"]) {
+    features[ind] = {
+        "Name": feature,
+        "Description": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        "Source": bgChoice["Name"]
+    };
+    ind += 1;
+  };
   let iter = 1;
-  let features = [];
-  features.push(bgChoice["Features"]);
+  // features.push(bgChoice["Features"]);
   while (iter <= charLevel) {
-    features.push(classFeatures[classChoice][String(iter)]["Features"]);
+    for (let feature of classFeatures[classChoice][String(iter)]["Features"]) {
+      features[ind] = {
+          "Name": feature,
+          "Description": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          "Source": classChoice + ' ' + String(iter)
+      };
+      ind += 1;
+    };
+    // features.push(classFeatures[classChoice][String(iter)]["Features"]);
     iter += 1;
   };
-  features = flatten(features);
   return features;
 };
 

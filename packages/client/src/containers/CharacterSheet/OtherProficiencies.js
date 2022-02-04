@@ -4,7 +4,6 @@ const OtherProficiencies = ( props ) =>
 {
     const proficiencyList = () =>
     {
-        console.log(props.proficiencies);
         let rows = [];
         for(let prof in props.proficiencies)
         {
