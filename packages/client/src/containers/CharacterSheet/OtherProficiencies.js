@@ -18,9 +18,9 @@ const OtherProficiencies = ( props ) =>
     }
 
     return(
-        <section className="characterProficiencies">
+        <section className="characterProficiencieSection">
             <h2 className="proficiencyHeader">PROFICIENCIES</h2>
-            <ul className="proficiencyList">
+            <ul className="characterProficiencies">
                 {proficiencyList()}
             </ul>
         </section>
@@ -42,7 +42,7 @@ const ProficiencyEntry = ( props ) =>
     return(
         <li className="proficiencyEntry">
             <h4 className="proficiencyEntryHeader leftAlign">{props.category}</h4>
-            <ul className="proficiencies">
+            <ul className="proficiencyEntries">
                 {proficiencyValues()}
             </ul>
         </li>

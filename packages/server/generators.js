@@ -508,7 +508,8 @@ const generateProficiency = (modObject, classChoice, bgObject, charLevel) => {
 
 const generateFeatures = (classChoice, bgChoice, charLevel) => {
   let iter = 1;
-  let features = bgChoice["Features"];
+  let features = [];
+  features.push(bgChoice["Features"]);
   while (iter <= charLevel) {
     features.push(classFeatures[classChoice][String(iter)]["Features"]);
     iter += 1;

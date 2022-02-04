@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Clock from '../Clock';
 
 const HomePage = () =>
 {
     return(
         <React.Fragment>
+            <p>Welcome to the DNDLER, yer number wan place for makin da MINS!!!!</p>
         </React.Fragment>
     )
 }

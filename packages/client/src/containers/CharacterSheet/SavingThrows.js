@@ -3,9 +3,9 @@ import React from 'react';
 const SavingThrows = ( props ) =>
 {
     return (
-        <section className="characterSaves">
+        <section className="characterSaveSection">
             <h2 className="savesHeader">SAVING THROWS</h2>
-            <ul>
+            <ul className="characterSaves">
                 <SaveThrow
                     title={"STR"}
                     value={props.saves["STR"]}

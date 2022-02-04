@@ -18,12 +18,12 @@ const CharacterSkills = ( props ) =>
     }
 
     return (
-        <React.Fragment>
+        <section className="characterSkillSection">
             <h2 className="skillsHeader">SKILLS</h2>
             <ul className="characterSkills">
                 {skillsList()}
             </ul>
-        </React.Fragment>
+        </section>
     );
 }
 

@@ -1,4 +1,37 @@
 /* GLOBAL */
+
+html,body {
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 0.8em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+h4 {
+  font-size: 0.8em;
+}
+
+@media only screen and (min-width: 768px)
+{
+  /* FOR DESKTOP */
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.4em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -12,6 +45,17 @@
 {
   text-align: right;
 }
+
+.threeColumn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thirdColumn {
+  margin: 0 auto;
+  max-width: 30%;
+}
+
 /* END GLOBAL */
 
 /* APP */
@@ -54,6 +98,66 @@
 
 /* END APP */
 
+/* EVENT CALLERS */
+
+.optionSwitch-container,
+.optionButton-container {
+  flex: 0 0 21%;
+}
+
+.optionSwitch-container {
+  margin: 8px 5px;
+}
+
+.optionButton-container {
+  margin: 16px;
+}
+
+.optionSwitch-container label,
+.optionButton-container label {
+  padding: 4px;
+  transition: background-color 0.1s 0s;
+  background-color: #eee;
+  border: solid 1px #ddd;
+}
+
+.optionButton-container label {
+  font-size: 16pt;
+}
+
+@media only screen and (min-width: 768px)
+{
+  /* FOR DESKTOP */
+  .optionButton-container label {
+    font-size: 24pt;
+  }
+}
+
+.optionSwitch-container input[type=checkbox] + label:hover,
+.optionButton-container button + label:hover {
+  background-color: rgb(151, 151, 151);
+}
+
+.optionSwitch-container input[type=checkbox].hidden,
+.optionButton-container button.hidden  {
+  opacity: 0;
+  position: absolute;
+  z-index: -3;
+}
+
+.optionSwitch-container input[type=checkbox]:checked + label,
+.optionButton-container button:active + label {
+  background-color: rgb(73, 138, 96);
+  color: #fff;
+}
+
+.optionSwitch-container input[type=checkbox]:checked + label:hover,
+.optionButton-container button:active + label:hover {
+  background-color: rgb(45, 83, 58);
+}
+
+/* END EVENT CALLERS */
+
 /* NAV */
 
 .App-nav .optionButton-container {
@@ -80,55 +184,6 @@
   flex-wrap: wrap;
 }
 
-.optionSwitch-container,
-.optionButton-container {
-  flex: 0 0 21%;
-}
-
-.optionSwitch-container {
-  margin: 8px 5px;
-}
-
-.optionButton-container {
-  margin: 16px;
-}
-
-.optionSwitch-container label,
-.optionButton-container label {
-  padding: 4px;
-  transition: background-color 0.1s 0s;
-  background-color: #eee;
-  border: solid 1px #ddd;
-}
-
-.optionButton-container label {
-  font-size: 24pt;
-}
-
-.optionSwitch-container input[type=checkbox] + label:hover,
-.optionButton-container button + label:hover {
-  background-color: rgb(151, 151, 151);
-}
-
-.optionSwitch-container input[type=checkbox].hidden,
-.optionButton-container button.hidden  {
-  opacity: 0;
-  position: absolute;
-  z-index: -3;
-  min-width: 240px;
-}
-
-.optionSwitch-container input[type=checkbox]:checked + label,
-.optionButton-container button:active + label {
-  background-color: rgb(73, 138, 96);
-  color: #fff;
-}
-
-.optionSwitch-container input[type=checkbox]:checked + label:hover,
-.optionButton-container button:active + label:hover {
-  background-color: rgb(45, 83, 58);
-}
-
 /* END CUSTOM OPTIONS*/
 
 /* CHARACTER SHEET */
@@ -138,15 +193,8 @@ h1.characterName {
   margin: 0 auto;
 }
 
-.threeColumn {
-  display: flex;
-  justify-content: space-between;
-}
-
-.characterColumn {
-  margin: 0 auto;
-  max-width:33%;
-  padding: 0 5px;
+h2.characterDescriptor {
+  font-size: 14pt;
 }
 
 .characterCombatProps {
@@ -167,6 +215,7 @@ h1.characterName {
   box-sizing: border-box;         /* Opera/IE 8+ */
   margin: 10px 0;
   padding: 5px;
+  max-width: 160px;
 }
 
 .attributeTitle {
@@ -191,13 +240,28 @@ h1.characterName {
   max-width: 20%;
 }
 
-.characterSaves ul li:nth-child(even),
+ul.characterSaves,
+ul.characterSkills,
+ul.characterProficiencies,
+ul.characterEquipment,
+ul.characterFeatures
+{
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.proficiencyEntries {
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+.characterSaves li:nth-child(even),
 .characterSkills li:nth-child(odd)
 {
   background-color: rgba(110, 110, 110, 0.2);
 }
 
-.characterSaves ul li:nth-child(odd),
+.characterSaves li:nth-child(odd),
 .characterSkills li:nth-child(even)
 {
   background-color: rgba(110, 110, 110, 0.4);
@@ -205,7 +269,9 @@ h1.characterName {
 
 .characterSaves li,
 .characterSkills li,
-.characterEquipment li {
+.characterEquipment li,
+.characterFeatures li {
+  list-style-position: inside;
   margin: 0;
 }
 
@@ -214,8 +280,8 @@ h1.characterName {
   list-style-type: circle;
 }
 
-.characterEquipment li
-{
+.characterEquipment li,
+.characterFeatures li {
   list-style-type: none;
 }
 
@@ -224,43 +290,30 @@ h1.characterName {
   list-style-type: disc;
 }
 
-.characterSaves li p,
-.characterSkills li p,
-.characterEquipment li p
-{
+.characterEquipment li p {
   margin: 0 auto;
 }
 
 .characterEquipment li p,
-ul.proficiencies li
-{
+ul.proficiencies li {
   text-indent: -20px;
   padding-left: 20px;
 }
 
 p.savesTitle,
 p.skillsTitle {
-  width: 80%;
+  width: 60%;
+  margin: 0 10px 0 -10px;
 }
 
 p.savesValue,
 p.skillsValue {
+  margin: 0;
   width: 20%;
 }
 
 li.gearItem {
   margin: 0 auto;
-}
-
-ul.proficiencyList
-{
-  padding: 0;
-  list-style-type: none;
-}
-
-ul.proficiencies {
-  padding: 0;
-  list-style-type: none;
 }
 
 /* END CHARACTER SHEET */
