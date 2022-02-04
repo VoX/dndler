@@ -11,8 +11,6 @@ const CharacterBackground = ( props ) =>
                 && feature !== "Features" && feature !== "Languages" && feature !== "Skills"
                 && feature !== "Tools" && feature !== "Variants")
             {
-                console.log(feature);
-                console.log(props.background[feature]);
                 return [feature, props.background[feature]];
             }
         }

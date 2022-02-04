@@ -3,34 +3,34 @@ import React from 'react';
 const CharacterAttributes = (props) =>
 {
     return (
-        <section className="characterStats">
+        <section className="characterStatSection">
             <div className="STR attributeEntry">
-                <p className="attributeTitle">STRENGTH</p>
+                <h4 className="attributeTitle">STRENGTH</h4>
                 <p className="attributeValue">{props.attributes["Total Stats"].STR}</p>
                 <p className="attributeMod">{props.attributes["Total Modifiers"].STR > 0 ? "+" : ""}{props.attributes["Total Modifiers"].STR}</p>
             </div>
             <div className="DEX attributeEntry">
-                <p className="attributeTitle">DEXTERITY</p>
+                <h4 className="attributeTitle">DEXTERITY</h4>
                 <p className="attributeValue">{props.attributes["Total Stats"].DEX}</p>
                 <p className="attributeMod">{props.attributes["Total Modifiers"].DEX > 0 ? "+" : ""}{props.attributes["Total Modifiers"].DEX}</p>
             </div>
             <div className="CON attributeEntry">
-                <p className="attributeTitle">CONSTITUTION</p>
+                <h4 className="attributeTitle">CONSTITUTION</h4>
                 <p className="attributeValue">{props.attributes["Total Stats"].CON}</p>
                 <p className="attributeMod">{props.attributes["Total Modifiers"].CON > 0 ? "+" : ""}{props.attributes["Total Modifiers"].CON}</p>
             </div>
             <div className="INT attributeEntry">
-                <p className="attributeTitle">INTELLIGENCE</p>
+                <h4 className="attributeTitle">INTELLIGENCE</h4>
                 <p className="attributeValue">{props.attributes["Total Stats"].INT}</p>
                 <p className="attributeMod">{props.attributes["Total Modifiers"].INT > 0 ? "+" : ""}{props.attributes["Total Modifiers"].INT}</p>
             </div>
             <div className="WIS attributeEntry">
-                <p className="attributeTitle">WISDOM</p>
+                <h4 className="attributeTitle">WISDOM</h4>
                 <p className="attributeValue">{props.attributes["Total Stats"].WIS}</p>
                 <p className="attributeMod">{props.attributes["Total Modifiers"].WIS > 0 ? "+" : ""}{props.attributes["Total Modifiers"].WIS}</p>
             </div>
             <div className="CHA attributeEntry">
-                <p className="attributeTitle">CHARISMA</p>
+                <h4 className="attributeTitle">CHARISMA</h4>
                 <p className="attributeValue">{props.attributes["Total Stats"].CHA}</p>
                 <p className="attributeMod">{props.attributes["Total Modifiers"].CHA > 0 ? "+" : ""}{props.attributes["Total Modifiers"].CHA}</p>
             </div>

@@ -6,7 +6,6 @@ import Skills from "./SkillProficiencies"
 import CombatProperties from "./CombatProperties"
 import Equipment from "./Equipment"
 import SavingThrows from "./SavingThrows"
-import Navigation from "../Navigation"
 import Features from "./CharacterFeatures"
 import OptionButton from "../EventCallers/OptionButton";
 
@@ -55,7 +54,7 @@ const CharacterSheet = (props) =>
                         {character.class}
                     </h2>
                     <section className="threeColumn">
-                        <div className="characterColumn">
+                        <div className="thirdColumn">
                             <Attributes
                                 attributes={character.stats}
                             />
@@ -64,7 +63,7 @@ const CharacterSheet = (props) =>
                                 proficiencies={character.proficiency["Other"]}
                             />
                         </div>
-                        <div className="characterColumn">
+                        <div className="thirdColumn">
                             <CombatProperties
                                 hp={character.hitpoints}
                                 ac={character.armorclass}
@@ -84,13 +83,13 @@ const CharacterSheet = (props) =>
                                 equipment={character.equipment}
                             />
                         </div>
-                        <div className="characterColumn">
+                        <div className="thirdColumn">
                             <Background
                                 background={character.background}
                             />
                             <hr/>
                             <Features
-                                features=""
+                                features={character.features}
                             />
                         </div>
                     </section>
