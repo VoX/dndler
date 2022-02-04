@@ -3770,8 +3770,7 @@ const backgrounds = {
         ],
         "Features": [
             [
-                "Factor",
-                "Trade Contact"
+                "Factor"
             ]
         ],
         "Skills": [
