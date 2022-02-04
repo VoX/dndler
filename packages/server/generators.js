@@ -218,7 +218,7 @@ const generateRace = () => {
 // generates class
 const generateClass = () => {
   let classchoice = sample(Object.keys(classFeatures));
-  // let classchoice = "Monk"
+  // let classchoice = "Bard"
   return classchoice;
 };
 
@@ -231,7 +231,7 @@ const calcHitDice = (classChoice, level) => {
 // generates background
 const generateBackground = () => {
   let background = sample(Object.keys(backgrounds));
-  // let background = "Knight of the Order";
+  // let background = "Sage";
   let bgObject = {
     Name: background
   };
@@ -433,14 +433,18 @@ const chooseOtherProficiencies = (classChoice, bgChoice) => {
           if (Array.isArray(otherProficiencies[key][index])) {
             let choice = sample(otherProficiencies[key][index]);
             while (otherProficiencies[key].includes(choice)) {
-              choice = sample(otherProficiencies[key][index])
+              choice = sample(otherProficiencies[key][index]);
             };
-            otherProficiencies[key][index] = sample(otherProficiencies[key][index]);
+            otherProficiencies[key][index] = choice;
           };
         });
         otherProficiencies[key].forEach(function (item, index) {
           if (needSwap.includes(item)) {
-            otherProficiencies[key][index] = equipmentReplace(item);
+            let choice = equipmentReplace(item);
+            while (otherProficiencies[key].includes(choice)) {
+              choice = equipmentReplace(item);
+            }
+            otherProficiencies[key][index] = choice;
           };
         });
         break;
@@ -459,7 +463,11 @@ const chooseOtherProficiencies = (classChoice, bgChoice) => {
         });
         otherProficiencies[key].forEach(function (item, index) {
           if (needSwap.includes(item)) {
-            otherProficiencies[key][index] = equipmentReplace(item);
+            let choice = equipmentReplace(item);
+            while (otherProficiencies[key].includes(choice)) {
+              choice = equipmentReplace(item);
+            }
+            otherProficiencies[key][index] = choice;
           };
         });
         break;
@@ -520,27 +528,32 @@ const generateProficiency = (modObject, classChoice, bgObject, charLevel) => {
 
 // combine features from background and class, still need to add race
 const generateFeatures = (classChoice, bgChoice, charLevel) => {
-  let iter = 1;
-  let features = new Map();
+  let ind = 0;
+  let features = {};
   for (let feature of bgChoice["Features"]) {
-    features.set(feature, {
-      "Description": '', // need to fill features catalog
-      "Source": bgChoice["Name"]
-    });
+    features[ind] = {
+      [feature]: {
+        "Description": '',
+        "Source": bgChoice["Name"]
+      }
+    };
+    ind += 1;
   };
+  let iter = 1;
   // features.push(bgChoice["Features"]);
   while (iter <= charLevel) {
     for (let feature of classFeatures[classChoice][String(iter)]["Features"]) {
-      features.set(feature, {
-        "Description": '',
-        "Source": classChoice + ' ' + String(iter)
-        // add handling for dice provided by the feature
-      });
+      features[ind] = {
+        [feature]: {
+          "Description": '',
+          "Source": classChoice + ' ' + String(iter)
+        }
+      };
+      ind += 1;
     };
     // features.push(classFeatures[classChoice][String(iter)]["Features"]);
     iter += 1;
   };
-  // console.log(features.entries());
   return features;
 };
 
@@ -556,7 +569,7 @@ const generateAll = () => {
   let equipment = generateEquipment(classChoice, background);
   let armorclass = calcArmorClass(stats["Total Modifiers"], classChoice, equipment);
   let profObject = generateProficiency(stats["Total Modifiers"], classChoice, background, level);
-  let features = generateFeatures(classChoice, background, level).keys();
+  let features = generateFeatures(classChoice, background, level);
 
   const characterJSON = {
     race: race,
