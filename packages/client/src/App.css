@@ -193,6 +193,10 @@ h1.characterName {
   margin: 0 auto;
 }
 
+h2.characterDescriptor {
+  font-size: 14pt;
+}
+
 .characterCombatProps {
   margin-top: 0.83em;
   display:flexbox;
