@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import AJV from 'ajv';
 import Attributes from "./Attributes"
 import Proficiencies from "./OtherProficiencies"
 import Background from "./Background"
@@ -8,8 +9,39 @@ import Equipment from "./Equipment"
 import SavingThrows from "./SavingThrows"
 import Features from "./CharacterFeatures"
 import OptionButton from "../EventCallers/OptionButton";
+import UploadButton from "../EventCallers/UploadButton";
 import SaveIcon from "../../img/save.png"
 import LoadIcon from "../../img/load.png"
+
+const characterSchema =
+{
+    '$schema': 'http://json-schema.org/draft-07/schema#',
+    '$id': 'character',
+    'title': 'Character',
+    'description': 'Represents a single character.',
+    'type': 'object',
+    'properties':
+    {
+        'armorclass': {type: 'number'},
+        'background': {type: 'object'},
+        'class': {type: 'string'},
+        'equipment': {type: 'array'},
+        'features': {type: 'object'},
+        'hitdice': {type: 'string'},
+        'hitpoints': {type: 'number'},
+        'level': {type: 'number'},
+        'name': {type: 'string'},
+        'proficiency': {type: 'object'},
+        'race': {type: 'string'},
+        'sources': {type: 'object'},
+        'spells': {type: 'object'},
+        'stats': {type: 'object'},
+        'weapons': {type: 'object'}
+    },
+    'required': ['armorclass', 'background', 'class', 'equipment', 'features', 'hitdice',
+    'hitpoints', 'level', 'name', 'proficiency', 'race', 'sources', 'spells', 'stats', 'weapons'],
+    'additionalProperties': false
+}
 
 const CharacterSheet = () =>
 {
@@ -26,6 +58,7 @@ const CharacterSheet = () =>
         })
         .then(response => response.json())
         .then((json) => {
+            console.log(json);
             setHistory([...history, json]);
             setCharacterIndex(history.length);
         })
@@ -97,6 +130,75 @@ const CharacterSheet = () =>
         }
     }
 
+    const saveCharacter = () =>
+    {
+        const str = JSON.stringify(history[characterIndex]);
+        const blob = new Blob([str], {
+            type: 'application/octet-stream'
+        });
+
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', `${history[characterIndex].name}.json`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    const validateCharacterUpload = (character) =>
+    {
+        const ajv = new AJV();
+        const valid = ajv.validate(characterSchema, character);
+        if(valid)
+            return true;
+        else
+        {
+            alert(ajv.errors);
+            return false;
+        }
+    }
+
+    const checkDuplicateCharacter = (character) =>
+    {
+        let returnObj =
+        {
+            index: 0,
+            duplicate: false
+        };
+        for(returnObj.index; returnObj.index < history.length; ++returnObj.index)
+        {
+            if(JSON.stringify(history[returnObj.index]) === JSON.stringify(character))
+            {
+                returnObj.duplicate = true;
+                break;
+            }
+        }
+        return returnObj;
+    }
+
+    const loadCharacter = (file) =>
+    {
+        file.text().then((text) =>
+        {
+            const parsed_json = JSON.parse(text);
+            if(validateCharacterUpload(parsed_json))
+            {
+                let dupeEval = checkDuplicateCharacter(parsed_json);
+                if(!dupeEval.duplicate)
+                {
+                    setHistory([...history, parsed_json]);
+                    setCharacterIndex(history.length);
+                }
+                else
+                {
+                    alert("This character already exists!");
+                    setCharacterIndex(dupeEval.index);
+                }
+            }
+        })
+    }
+
     if(history[characterIndex])
     {
         return (
@@ -114,6 +216,24 @@ const CharacterSheet = () =>
                     {determineForwardButton()}
                 </section>
                 <h5 className="characterCount">{characterIndex+1}/{history.length}</h5>
+                <section className="fileButtonSection">
+                    <OptionButton
+                        onClick={saveCharacter}
+                        id={"saveButton"}
+                        containerName={"inline-block"}
+                        className={"saveButton"}
+                        img={SaveIcon}
+                        imgName={"fileButtons"}
+                    />
+                    <UploadButton
+                        onChange={loadCharacter}
+                        id={"loadButton"}
+                        containerName={"inline-block"}
+                        className={"loadButton"}
+                        img={LoadIcon}
+                        imgName={"fileButtons"}
+                    />
+                </section>
                 <section className="characterContainer">
                     <h1 className="characterName">{history[characterIndex].name}</h1>
                     <h2 className="characterDescriptor">Level&nbsp;
