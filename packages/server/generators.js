@@ -1,5 +1,4 @@
 // import lodash library
-import e from 'express';
 import pkg from 'lodash';
 const { sum, zipWith, add, shuffle, sample, sampleSize, flatten, flattenDeep } = pkg;
 import {
@@ -11,7 +10,7 @@ import {
   classFeatures,
   equipment,
   miscRollTable
-} from '../data/data.js';
+} from './data/data.js';
 
 // array of ability score abbreviations
 const abilityScores = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
