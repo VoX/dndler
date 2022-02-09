@@ -29,11 +29,6 @@ app.get('/', (req, res) => {
     res.status(200).send("lol hi im api");
 })
 
-app.get('/sourceprint', (req, res) => {
-    res.setHeader('Access-Control-Allow-Methods', 'GET');
-    res.status(200).send(JSON.stringify(sourcebooks));
-})
-
 app.get('/sources', (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET');
     res.status(200).send(JSON.stringify(sourcebooks));
@@ -41,8 +36,7 @@ app.get('/sources', (req, res) => {
 
 app.post('/custom', (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'POST');
-    console.log(req.body);
-    res.status(200).send(JSON.stringify(generator.generateAll()));
+    res.status(200).send(JSON.stringify(generator.generateAll(req.body)))
 })
 
 //Leaving the old code here for reference until we want to merge this over to main

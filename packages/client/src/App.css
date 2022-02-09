@@ -20,6 +20,13 @@ h5 {
   font-size: 0.6em;
 }
 
+hr
+{
+  background-color: rgba(110, 110, 110, 0.6);
+  border: none;
+  height: 1px;
+}
+
 @media only screen and (min-width: 768px)
 {
   /* FOR DESKTOP */
@@ -66,6 +73,15 @@ h5 {
 .thirdColumn {
   margin: 0 auto;
   max-width: 30%;
+}
+
+.category.collapsed {
+  height: 0;
+  overflow: hidden;
+}
+
+.faded {
+  background-color: rgba(110, 110, 110, 0.3)
 }
 
 /* END GLOBAL */
@@ -160,13 +176,13 @@ h5 {
 
 .optionSwitch-container input[type=checkbox]:checked + label,
 .optionButton-container button:active + label {
-  background-color: rgb(73, 138, 96);
+  background-color: #494f5a;
   color: #fff;
 }
 
 .optionSwitch-container input[type=checkbox]:checked + label:hover,
 .optionButton-container button:active + label:hover {
-  background-color: rgb(45, 83, 58);
+  background-color: #282c34;
 }
 
 /* END EVENT CALLERS */
@@ -195,6 +211,35 @@ h5 {
   justify-content: center;
   max-width: 100vw;
   flex-wrap: wrap;
+}
+
+.levelRange-title
+{
+  margin: 5px;
+}
+
+.levelRange-container
+{
+  display: block;
+  width: 100%
+}
+
+.levelInput-container
+{
+  width: 100px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.level-label
+{
+  padding-left: 5px;
+  width: 35px;
+}
+
+.level-span
+{
+  width: 35px;
 }
 
 /* END CUSTOM OPTIONS*/
