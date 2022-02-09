@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'packages/server/**'
+    - '!packages/server/**/*.test.js'
+    - '!packages/server/data/*.py'
+    - '!packages/server/data/*.csv'
+    - '!packages/server/data/*.json'
+
+jobs:
+  docker_build:
+
+    runs_on: ubuntu_latest
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: packages/server
+          push: true
+          tags: dndler/client:latest
