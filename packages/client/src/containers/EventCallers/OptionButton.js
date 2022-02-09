@@ -8,7 +8,7 @@ const OptionButton = (props) =>
     }
 
     return (
-        <div className="optionButton-container">
+        <div className={props.containerName + " optionButton-container"}>
             <button
                 value = {props.value}
                 onClick={handleChange}

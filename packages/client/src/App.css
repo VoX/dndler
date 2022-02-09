@@ -131,6 +131,7 @@ h5 {
   transition: background-color 0.1s 0s;
   background-color: #eee;
   border: solid 1px #ddd;
+  white-space: nowrap;
 }
 
 .optionButton-container label {
@@ -199,6 +200,18 @@ h5 {
 /* END CUSTOM OPTIONS*/
 
 /* CHARACTER SHEET */
+
+h5.optionsNotice {
+  margin: 5px;
+}
+
+.clearButton.optionButton-container {
+  margin: 0 auto
+}
+
+.clearButton.optionButton-container label {
+  font-size: 10pt;
+}
 
 h1.characterName {
   font-size: 36pt;
