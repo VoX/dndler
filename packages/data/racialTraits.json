@@ -6,5 +6,15 @@
         "description": "You gain proficiency with two of the following skills of your choice: Deception, Insight, Intimidation, and Persuasion.",
         "proficiencies": ["Deception", "Insight", "Intimidation", "Persuasion"],
         "proficiencyCount": 2
+    },
+    "Darkvision": {
+        "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+    },
+    "Dwarven Resilience": {
+        "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+    },
+    "Dwarven Combat Training": {
+        "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+        "weapons": ["Battleaxe", "Handaxe", "Light Hammer", "Warhammer"]
     }
 }

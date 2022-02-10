@@ -13,13 +13,13 @@
     "Kalashtar": {
         "bonuses": [0, 0, 0, 0, 2, 1],
         "speed": "30",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Orc of Eberron": {
         "bonuses": [2, 0, 1, 0, 0, 0],
         "speed": "30",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Shifter": {
@@ -35,253 +35,300 @@
     "Warforged": {
         "bonuses": [0, 0, 2, 0, 0, 0],
         "speed": "30",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Aarakocra": {
         "bonuses": [0, 2, 0, 0, 1, 0],
         "speed": "30",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Genasi": {
         "bonuses": [0, 0, 2, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Goliath": {
         "bonuses": [2, 0, 1, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Orc of Exandria": {
         "bonuses": [2, 0, 1, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Centaur": {
         "bonuses": [2, 0, 0, 0, 1, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Loxodon": {
         "bonuses": [0, 0, 2, 0, 1, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Minotaur": {
         "bonuses": [2, 0, 1, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Simic Hybrid": {
         "bonuses": [0, 0, 2, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Vedalken": {
         "bonuses": [0, 0, 0, 2, 1, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Leonin": {
         "bonuses": [1, 0, 2, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Satyr": {
         "bonuses": [0, 1, 0, 0, 0, 2],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Dragonborn": {
-        "bonuses": [0, 2, 0, 0, 0, 1],
-        "speed": "",
-        "languages": {},
-        "traits": []
+        "bonuses": [2, 0, 0, 0, 0, 1],
+        "size": "Medium",
+        "speed": {"walk": 30},
+        "languages": ["Common", "Draconic"],
+        "traits": ["Draconic Ancestry", "Breath Weapon", "Damage Resistance"]
+    },
+    "Draconblood": {
+        "bonuses": [0, 0, 0, 2, 0, 1],
+        "size": "Medium",
+        "speed": {"walk": 30},
+        "languages": ["Common", "Draconic"],
+        "traits": ["Draconic Ancestry", "Breath Weapon", "Darkvision", "Forceful Presence"]
+    },
+    "Ravenite": {
+        "bonuses": [2, 0, 1, 0, 0, 0],
+        "size": "Medium",
+        "speed": {"walk": 30},
+        "languages": ["Common", "Draconic"],
+        "traits": ["Draconic Ancestry", "Breath Weapon", "Darkvision", "Vengeful Assault"]
+    },
+    "Chromatic Dragonborn": {
+        "bonuses": [0, 0, 0, 0, 0, 0],
+        "size": "Medium",
+        "speed": {"walk": 30},
+        "languages": ["Common", "Language Choice"],
+        "traits": ["Chromatic Ancestry", "Breath Weapon (FTD)", "Draconic Resistance", "Chromatic Warding"]
+    },
+    "Gem Dragonborn": {
+        "bonuses": [0, 0, 0, 0, 0, 0],
+        "size": "Medium",
+        "speed": {"walk": 30},
+        "languages": ["Common", "Language Choice"],
+        "traits": ["Gem Ancestry", "Breath Weapon (FTD)", "Draconic Resistance", "Psionic Mind", "Gem Flight"]
+    },
+    "Metallic Dragonborn": {
+        "bonuses": [0, 0, 0, 0, 0, 0],
+        "size": "Medium",
+        "speed": {"walk": 30},
+        "languages": ["Common", "Language Choice"],
+        "traits": ["Metallic Ancestry", "Breath Weapon (FTD)", "Draconic Resistance", "Metallic Breath Weapon"]
     },
     "Drow Elf": {
         "bonuses": [0, 2, 0, 0, 0, 1],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Forest Gnome": {
         "bonuses": [0, 1, 0, 2, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Half-Elf": {
         "bonuses": [0, 0, 0, 0, 0, 2],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Half-Orc": {
         "bonuses": [2, 0, 1, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "High Elf": {
         "bonuses": [0, 2, 0, 1, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Hill Dwarf": {
         "bonuses": [0, 0, 2, 0, 1, 0],
-        "speed": "",
-        "languages": {},
-        "traits": []
+        "speed": "25",
+        "languages": [
+            "Common",
+            "Dwarvish"
+        ],
+        "tools": [
+            ["Smith's Tools", "Brewer's Supplies", "Mason's Tools"]
+        ],
+        "traits": [
+            "Darkvision",
+            "Dwarven Resilience",
+            "Dwarven Combat Training",
+            "Stonecunning"
+        ]
     },
     "Human": {
         "bonuses": [1, 1, 1, 1, 1, 1],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Lightfoot Halfling": {
         "bonuses": [0, 2, 0, 0, 0, 1],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Mountain Dwarf": {
         "bonuses": [2, 0, 2, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Rock Gnome": {
         "bonuses": [0, 0, 1, 2, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Stout Halfling": {
         "bonuses": [0, 2, 1, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Tiefling": {
         "bonuses": [0, 0, 0, 1, 0, 2],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Variant Human": {
         "bonuses": [0, 0, 0, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Wood Elf": {
         "bonuses": [0, 2, 0, 0, 1, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Feral Tiefling": {
         "bonuses": [0, 2, 0, 1, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Fairy": {
         "bonuses": [0, 0, 0, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Harengon": {
         "bonuses": [0, 0, 0, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Aasimar": {
         "bonuses": [0, 0, 0, 0, 0, 2],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Bugbear": {
         "bonuses": [2, 1, 0, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Firbolg": {
         "bonuses": [1, 0, 0, 0, 2, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Goblin": {
         "bonuses": [0, 2, 1, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Hobgoblin": {
         "bonuses": [0, 0, 2, 1, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Kenku": {
         "bonuses": [0, 2, 0, 0, 1, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Kobold": {
         "bonuses": [0, 2, 0, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Lizardfolk": {
         "bonuses": [0, 0, 2, 0, 1, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Orc": {
         "bonuses": [2, 0, 1, 0, 0, 0],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Tabaxi": {
         "bonuses": [0, 2, 0, 0, 0, 1],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Triton": {
         "bonuses": [1, 0, 1, 0, 0, 1],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     },
     "Yuan-Ti Pureblood": {
         "bonuses": [0, 0, 0, 1, 0, 2],
         "speed": "",
-        "languages": {},
+        "languages": [],
         "traits": []
     }
 }

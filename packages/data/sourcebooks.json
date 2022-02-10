@@ -228,7 +228,9 @@
         ],
         "Classes": [],
         "Races": [
-            "Orc of Exandria"
+            "Orc of Exandria",
+            "Draconblood",
+            "Ravenite"
         ],
         "Spells": []
     },
@@ -296,6 +298,16 @@
         ],
         "Classes": [],
         "Races": [],
+        "Spells": []
+    },
+    "FTD": {
+        "Name": "Fizban's Treasury of Dragons",
+        "Backgrounds": [],
+        "Classes": [],
+        "Races": [
+            "Chromatic Dragonborn (FTD)",
+            "Gem Dragonborn (FTD)"
+        ],
         "Spells": []
     }
 }
