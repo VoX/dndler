@@ -1,0 +1,435 @@
+{
+    "Draconic Ancestry": {
+        "Black": {
+            "Damage Type": "Acid",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Blue": {
+            "Damage Type": "Lightning",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Brass": {
+            "Damage Type": "Fire",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Bronze": {
+            "Damage Type": "Lightning",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Copper": {
+            "Damage Type": "Acid",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Gold": {
+            "Damage Type": "Fire",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Green": {
+            "Damage Type": "Poison",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "CON",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Red": {
+            "Damage Type": "Fire",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "Silver": {
+            "Damage Type": "Cold",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "CON",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        },
+        "White": {
+            "Damage Type": "Cold",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "CON",
+                "DC": "CON",
+                "Damage": {
+                    "1": "2d6",
+                    "6": "3d6",
+                    "11": "4d6",
+                    "16": "5d6"
+                },
+                "Action": "Action",
+                "Uses": "1",
+                "Cooldown": "SR/LR"
+            }
+        }
+    },
+    "Chromatic Ancestry": {
+        "Black": {
+            "Damage Type": "Acid",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Blue": {
+            "Damage Type": "Lightning",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Green": {
+            "Damage Type": "Poison",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Red": {
+            "Damage Type": "Fire",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "White": {
+            "Damage Type": "Cold",
+            "Breath Weapon": {
+                "Shape": "5' x 30' line",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        }
+    },
+    "Gem Ancestry": {
+        "Amethyst": {
+            "Damage Type": "Force",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Crystal": {
+            "Damage Type": "Radiant",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Emerald": {
+            "Damage Type": "Pyschic",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Sapphire": {
+            "Damage Type": "Thunder",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Topaz": {
+            "Damage Type": "Necrotic",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        }
+    },
+    "Metallic Ancestry": {
+        "Brass": {
+            "Damage Type": "Fire",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Bronze": {
+            "Damage Type": "Lightning",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Copper": {
+            "Damage Type": "Acid",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Gold": {
+            "Damage Type": "Fire",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        },
+        "Silver": {
+            "Damage Type": "Cold",
+            "Breath Weapon": {
+                "Shape": "15' cone",
+                "Save": "DEX",
+                "DC": "CON",
+                "Damage": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                },
+                "Action": "Attack Action",
+                "Uses": "Prof",
+                "Cooldown": "LR"
+            }
+        }
+    }
+}

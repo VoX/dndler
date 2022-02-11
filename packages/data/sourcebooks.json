@@ -305,8 +305,20 @@
         "Backgrounds": [],
         "Classes": [],
         "Races": [
-            "Chromatic Dragonborn (FTD)",
-            "Gem Dragonborn (FTD)"
+            "Chromatic Dragonborn",
+            "Gem Dragonborn",
+            "Metallic Dragonborn"
+        ],
+        "Spells": []
+    },
+    "UA": {
+        "Name": "Unearthed Arcana",
+        "Backgrounds": [],
+        "Classes": [],
+        "Races": [
+            "Chromatic Dragonborn",
+            "Gem Dragonborn",
+            "Metallic Dragonborn"
         ],
         "Spells": []
     }
