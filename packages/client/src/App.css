@@ -48,6 +48,10 @@ h5 {
   display: inline-block;
 }
 
+.grid-center {
+  align-self: center;
+}
+
 .leftAlign
 {
   text-align: left;
@@ -113,7 +117,8 @@ h5 {
 /* EVENT CALLERS */
 
 .optionSwitch-container,
-.optionButton-container {
+.optionButton-container,
+.uploadButton-container {
   flex: 0 0 21%;
 }
 
@@ -121,50 +126,54 @@ h5 {
   margin: 8px 5px;
 }
 
-.optionButton-container {
+.optionButton-container,
+.uploadButton-container {
   margin: 16px;
 }
 
 .optionSwitch-container label,
-.optionButton-container label {
+.optionButton-container label,
+.uploadButton-container label {
   padding: 4px;
   transition: background-color 0.1s 0s;
   background-color: #eee;
   border: solid 1px #ddd;
-}
-
-.optionButton-container label {
   font-size: 16pt;
 }
 
 @media only screen and (min-width: 768px)
 {
   /* FOR DESKTOP */
-  .optionButton-container label {
+  .optionButton-container label,
+  .uploadButton-container label {
     font-size: 24pt;
   }
 }
 
 .optionSwitch-container input[type=checkbox] + label:hover,
-.optionButton-container button + label:hover {
+.optionButton-container button + label:hover,
+.uploadButton-container input[type=file] + label:hover {
   background-color: rgb(151, 151, 151);
 }
 
 .optionSwitch-container input[type=checkbox].hidden,
-.optionButton-container button.hidden  {
+.optionButton-container button.hidden,
+.uploadButton-container input[type=file].hidden {
   opacity: 0;
   position: absolute;
   z-index: -3;
 }
 
 .optionSwitch-container input[type=checkbox]:checked + label,
-.optionButton-container button:active + label {
+.optionButton-container button:active + label,
+.uploadButton-container input[type=file]:active + label {
   background-color: rgb(73, 138, 96);
   color: #fff;
 }
 
 .optionSwitch-container input[type=checkbox]:checked + label:hover,
-.optionButton-container button:active + label:hover {
+.optionButton-container button:active + label:hover,
+.uploadButton-container input[type=file]:active + label:hover {
   background-color: rgb(45, 83, 58);
 }
 
@@ -199,6 +208,29 @@ h5 {
 /* END CUSTOM OPTIONS*/
 
 /* CHARACTER SHEET */
+
+section.characterButtonSection {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+h5.characterCount {
+  margin: 0 auto;
+}
+
+img.fileButtons {
+  object-fit: contain;
+  width: 20px;
+  height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+/* FOR DESKTOP */
+img.fileButtons {
+  width: 30px;
+}
+}
 
 h1.characterName {
   font-size: 36pt;
