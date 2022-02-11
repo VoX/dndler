@@ -62,18 +62,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 2
-        if: needs.check-file-changes.outputs.server_modified == "true"
+        if: needs.check-file-changes.outputs.server_modified == 'true'
 
       - name: Install dependencies
-        if: needs.check-file-changes.outputs.server_modified == "true"
+        if: needs.check-file-changes.outputs.server_modified == 'true'
         run: yarn workspace server install --immutable --immutable-cache --check-cache
 
       - name: Run test suite
-        if: needs.check-file-changes.outputs.server_modified == "true"
+        if: needs.check-file-changes.outputs.server_modified == 'true'
         run: yarn workspace server test --verbose
 
       - name: Run cli
-        if: needs.check-file-changes.outputs.server_modified == "true"
+        if: needs.check-file-changes.outputs.server_modified == 'true'
         run: yarn workspace server cli
 
   client-test-suite:
@@ -84,16 +84,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 2
-        if: needs.check-file-changes.outputs.client_modified == "true"
+        if: needs.check-file-changes.outputs.client_modified == 'true'
 
       - name: Install dependencies
-        if: needs.check-file-changes.outputs.client_modified == "true"
+        if: needs.check-file-changes.outputs.client_modified == 'true'
         run: yarn workspace client install --immutable --immutable-cache --check-cache
 
       - name: Run test suite
-        if: needs.check-file-changes.outputs.client_modified == "true"
+        if: needs.check-file-changes.outputs.client_modified == 'true'
         run: yarn workspace client test --verbose
 
       - name: Run cli
-        if: needs.check-file-changes.outputs.client_modified == "true"
+        if: needs.check-file-changes.outputs.client_modified == 'true'
         run: yarn workspace client cli
