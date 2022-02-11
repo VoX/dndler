@@ -56,6 +56,7 @@ const prioritizeStats = (sortedStats, priorityStats) => {
 // generate stats, weighted or unweighted based on bool
 const generateStats = (raceChoice, classChoice, isWeighted = false) => {
   let baseStats = [];
+  console.log(isWeighted);
   if (isWeighted === true) {
     let sortedStats = [
       roll4DropLowest(),
@@ -209,16 +210,32 @@ const generateName = () => {
 };
 
 // generates race
-const generateRace = () => {
-  let race = sample(Object.keys(races));
-  return race;
+const generateRace = (raceArray) => {
+  let raceChoice = "";
+  if(raceArray.length > 0)
+  {
+    raceChoice = sample(Object.keys(races).filter((raceName) => raceArray.includes(raceName)));
+  }
+  else
+  {
+    raceChoice = sample(Object.keys(races));
+  }
+  return raceChoice;
 };
 
 // generates class
-const generateClass = () => {
-  let classchoice = sample(Object.keys(classFeatures));
-  // let classchoice = "Bard"
-  return classchoice;
+const generateClass = (classArray) => {
+  let classChoice = ""
+  if(classArray.length > 0)
+  {
+    classChoice = sample(Object.keys(classFeatures).filter((className) => classArray.includes(className)));
+  }
+  else
+  {
+    classChoice = sample(Object.keys(classFeatures));
+  }
+    // let classchoice = "Bard"
+  return classChoice;
 };
 
 // calculates hit dice available based on class and level
@@ -228,21 +245,29 @@ const calcHitDice = (classChoice, level) => {
 }
 
 // generates background
-const generateBackground = () => {
-  let background = sample(Object.keys(backgrounds));
+const generateBackground = (backgroundArray) => {
+  let backgroundChoice = "";
+  if(backgroundArray.length > 0)
+  {
+    backgroundChoice = sample(Object.keys(backgrounds).filter((backgroundName) => backgroundArray.includes(backgroundName)));
+  }
+  else
+  {
+    backgroundChoice = sample(Object.keys(backgrounds));
+  }
   // let background = "Sage";
   let bgObject = {
-    Name: background
+    Name: backgroundChoice
   };
-  if (background === "House Agent") {
+  if (backgroundChoice === "House Agent") {
     bgObject["House"] = "House " + sample(names['Last']);
   }
-  Object.keys(backgrounds[background]).forEach(k => bgObject[k] = sample(backgrounds[background][k]));
-  bgObject["Gear"] = backgrounds[background]["Gear"];
-  bgObject["Features"] = backgrounds[background]["Features"];
-  bgObject["Skills"] = backgrounds[background]["Skills"];
-  bgObject["Tools"] = backgrounds[background]["Tools"];
-  bgObject["Languages"] = backgrounds[background]["Languages"];
+  Object.keys(backgrounds[backgroundChoice]).forEach(k => bgObject[k] = sample(backgrounds[backgroundChoice][k]));
+  bgObject["Gear"] = backgrounds[backgroundChoice]["Gear"];
+  bgObject["Features"] = backgrounds[backgroundChoice]["Features"];
+  bgObject["Skills"] = backgrounds[backgroundChoice]["Skills"];
+  bgObject["Tools"] = backgrounds[backgroundChoice]["Tools"];
+  bgObject["Languages"] = backgrounds[backgroundChoice]["Languages"];
   return bgObject;
 };
 
@@ -555,14 +580,26 @@ const generateFeatures = (classChoice, bgChoice, charLevel) => {
 };
 
 //generates a full character sheet
-const generateAll = () => {
-  let level = generateLevel(1,5);
-  let race = generateRace();
+const generateAll = (options) => {
+
+  console.log(options);
+  let level = generateLevel(
+    options['Levels'] ? options['Levels'][0] : 1,
+    options['Levels'] ? options['Levels'][1] : 20);
+  let race = generateRace(
+    options['Races'] ? options['Races'] : []
+  );
   let name = generateName();
-  let classChoice = generateClass();
+  let classChoice = generateClass(
+    options['Classes'] ? options['Classes'] : []
+  );
   let hitdice = calcHitDice(classChoice, level);
-  let background = generateBackground();
-  let stats = generateStats(race, classChoice, true);
+  let background = generateBackground(
+    options['Backgrounds'] ? options['Backgrounds'] : []
+  );
+  let stats = generateStats(race, classChoice,
+    options['Other'] ? options['Other']['weighted'] ? true : false : true
+  );
   let equipment = generateEquipment(classChoice, background);
   let armorclass = calcArmorClass(stats["Total Modifiers"], classChoice, equipment);
   let profObject = generateProficiency(stats["Total Modifiers"], classChoice, background, level);

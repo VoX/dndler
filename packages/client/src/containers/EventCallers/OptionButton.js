@@ -7,8 +7,20 @@ const OptionButton = (props) =>
         props.onClick(event.target.value);
     }
 
+    const labelImg = () =>
+    {
+        if(props.img)
+        {
+            return (
+                <img className={props.imgName} alt={props.id} src={props.img}/>
+            );
+        }
+        else
+            return null;
+    }
+
     return (
-        <div className="optionButton-container">
+        <div className={props.containerName + " optionButton-container"}>
             <button
                 value = {props.value}
                 onClick={handleChange}
@@ -16,6 +28,7 @@ const OptionButton = (props) =>
                 className={props.className + " hidden"}>
             </button>
             <label htmlFor={props.id} className={props.className+"-label optionButton-label"}>
+                {labelImg()}
                 <span className="optionButton-span">{props.label}</span>
             </label>
         </div>

@@ -135,4 +135,4 @@ dist
 dndler_py/
 data/firstnames.json
 data/lastnames.json
-*/.DS_Store
+**/.DS_Store
