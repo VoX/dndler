@@ -11,27 +11,44 @@ const App = () =>
 {
   const [curPage, setPage] = useState("Home");
   const [body, setBody] = useState(null);
+  const [charOptions, setCharOptions] = useState();
 
   const changePage = (pageChoice) =>
   {
     setPage(pageChoice);
   }
 
+  const characterWithOptions = (options) =>
+  {
+    setCharOptions(options);
+    changePage("Character");
+  }
+
+  const clearOptions = () =>
+  {
+    setCharOptions(null);
+  }
+
   useEffect(() =>
   {
     switch(curPage){
       case("Custom"):
-        setBody(<CustomOptionsPage/>);
+        setBody(<CustomOptionsPage
+          sendOptions={characterWithOptions}
+        />);
         break;
       case("Character"):
-        setBody(<CharacterSheet/>);
+        setBody(<CharacterSheet
+          charOptions={charOptions}
+          clearOptions={clearOptions}
+        />);
         break;
       case("Home"):
       default:
         setBody(<HomePage/>);
         break;
     }
-  }, [curPage]);
+  }, [curPage, charOptions]);
 
   return (
     <div className="App">

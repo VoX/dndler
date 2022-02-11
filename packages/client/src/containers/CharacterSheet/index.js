@@ -52,8 +52,10 @@ const CharacterSheet = () =>
     {
         fetch(`http://${window.location.hostname}:8000/custom`, {
             method: 'POST',
+            body: props.charOptions ? JSON.stringify(props.charOptions) : null,
             headers: {
-                Accept: 'application/json',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
         })
         .then(response => response.json())
@@ -68,13 +70,36 @@ const CharacterSheet = () =>
 
     }
 
+    const customOptionsNotice = () =>
+    {
+        if(props.charOptions)
+        {
+            return(
+                <>
+                    <h5 className="optionsNotice">(Your custom options remain in effect)</h5>
+                    <OptionButton
+                        label={"clear custom options"}
+                        onClick={props.clearOptions}
+                        id={"clearOptions"}
+                        className={"clearOptions"}
+                        containerName={"clearButton"}
+                    />
+                </>
+            );
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     useEffect(() => {
         fetchCharacter();
     }, []);
 
     const goBackChar = () =>
     {
-        if(characterIndex > 0)
+      if(characterIndex > 0)
         {
             setCharacterIndex(characterIndex - 1);
         }
@@ -122,6 +147,7 @@ const CharacterSheet = () =>
                     containerName={"inline-block"}
                     className={"charFrwd"}
                 />
+                <hr/>
             );
         }
         else
@@ -203,6 +229,7 @@ const CharacterSheet = () =>
     {
         return (
             <React.Fragment>
+                {customOptionsNotice()}
                 <section className="characterButtonSection">
                     {determineBackButton()}
                     <OptionButton

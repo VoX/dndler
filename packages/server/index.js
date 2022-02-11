@@ -16,22 +16,27 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 8000;
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use((req, res, next) =>
+{
+    res.header('Access-Control-Allow-Origin', '*'); //this should not be accepting all in deployment
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+})
 
 app.get('/', (req, res) => {
     res.status(200).send("lol hi im api");
 })
 
 app.get('/sources', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); //this should not be accepting all in deployment
     res.setHeader('Access-Control-Allow-Methods', 'GET');
     res.status(200).send(JSON.stringify(sourcebooks));
 })
 
 app.post('/custom', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); //this should not be accepting all in deployment
     res.setHeader('Access-Control-Allow-Methods', 'POST');
-    res.status(200).send(JSON.stringify(generator.generateAll()));
+    res.status(200).send(JSON.stringify(generator.generateAll(req.body)))
 })
 
 //Leaving the old code here for reference until we want to merge this over to main

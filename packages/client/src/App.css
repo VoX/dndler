@@ -20,6 +20,13 @@ h5 {
   font-size: 0.6em;
 }
 
+hr
+{
+  background-color: rgba(110, 110, 110, 0.6);
+  border: none;
+  height: 1px;
+}
+
 @media only screen and (min-width: 768px)
 {
   /* FOR DESKTOP */
@@ -70,6 +77,15 @@ h5 {
 .thirdColumn {
   margin: 0 auto;
   max-width: 30%;
+}
+
+.category.collapsed {
+  height: 0;
+  overflow: hidden;
+}
+
+.faded {
+  background-color: rgba(110, 110, 110, 0.3)
 }
 
 /* END GLOBAL */
@@ -138,6 +154,10 @@ h5 {
   transition: background-color 0.1s 0s;
   background-color: #eee;
   border: solid 1px #ddd;
+  white-space: nowrap;
+}
+
+.optionButton-container label {
   font-size: 16pt;
 }
 
@@ -167,14 +187,13 @@ h5 {
 .optionSwitch-container input[type=checkbox]:checked + label,
 .optionButton-container button:active + label,
 .uploadButton-container input[type=file]:active + label {
-  background-color: rgb(73, 138, 96);
-  color: #fff;
+  background-color: #494f5a;
 }
 
 .optionSwitch-container input[type=checkbox]:checked + label:hover,
 .optionButton-container button:active + label:hover,
 .uploadButton-container input[type=file]:active + label:hover {
-  background-color: rgb(45, 83, 58);
+  background-color: #282c34;
 }
 
 /* END EVENT CALLERS */
@@ -205,10 +224,50 @@ h5 {
   flex-wrap: wrap;
 }
 
+.levelRange-title
+{
+  margin: 5px;
+}
+
+.levelRange-container
+{
+  display: block;
+  width: 100%
+}
+
+.levelInput-container
+{
+  width: 100px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.level-label
+{
+  padding-left: 5px;
+  width: 35px;
+}
+
+.level-span
+{
+  width: 35px;
+}
+
 /* END CUSTOM OPTIONS*/
 
 /* CHARACTER SHEET */
 
+h5.optionsNotice {
+  margin: 5px;
+}
+
+.clearButton.optionButton-container {
+  margin: 0 auto
+}
+
+.clearButton.optionButton-container label {
+  font-size: 10pt;
+  
 section.characterButtonSection {
   display: grid;
   align-items: center;
@@ -227,9 +286,9 @@ img.fileButtons {
 
 @media only screen and (min-width: 768px) {
 /* FOR DESKTOP */
-img.fileButtons {
-  width: 30px;
-}
+  img.fileButtons {
+    width: 30px;
+  }
 }
 
 h1.characterName {
