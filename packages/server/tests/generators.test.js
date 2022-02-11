@@ -20,14 +20,14 @@ test('function \'generateName()\' generates a name as a string', () => {
 });
 
 test('function \'generateRace()\' generates a race as a string', () => {
-    let race = generateRace()
+    let race = generateRace(["Dragonborn", "Forest Gnome", "Half-Orc", "Hill Dwarf", "Rock Gnome", "Human", "Mountain Dwarf"])
     expect(race).toBeDefined()
     expect(typeof race === 'string').toEqual(true);
     expect(race.length).toBeGreaterThan(1)
 });
 
 test('function \'generateBackground()\' generates a background object', () => {
-    let background = generateBackground()
+    let background = generateBackground(["Haunted One", "Black Fist Double Agent", "Dragon Casualty", "Iron Route Bandit", "Phlan Insurgent"])
     expect(background).toBeDefined()
     expect(typeof background === 'object').toEqual(true);
 
@@ -59,7 +59,7 @@ test('function \'generateBackground()\' generates a background object', () => {
 });
 
 test('function \'generateClass()\' generates a class as a string', () => {
-    let classChoice = generateClass()
+    let classChoice = generateClass(["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer"])
     expect(classChoice).toBeDefined()
     expect(typeof classChoice === 'string').toEqual(true);
     expect(classChoice.length).toBeGreaterThan(1)
@@ -71,28 +71,8 @@ test('function \'calcHitPoints()\' generates correct hp', () => {
     expect(calcHitpoints(2, 'Druid', 1)).toEqual(10)
 })
 
-/*
-test('function \'generateUnweightedStats()\' generates appropriate stats', () => {
-    let stats = generateUnweightedStats(generateRace())
-
-    expect(stats).toBeDefined()
-    expect(typeof stats === 'object').toEqual(true);
-
-    Object.keys(stats).forEach(key => {
-
-        expect(stats[key]).toBeDefined()
-        expect(typeof stats[key] === 'object').toEqual(true);
-
-        Object.keys(stats[key]).forEach(stat => {
-            expect(stats[key][stat]).toBeDefined()
-            expect(typeof stats[key][stat] === 'number').toEqual(true)
-            expect(stats[key][stat] >= 3 && stats[key][stat] <= 18)
-        })
-    })
-}) */
-
 test('function \'generateStats()\' generates appropriate stats', () => {
-    let stats = generateStats(generateRace())
+    let stats = generateStats(generateRace(["Dragonborn", "Forest Gnome", "Half-Orc", "Hill Dwarf", "Rock Gnome", "Human", "Mountain Dwarf"]))
 
     expect(stats).toBeDefined()
     expect(typeof stats === 'object').toEqual(true);
