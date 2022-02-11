@@ -50,7 +50,7 @@ const CharacterSheet = (props) =>
 
     const fetchCharacter = () =>
     {
-        fetch(`http://${window.location.hostname}:8000/custom`, {
+        fetch(`/custom`, {
             method: 'POST',
             body: props.charOptions ? JSON.stringify(props.charOptions) : null,
             headers: {

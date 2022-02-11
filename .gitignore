@@ -136,3 +136,6 @@ dndler_py/
 data/firstnames.json
 data/lastnames.json
 **/.DS_Store
+
+#build output
+build/
