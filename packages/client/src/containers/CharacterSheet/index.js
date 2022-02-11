@@ -43,7 +43,7 @@ const characterSchema =
     'additionalProperties': false
 }
 
-const CharacterSheet = () =>
+const CharacterSheet = (props) =>
 {
     const [history, setHistory] = useState([]);
     const [characterIndex, setCharacterIndex] = useState(0);
@@ -147,7 +147,6 @@ const CharacterSheet = () =>
                     containerName={"inline-block"}
                     className={"charFrwd"}
                 />
-                <hr/>
             );
         }
         else

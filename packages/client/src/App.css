@@ -188,6 +188,7 @@ hr
 .optionButton-container button:active + label,
 .uploadButton-container input[type=file]:active + label {
   background-color: #494f5a;
+  color: #fff;
 }
 
 .optionSwitch-container input[type=checkbox]:checked + label:hover,
@@ -267,7 +268,8 @@ h5.optionsNotice {
 
 .clearButton.optionButton-container label {
   font-size: 10pt;
-  
+}
+
 section.characterButtonSection {
   display: grid;
   align-items: center;
